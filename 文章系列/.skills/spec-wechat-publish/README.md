@@ -1,6 +1,6 @@
 # spec-wechat-publish 使用说明
 
-`spec-wechat-publish` 是 `docs/11-文章系列/` 的项目本地微信公众号发布流水线 skill，不属于 `spec-first init` 会分发的 bundled skill。
+`spec-wechat-publish` 是 `文章系列/` 的项目本地微信公众号发布流水线 skill，不属于 `spec-first init` 会分发的 bundled skill。
 
 它用于把一篇文章从选题推进到微信编辑器草稿，串联：
 
@@ -13,13 +13,13 @@
 在当前仓库中，把下面这段作为任务发给 agent：
 
 ```text
-使用 docs/11-文章系列/.skills/spec-wechat-publish/SKILL.md，发布 docs/11-文章系列/<文章文件>.md
+使用 文章系列/.skills/spec-wechat-publish/SKILL.md，发布 文章系列/<文章文件>.md
 ```
 
 如果还没有确定文章文件，可以说：
 
 ```text
-使用 docs/11-文章系列/.skills/spec-wechat-publish/SKILL.md，进入选题步骤
+使用 文章系列/.skills/spec-wechat-publish/SKILL.md，进入选题步骤
 ```
 
 执行时，agent 应先读取 `SKILL.md`，再按其中的 Prerequisites、Progress Checklist 和 Step 1 → Step 7（含子步 4.5/4.6/4.7/6.5）继续。
@@ -32,20 +32,20 @@ Claude Code:
 
 ```bash
 mkdir -p "$HOME/.claude/skills"
-cp -R docs/11-文章系列/.skills/spec-wechat-publish "$HOME/.claude/skills/spec-wechat-publish"
+cp -R 文章系列/.skills/spec-wechat-publish "$HOME/.claude/skills/spec-wechat-publish"
 ```
 
 Codex:
 
 ```bash
 mkdir -p "$HOME/.agents/skills"
-cp -R docs/11-文章系列/.skills/spec-wechat-publish "$HOME/.agents/skills/spec-wechat-publish"
+cp -R 文章系列/.skills/spec-wechat-publish "$HOME/.agents/skills/spec-wechat-publish"
 ```
 
 安装后重启对应宿主，再用自然语言触发，例如：
 
 ```text
-使用 spec-wechat-publish 发布 docs/11-文章系列/02-ai-coding-harness-publish.md
+使用 spec-wechat-publish 发布 文章系列/第一季-harness认知/02-ai-coding-harness-publish.md
 ```
 
 ## 依赖
@@ -71,14 +71,14 @@ SVG 转 PNG 默认使用本 skill 自带的 `scripts/svg-to-png.mjs`，通过 Ch
 如果本机 `baoyu-post-to-wechat` 还没有 `tech-blog` 主题，运行：
 
 ```bash
-node docs/11-文章系列/.skills/spec-wechat-publish/scripts/install-tech-blog-theme.mjs \
+node 文章系列/.skills/spec-wechat-publish/scripts/install-tech-blog-theme.mjs \
   --skill-dir "$HOME/.claude/skills/baoyu-post-to-wechat"
 ```
 
 Codex 用户级 runtime 也可以安装到：
 
 ```bash
-node docs/11-文章系列/.skills/spec-wechat-publish/scripts/install-tech-blog-theme.mjs \
+node 文章系列/.skills/spec-wechat-publish/scripts/install-tech-blog-theme.mjs \
   --skill-dir "$HOME/.agents/skills/baoyu-post-to-wechat"
 ```
 

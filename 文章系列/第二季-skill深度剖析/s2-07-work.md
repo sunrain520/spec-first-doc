@@ -57,7 +57,7 @@ AI 开始工作。
 
 ## 02 work 的三种输入模式
 
-![work 的三种输入模式](pic/s2-07-work-input-modes.png)
+![work 的三种输入模式](../pic/s2-07-work-input-modes.png)
 
 work 支持三种输入模式：
 
@@ -100,7 +100,7 @@ $spec-work "修复 CLI 的错误提示文案"
 
 ## 03 spec-work 的执行流程
 
-![spec-work 的执行流程](pic/s2-07-work-flow.png)
+![spec-work 的执行流程](../pic/s2-07-work-flow.png)
 
 spec-work 有四个阶段：
 
@@ -116,7 +116,7 @@ spec-work 有四个阶段：
 
 ## 04 五个关键控制点
 
-![work 的五个关键控制点](pic/s2-07-work-five-controls.png)
+![work 的五个关键控制点](../pic/s2-07-work-five-controls.png)
 
 ### 03.1 控制点一：scope 验证
 
@@ -149,7 +149,7 @@ spec-work 有四个阶段：
 
 ### 04.3 控制点三：vertical tracer bullet
 
-![vertical tracer bullet：先关闭一个行为，再扩展](pic/s2-07-work-vertical-tracer.png)
+![vertical tracer bullet：先关闭一个行为，再扩展](../pic/s2-07-work-vertical-tracer.png)
 
 vertical tracer bullet 是 work 的执行策略：
 
@@ -221,7 +221,7 @@ code-review 是整个 work 完成后的全面审查。
 
 任务结束时，work 会生成 handoff evidence：
 
-![handoff evidence：任务结束时留下可被下游消费的证据](pic/s2-07-work-handoff.png)
+![handoff evidence：任务结束时留下可被下游消费的证据](../pic/s2-07-work-handoff.png)
 
 handoff evidence 包含：
 
@@ -251,7 +251,7 @@ compound 读取这个 summary，知道：
 
 ## 04 scope 扩张时如何停止
 
-![scope 扩张时如何停止](pic/s2-07-work-scope-stop.png)
+![scope 扩张时如何停止](../pic/s2-07-work-scope-stop.png)
 
 当 work 发现需要改一个不在 plan 里的文件时，正确的处理方式是：
 

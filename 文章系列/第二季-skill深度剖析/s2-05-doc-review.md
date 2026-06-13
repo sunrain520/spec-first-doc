@@ -63,7 +63,7 @@ plan 写完后，直接进入了 work。
 
 ## 02 修复成本随发现时机指数级增长
 
-![修复成本随发现时机指数级增长](pic/s2-05-doc-review-cost-curve.png)
+![修复成本随发现时机指数级增长](../pic/s2-05-doc-review-cost-curve.png)
 
 这张图说明了一个简单的道理：
 
@@ -129,7 +129,7 @@ $spec-doc-review
 
 ## 04 doc-review 的适用范围
 
-![doc-review 的适用范围](pic/s2-05-doc-review-scope.png)
+![doc-review 的适用范围](../pic/s2-05-doc-review-scope.png)
 
 doc-review 不只是用于 plan，它可以审查任何需要审查 WHAT/WHY 的文档：
 
@@ -174,7 +174,7 @@ doc-review 不只是用于 plan，它可以审查任何需要审查 WHAT/WHY 的
 
 ## 05 doc-review 的六个 persona
 
-![doc-review 的六个 persona](pic/s2-05-doc-review-personas.png)
+![doc-review 的六个 persona](../pic/s2-05-doc-review-personas.png)
 
 doc-review 通过六个 persona 从不同角度审查文档：
 
@@ -265,7 +265,7 @@ doc-review 会根据文档类型和风险级别，自动选择合适的 persona 
 
 ## 06 doc-review 和 code-review 的分工
 
-![doc-review vs code-review：两种 review 的分工](pic/s2-05-doc-review-vs-code-review.png)
+![doc-review vs code-review：两种 review 的分工](../pic/s2-05-doc-review-vs-code-review.png)
 
 两种 review 解决不同阶段的问题：
 
@@ -289,7 +289,7 @@ doc-review 会根据文档类型和风险级别，自动选择合适的 persona 
 
 **两种 review 在工作流中的位置：**
 
-![doc-review 在工作流中的位置](pic/s2-05-doc-review-position.png)
+![doc-review 在工作流中的位置](../pic/s2-05-doc-review-position.png)
 
 doc-review 在 plan 之后立即运行，发现问题只需要改文档，成本最低。code-review 在 work 之后运行，发现问题需要改代码，成本更高。
 
@@ -297,7 +297,7 @@ doc-review 在 plan 之后立即运行，发现问题只需要改文档，成本
 
 ## 07 doc-review findings 的处理方式
 
-![doc-review findings 的四种处理方式](pic/s2-05-doc-review-findings.png)
+![doc-review findings 的四种处理方式](../pic/s2-05-doc-review-findings.png)
 
 doc-review 完成后，会输出 findings。每个 finding 有四种处理方式：
 

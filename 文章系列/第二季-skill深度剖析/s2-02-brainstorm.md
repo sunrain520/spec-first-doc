@@ -71,7 +71,7 @@ AI 没有这些上下文。
 
 在讨论 brainstorm 之前，先说清楚它和 ideate 的区别。
 
-![ideate vs brainstorm：发散 vs 收敛](pic/s2-02-brainstorm-ideate-vs-brainstorm.png)
+![ideate vs brainstorm：发散 vs 收敛](../pic/s2-02-brainstorm-ideate-vs-brainstorm.png)
 
 ### 03.1 spec-ideate：发散，探索方向
 
@@ -119,7 +119,7 @@ ideate 选方向，brainstorm 定边界。
 
 brainstorm 不是一个简单的问答工具，它有完整的执行逻辑：
 
-![brainstorm 的执行逻辑：从想法到 requirements brief](pic/s2-02-brainstorm-flow.png)
+![brainstorm 的执行逻辑：从想法到 requirements brief](../pic/s2-02-brainstorm-flow.png)
 
 ### 04.1 Phase 0：评估范围
 
@@ -169,7 +169,7 @@ docs/brainstorms/2026-06-01-001-cli-health-check-requirements.md
 
 一份好的 requirements brief，必须让 plan 不需要猜 WHAT。
 
-![requirements brief 的最小字段](pic/s2-02-brainstorm-brief-fields.png)
+![requirements brief 的最小字段](../pic/s2-02-brainstorm-brief-fields.png)
 
 ### 05.1 谁在用
 
@@ -320,7 +320,7 @@ artifact_kind: requirements
 
 好的 brief 和差的 brief，差别在于是否具体可验证：
 
-![好的 requirements brief vs 差的 brief](pic/s2-02-brainstorm-good-vs-bad.png)
+![好的 requirements brief vs 差的 brief](../pic/s2-02-brainstorm-good-vs-bad.png)
 
 模糊的 brief 不是"没有需求"，而是"需求在你脑子里，但没有写出来"。brainstorm 的价值，就是帮你把脑子里的需求写出来。
 
@@ -400,7 +400,7 @@ AI 在改进错误提示的同时，"顺手"重构了错误处理的整体架构
 
 ## 08 什么时候 brainstorm 就够了，什么时候需要 spec-prd
 
-![brainstorm vs spec-prd：什么时候用哪个](pic/s2-02-brainstorm-vs-prd.png)
+![brainstorm vs spec-prd：什么时候用哪个](../pic/s2-02-brainstorm-vs-prd.png)
 
 ### 08.1 brainstorm 就够了的情况
 
@@ -424,7 +424,7 @@ brainstorm 适合"我要做什么"，spec-prd 适合"在已有系统上改什么
 
 ## 09 requirements brief 如何交接给 plan
 
-![requirements brief 如何交接给 plan](pic/s2-02-brainstorm-handoff.png)
+![requirements brief 如何交接给 plan](../pic/s2-02-brainstorm-handoff.png)
 
 brainstorm 和 plan 有明确的边界：
 

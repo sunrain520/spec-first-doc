@@ -162,7 +162,7 @@ stale evidence 不能当真，必须先刷新图谱或直接读源码。
 
 > **不是假装拿到了确认证据，而是如实标注证据的可信等级和限制。**
 
-![Graph Evidence 四个可信等级](pic/05-graph-decision-input-evidence-grades.png)
+![Graph Evidence 四个可信等级](../pic/05-graph-decision-input-evidence-grades.png)
 
 四个等级决定了图谱结果能用到什么程度，以及下一步该做什么。
 
@@ -262,7 +262,7 @@ group-aware 能力可以跨仓库查询 symbol 关系和影响面。
 
 图谱告诉你去哪里看，但最终的判断必须基于你实际读到的源码。
 
-![有无 Graph 的决策输入对比](pic/05-graph-decision-input-before-after.png)
+![有无 Graph 的决策输入对比](../pic/05-graph-decision-input-before-after.png)
 
 两种工作流程的差别，不在于模型智能，而在于第一轮决策输入的质量。
 

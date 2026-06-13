@@ -54,7 +54,7 @@ spec-first doctor --codex    # 检查 Codex 宿主
 
 doctor 会检查五个维度：
 
-![spec-first doctor 检查的五个维度](pic/s2-01-runtime-setup-doctor.png)
+![spec-first doctor 检查的五个维度](../pic/s2-01-runtime-setup-doctor.png)
 
 1. **Node.js 版本**：是否满足 >= 20 的要求
 2. **Git 可用性**：当前目录是否是 Git 仓库
@@ -101,7 +101,7 @@ init 做的事情是：**从 source 生成 host runtime assets**。
 
 > **不要手改 `.claude/`、`.codex/`、`.agents/skills/` 里的文件。**
 
-![source 与 runtime 的边界：为什么不能手改生成物](pic/s2-01-runtime-setup-source-runtime.png)
+![source 与 runtime 的边界：为什么不能手改生成物](../pic/s2-01-runtime-setup-source-runtime.png)
 
 这些目录是从 source 生成出来的 runtime mirror。
 
@@ -265,7 +265,7 @@ graph-bootstrap 不是生成"代码地图"，而是编译一组 **readiness fact
 
 ### 04.3 四种 freshness 状态
 
-![graph-facts.json 四种 freshness 状态](pic/s2-01-runtime-setup-freshness.png)
+![graph-facts.json 四种 freshness 状态](../pic/s2-01-runtime-setup-freshness.png)
 
 **`fresh`**：图谱与当前 checkout 一致，可以作为 primary evidence 使用。
 
@@ -337,7 +337,7 @@ graph-bootstrap 的执行逻辑是：
 
 ## 05 三件事的顺序依赖
 
-![三件事的顺序依赖关系](pic/s2-01-runtime-setup-three-steps.png)
+![三件事的顺序依赖关系](../pic/s2-01-runtime-setup-three-steps.png)
 
 三件事必须按顺序执行：
 
@@ -374,7 +374,7 @@ spec-first init --all-repos --claude
 
 三件事不是只做一次就永久有效的。
 
-![什么时候需要重新做这三件事](pic/s2-01-runtime-setup-when-redo.png)
+![什么时候需要重新做这三件事](../pic/s2-01-runtime-setup-when-redo.png)
 
 **升级 spec-first 版本后：** 重新运行 init + mcp-setup。新版本可能有新的 runtime assets 或新的 MCP 配置。
 
@@ -426,7 +426,7 @@ cat .spec-first/graph/graph-facts.json | grep freshness_state
 
 三件事完成后，项目目录里会有这些文件：
 
-![三件事完成后的目录结构](pic/s2-01-runtime-setup-dir-structure.png)
+![三件事完成后的目录结构](../pic/s2-01-runtime-setup-dir-structure.png)
 
 这些目录都在 `.gitignore` 的 managed block 里，不会被提交到 Git。它们是 runtime 产物，不是 source。
 

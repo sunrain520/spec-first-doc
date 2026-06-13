@@ -47,7 +47,7 @@ spec-first 按产品阶段区分三种需求模式。
 
 核心差别在需求阶段——其余链路（plan → work → review → compound）基本一致。
 
-![三种需求模式：0-1 / 1-10 / 10-100](pic/s2-00-full-journey-req-modes.png)
+![三种需求模式：0-1 / 1-10 / 10-100](../pic/s2-00-full-journey-req-modes.png)
 
 ### 02.1 0-1：全新产品，方向未定
 
@@ -110,7 +110,7 @@ spec-first 按产品阶段区分三种需求模式。
 
 spec-first 的项目边界按 Git 拓扑判断，不按 workflow 参数判断。
 
-![三种仓库拓扑：单仓单项目 / 单仓多模块 / 多仓工作区](pic/s2-00-full-journey-repo-topology.png)
+![三种仓库拓扑：单仓单项目 / 单仓多模块 / 多仓工作区](../pic/s2-00-full-journey-repo-topology.png)
 
 ### 03.1 单仓单项目
 
@@ -216,7 +216,7 @@ workspace/
 
 **拓扑选择：** 单仓单项目
 
-![spec-first 完整工作流链路](pic/s2-00-full-journey-workflow.png)
+![spec-first 完整工作流链路](../pic/s2-00-full-journey-workflow.png)
 
 ### 04.1 第零步：环境就绪（三件事有顺序依赖）
 
@@ -417,7 +417,7 @@ docs/solutions/developer-experience/cli-onboarding-improvement-2026-06-01.md
 
 两张地图组合起来，决定了不同场景下的链路特点：
 
-![两张地图的组合：需求模式 × 仓库拓扑](pic/s2-00-full-journey-matrix.png)
+![两张地图的组合：需求模式 × 仓库拓扑](../pic/s2-00-full-journey-matrix.png)
 
 ### 05.1 最简单：0-1 × 单仓单项目
 
@@ -455,7 +455,7 @@ spec-prd 写清楚 delta，plan 按 module 边界拆分，review 按影响面分
 
 ## 06 每个节点的输入/输出
 
-![spec-first 各节点输入输出总览](pic/s2-00-full-journey-io-table.png)
+![spec-first 各节点输入输出总览](../pic/s2-00-full-journey-io-table.png)
 
 每个节点的输入、输出、适用模式和多仓注意事项一目了然。
 
@@ -472,7 +472,7 @@ spec-prd 写清楚 delta，plan 按 module 边界拆分，review 按影响面分
 
 spec-first 不是固定流水线，可以按场景灵活组合。
 
-![什么时候可以跳过某些步骤](pic/s2-00-full-journey-skip-guide.png)
+![什么时候可以跳过某些步骤](../pic/s2-00-full-journey-skip-guide.png)
 
 ### 07.1 可以跳过的步骤
 

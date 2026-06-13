@@ -34,8 +34,8 @@ spec-first 微信公众号系列的视觉语言规范。封面图和正文配图
 
 **SVG-first 输出路径约定：**
 
-- SVG source：`docs/11-文章系列/pic/{slug}-cover.svg`
-- PNG output：`docs/11-文章系列/pic/{slug}-cover.png`
+- SVG source：`文章系列/pic/{slug}-cover.svg`
+- PNG output：`文章系列/pic/{slug}-cover.png`
 
 **SVG viewBox：** `0 0 1200 511`（2.35:1）
 
@@ -73,8 +73,8 @@ spec-first 微信公众号系列的视觉语言规范。封面图和正文配图
 
 **输出路径约定：**
 
-- SVG source：`docs/11-文章系列/pic/{slug}-{topic}.svg`
-- PNG output：`docs/11-文章系列/pic/{slug}-{topic}.png`
+- SVG source：`文章系列/pic/{slug}-{topic}.svg`
+- PNG output：`文章系列/pic/{slug}-{topic}.png`
 
 ---
 
@@ -84,9 +84,9 @@ spec-first 微信公众号系列的视觉语言规范。封面图和正文配图
 
 **固定主题：`tech-blog`**
 
-主题源文件：`docs/11-文章系列/.skills/spec-wechat-publish/assets/tech-blog.css`
+主题源文件：`文章系列/.skills/spec-wechat-publish/assets/tech-blog.css`
 
-安装脚本：`docs/11-文章系列/.skills/spec-wechat-publish/scripts/install-tech-blog-theme.mjs`
+安装脚本：`文章系列/.skills/spec-wechat-publish/scripts/install-tech-blog-theme.mjs`
 
 理由：
 - `tech-blog` 主题为长篇技术公众号文章设计，使用克制的章节标题、24px 段落节奏、浅蓝引用块和全宽图片
@@ -138,7 +138,7 @@ npx -y bun "$WECHAT_SKILL_DIR/scripts/md-to-wechat.ts" "{article_path}" --theme 
 ## 文件存储约定
 
 ```
-docs/11-文章系列/
+文章系列/
 ├── {NN}-{slug}.md              # 正文（source）
 ├── {NN}-{slug}-polished.md     # 润色后版本（可选）
 └── pic/
@@ -167,12 +167,12 @@ docs/11-文章系列/
 
 ```bash
 # 转换单个 SVG（推荐 .mjs，自动从 viewBox 检测尺寸，scale=2x retina）
-node docs/11-文章系列/.skills/spec-wechat-publish/scripts/svg-to-png.mjs \
-  docs/11-文章系列/pic/{slug}-{n}-{type}.svg
+node 文章系列/.skills/spec-wechat-publish/scripts/svg-to-png.mjs \
+  文章系列/pic/{slug}-{n}-{type}.svg
 
 # 批量转换目录下所有 SVG
-node docs/11-文章系列/.skills/spec-wechat-publish/scripts/svg-to-png.mjs \
-  --batch docs/11-文章系列/pic/
+node 文章系列/.skills/spec-wechat-publish/scripts/svg-to-png.mjs \
+  --batch 文章系列/pic/
 
 # 自定义 scale（默认 2x）
 node .../svg-to-png.mjs input.svg --scale 3

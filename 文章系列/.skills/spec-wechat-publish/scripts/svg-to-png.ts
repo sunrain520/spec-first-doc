@@ -166,10 +166,10 @@ Usage:
 
 Examples:
   # Convert one file (scale 2x is the default for retina)
-  npx -y bun svg-to-png.ts docs/11-文章系列/pic/02-ai-coding-harness-evolution.svg
+  npx -y bun svg-to-png.ts 文章系列/pic/02-ai-coding-harness-evolution.svg
 
   # Batch convert
-  npx -y bun svg-to-png.ts --batch docs/11-文章系列/pic/
+  npx -y bun svg-to-png.ts --batch 文章系列/pic/
 
 Prerequisites:
   Chrome must be running with --remote-debugging-port. The script auto-discovers

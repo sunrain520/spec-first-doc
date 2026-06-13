@@ -126,7 +126,7 @@ AI 的能力在进步，但团队的 AI coding 效率没有明显提升。
 
 具体来说，有三种代价：
 
-![经验不沉淀的三种代价](pic/06-knowledge-harness-three-costs.png)
+![经验不沉淀的三种代价](../pic/06-knowledge-harness-three-costs.png)
 
 ### 03.1 重复踩坑
 
@@ -254,7 +254,7 @@ tags: ["dispatch", "fallback", "context-limit", "spec-doc-review"]
 - 按 `component` 过滤，找到某个模块的所有已知问题
 - 按 `tags` 搜索，找到跨模块的相关经验
 
-![docs/solutions/ 结构：五个分类 + 结构化 frontmatter](pic/06-knowledge-harness-solutions-structure.png)
+![docs/solutions/ 结构：五个分类 + 结构化 frontmatter](../pic/06-knowledge-harness-solutions-structure.png)
 
 结构化分类加上 frontmatter，让经验可以被下一次任务精确发现，而不是靠人工记忆。
 
@@ -417,7 +417,7 @@ applies_when:
 
 > **让经验在需要的时候自动出现，而不是靠人工记忆去找。**
 
-![经验如何被下一次任务发现：按需引用流程](pic/06-knowledge-harness-discovery.png)
+![经验如何被下一次任务发现：按需引用流程](../pic/06-knowledge-harness-discovery.png)
 
 按需精确引用，而不是全量广播——这让历史经验成为精确输入，而不是新的上下文负担。
 
@@ -530,7 +530,7 @@ spec-work 按 context_refs 精确引用
 知识复利
 ```
 
-![经验复利循环：从一次性对话到可积累的工程记忆](pic/06-knowledge-harness-compound-loop.png)
+![经验复利循环：从一次性对话到可积累的工程记忆](../pic/06-knowledge-harness-compound-loop.png)
 
 每次任务都让下一次任务更容易一点。
 
@@ -544,7 +544,7 @@ spec-work 按 context_refs 精确引用
 
 Knowledge Harness 不是孤立的，它和前面讲过的几层 Harness 有密切的关系。
 
-![Knowledge Harness 与其他 Harness 层的关系](pic/06-knowledge-harness-relations.png)
+![Knowledge Harness 与其他 Harness 层的关系](../pic/06-knowledge-harness-relations.png)
 
 ### 10.1 和 Context Harness 的关系
 
@@ -648,7 +648,7 @@ Knowledge Harness 提供了一个更可度量的视角：
 
 > **记录有没有真的变好，而不只是感觉有效。**
 
-![从"感觉有效"到可度量的知识复利](pic/06-knowledge-harness-metrics.png)
+![从"感觉有效"到可度量的知识复利](../pic/06-knowledge-harness-metrics.png)
 
 这些信号不是完美的指标，但它们比"感觉"更可追踪，也更容易发现问题。
 

@@ -10,7 +10,7 @@ metadata:
 **状态：** 规划稿
 **日期：** 2026-05-31
 **前置：** 第一季 6 篇已发布（01-06），建立了 AI Coding Harness 认知框架
-**关联规划：** `docs/11-文章系列/2026-05-27-004-spec-first-wechat-series-content-roadmap.md`
+**关联规划：** `运营规划/2026-05-27-004-spec-first-wechat-series-content-roadmap.md`
 
 ---
 

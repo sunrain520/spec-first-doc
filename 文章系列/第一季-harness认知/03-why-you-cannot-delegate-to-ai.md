@@ -250,7 +250,7 @@ Provider 结果是 confirmed truth，还是 advisory pointer？
 
 一次修复如果沉淀成可发现、可刷新、可引用的 learning，它才有机会变成团队能力。
 
-![AI 委派的五个信任缺口](pic/03-why-you-cannot-delegate-to-ai-trust-gaps.png)
+![AI 委派的五个信任缺口](../pic/03-why-you-cannot-delegate-to-ai-trust-gaps.png)
 
 五个缺口不是抽象概念，它们每天都发生在真实项目里。
 
@@ -355,7 +355,7 @@ Codebase -> Graph -> Spec -> Plan -> Tasks -> Code -> Review -> Knowledge
 
 它是把 AI coding 从一次性对话，放进一个能留下证据、能被复查、能持续改进的工程回路。
 
-![从 vibe coding 到 governed loop](pic/03-why-you-cannot-delegate-to-ai-vibe-vs-governed.png)
+![从 vibe coding 到 governed loop](../pic/03-why-you-cannot-delegate-to-ai-vibe-vs-governed.png)
 
 探索阶段靠感觉推进没问题，但交付阶段需要 artifact 把关键判断变成可检查对象。
 
@@ -521,7 +521,7 @@ Knowledge Harness 关心的是复利。
 
 > **你的 AI coding 还没有形成可委派的工程闭环。**
 
-![AI Coding 可委派性自测清单](pic/03-why-you-cannot-delegate-to-ai-checklist.png)
+![AI Coding 可委派性自测清单](../pic/03-why-you-cannot-delegate-to-ai-checklist.png)
 
 六个维度，每一个都对应着一层可以补上的工程边界。
 

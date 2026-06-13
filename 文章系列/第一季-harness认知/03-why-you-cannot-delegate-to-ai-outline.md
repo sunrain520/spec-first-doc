@@ -19,7 +19,7 @@ metadata:
 
 ## Evidence Ticket
 
-- 本地证据：`docs/11-文章系列/01-spec-first.md`
+- 本地证据：`第一季-harness认知/01-spec-first.md`
 - 本地证据：`docs/contracts/ai-coding-harness.md`
 - 外部证据：OpenAI Codex、GitHub Copilot cloud agent、GitHub Spec Kit、DORA 研究页，发布前重查最新表述。
 - 需降敏：无

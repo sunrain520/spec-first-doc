@@ -136,7 +136,7 @@ metadata:
 
 修复的方向不是"少读一点"，而是把两层分开：稳定指令层复用，动态任务层精确收集。
 
-![两种上下文不要混在一起](pic/04-context-harness-two-layers.png)
+![两种上下文不要混在一起](../pic/04-context-harness-two-layers.png)
 
 稳定指令前置，动态请求和证据后置——这是 Context Harness 的基本布局。
 
@@ -328,7 +328,7 @@ debug 需要的上下文，和 knowledge compound 需要的上下文，也不一
 
 按消费者精确收集，而不是一次性全量投喂。
 
-![放进上下文之前，先问四个问题](pic/04-context-harness-four-questions.png)
+![放进上下文之前，先问四个问题](../pic/04-context-harness-four-questions.png)
 
 四个问题都能回答，这段上下文才值得放进去。
 

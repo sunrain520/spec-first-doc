@@ -53,7 +53,7 @@ metadata:
 
 ## 02 第一张地图：三种需求模式
 
-spec-first 按产品阶段区分三种需求模式。
+先说清楚一件事：**0-1 / 1-10 / 10-100 是我为帮你快速选型提炼的助记说法，不是 spec-first 的官方术语。** spec-first 本身不按"规模"分类，它按需求所处的**阶段**提供不同入口工具——`spec-ideate`（要不要做、做哪个方向）、`spec-brainstorm`（讲清全新需求的 WHAT）、`spec-prd`（为存量系统的增量写 PRD 级需求）。我把这三类阶段对应到你最容易自我定位的三个规模区间，方便你一眼认出自己在哪。下面每种模式都会标出它对应的真实工具。
 
 核心差别在需求阶段——其余链路（plan → work → review → compound）基本一致。
 
@@ -160,7 +160,7 @@ my-app/
 
 `.spec-first/` 的权威边界就是当前 repo root。所有 workflow（plan、work、review、compound）都以当前 repo 为边界——不用纠结"该看哪些文件"，整个 repo 就是范围。
 
-`spec-mcp-setup` 写 `.spec-first/config/*`，`spec-graph-bootstrap` 写 `.spec-first/graph/*`、`.spec-first/providers/*` 和 `.spec-first/impact/*`。
+`spec-mcp-setup` 写 `.spec-first/config/*`，并在同一步里完成 graph providers（CodeGraph / Graphify）的安装与首次生成——graph readiness 是 `spec-mcp-setup` 的一个环节，不是单独的命令。
 
 **推荐新手从这里开始。** 边界最清晰、最不容易出错，下一篇 op-01 的标签过滤案例就落在这个拓扑上。绝大多数个人项目、独立服务、单个 SDK 都是这个形态——如果你不确定自己属于哪种拓扑，大概率就是这一种，按它走不会错。
 
@@ -226,14 +226,12 @@ workspace/
 
 ```bash
 /spec:mcp-setup --repo frontend
-/spec:graph-bootstrap --repo backend-api
 ```
 
 批量操作所有 child repos：
 
 ```bash
 /spec:mcp-setup --all-repos
-/spec:graph-bootstrap --all-repos
 ```
 
 **最重要的约束：** 写文件、修复、测试、review autofix 或 commit 之前，必须有明确的 `target_repo`。
@@ -429,7 +427,7 @@ spec-prd → plan（按 module 拆 units）→ doc-review → write-tasks → wo
 
 - **ideate** 只适用于 0-1 场景，方向已清晰时直接跳过
 - **spec-prd** 适用于 1-10 / 10-100，产出 PRD 级需求文档
-- **write-tasks** 是可选步骤，复杂任务才需要
+- **write-tasks** 是可选步骤，复杂任务才需要；注意它是独立安装的 standalone skill，调用方式和其他 `/spec:` 入口略有不同（按你宿主里 write-tasks skill 的安装说明触发）
 - **多仓工作区**：plan、write-tasks、work 这三步都需要明确 `target_repo`，写入前必须确认边界
 
 ---
@@ -450,7 +448,7 @@ spec-first 不是固定流水线，可以按场景灵活组合。
 
 ### 07.2 不建议跳过的步骤
 
-**环境就绪（init/mcp-setup/graph-bootstrap）**：这三件事是所有 workflow 的前提。跳过会导致 runtime 不一致、graph facts 缺失，后续 workflow 行为不可预测。
+**环境就绪（init → mcp-setup，含 graph readiness）**：这是所有 workflow 的前提。`spec-first init` 生成 runtime assets，`spec-mcp-setup` 装 MCP/provider 并完成 graph 首次生成。跳过会导致 runtime 不一致、graph facts 缺失，后续 workflow 行为不可预测。
 
 **需求收敛（brainstorm 或 spec-prd）**：没有需求文档，plan 就要猜 WHAT。猜出来的 plan 很容易在执行中漂移。
 

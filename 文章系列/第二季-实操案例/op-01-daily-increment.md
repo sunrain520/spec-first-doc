@@ -359,12 +359,7 @@ doc-review 会从几个角度查 plan：
 
 这一步我要专门讲讲，因为它教你一个判断。
 
-如果 plan 很大、跨多个模块、有明确的依赖和并行关系，你需要 `write-tasks` 把计划编译成一个"任务包"：
-
-```text
-/spec:write-tasks
-$spec-write-tasks
-```
+如果 plan 很大、跨多个模块、有明确的依赖和并行关系，你需要 `write-tasks` 把计划编译成一个"任务包"。注意 `write-tasks` 和其他 workflow 不太一样——它是一个**独立安装的 standalone skill**，不走 `/spec:` 或 `$spec-` 路由，按你宿主里这个 skill 的安装说明触发即可。
 
 任务包会记录它从哪个 plan 来、plan 的 hash、任务图、执行波次和验证信号。它带着 `spec_id` 和 `source_plan_hash`——**这是用来防止"链路过期了还在闷头执行"的**。计划改了，hash 对不上，它就不会拿着旧任务往下跑。
 

@@ -62,14 +62,14 @@ spec-first 微信公众号系列的视觉语言规范。封面图和正文配图
 | 数据、对比、指标、before/after、pros/cons | `infographic` | blueprint+infographic = ✓✓ |
 | 演进、历史、版本迭代、时间线 | `timeline` | blueprint+timeline = ✓ |
 
-**数量：** 3-7 张，balanced density（major sections），根据文章长度自动判断
+**数量：** 6-10 张（不含封面），覆盖主要 H2 章节；少于 6 张需补图，超过 10 张需精简。此为发布版式 gate 的硬性要求，详见 SKILL.md Step 5.5。
 
-**尺寸：**
+**尺寸：** 只约束比例，绝对像素由 `--scale`（默认 2x retina）决定，不写死。
 
-| Type | 比例 | 尺寸 |
+| Type | 比例 | viewBox 示例 |
 |---|---|---|
-| framework / infographic / timeline | 16:9 | 900×506px |
-| flowchart | 4:3 | 900×675px |
+| framework / infographic / timeline | 16:9 | `0 0 1200 675` |
+| flowchart | 4:3 | `0 0 1200 900` |
 
 **输出路径约定：**
 
@@ -98,9 +98,11 @@ spec-first 微信公众号系列的视觉语言规范。封面图和正文配图
 
 ## 专业技术博文版式 Gate
 
-发布前必须满足：
+发布前必须满足（与 SKILL.md Step 5.5 自动 gate 同步）：
 
 - frontmatter 有 `title:`，正文不出现 H1
+- 正文字数不少于 1.5 万字（按去除空白后的正文字符数统计）
+- 正文配图 6-10 张（不含封面）
 - 正文图片全部引用 PNG，不直接引用 SVG
 - H2 使用编号章节，例如 `## 01 从 Prompt 到 Harness`
 - H3 使用章节内编号，例如 `### 06.1 Context Harness：上下文要正确，不要无限`

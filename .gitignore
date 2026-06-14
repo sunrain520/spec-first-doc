@@ -5,6 +5,7 @@
 .claude/spec-first/
 .claude/agents/
 .claude/hooks/session-start
+.claude/hooks/spec-plan-guard
 .claude/tasks/
 .claude/worktrees/
 .codex/
@@ -16,6 +17,7 @@
 .spec-first/config.local.yaml
 .spec-first/config/*.json
 .spec-first/audits/
+.spec-first/governance/
 .spec-first/app-audit/
 .spec-first/workflows/
 .spec-first/workspace/
@@ -24,4 +26,5 @@
 # optional provider local artifacts
 .codegraph/
 graphify-out/cost.json
+graphify-out/.graphify_python
 # spec-first:end

@@ -1,0 +1,50 @@
+---
+name: op-01-daily-increment-outline
+description: 第二季（项目实操）第 1 篇大纲：给待办应用加标签过滤（1-10 × 单仓单项目），用最常见的日常增量需求走完 spec-first 完整链路。
+metadata:
+  type: article-outline
+  series: op
+  series_index: "op-01"
+---
+
+# Spec-First：给一个真实功能从头跑一遍，我才敢说它能用
+
+## 定位
+
+- 第二季（项目实操）开篇。承接第一季认知，回答"它在真实项目里怎么用"。
+- 案例：给待办应用 todo-app 加"按标签过滤"功能。坐标：1-10 增量 × 单仓单项目，最高频日常场景。
+- 种子：`运营规划/spec-first-使用说明.md`，改写为公众号文章形态（失败场景开场、第一人称、真实质感）。
+
+## 结构
+
+1. 开场：理解≠敢用，隔着一次真实跑通（金句 + 导读 + 承接）
+2. 案例定位：选这个场景的理由 + 两张地图坐标
+3. 反面：不用 spec-first 直接甩需求的三类翻车（缺边界/缺约束/缺禁区）
+4. 第零步 环境就绪（install/doctor/init/mcp-setup，一次性，顺序依赖）
+5. brainstorm：填窟窿，requirements 样貌，"非目标"是最贵的部分
+6. plan：约束边界不约束步骤，plan 文档样貌，颗粒度对齐风险
+7. doc-review：零成本纠错，真实 finding 实例，何时轻量化
+8. write-tasks：本例跳过，给判断标准表（≥3 单元/跨模块才用）
+9. work：五个控制点，vertical tracer bullet 推进顺序，scope 漂移要停
+10. code-review：带证据的 finding vs "你再检查一下"，按仓库规则审
+11. compound：把坑沉淀成 solution，什么该记什么不该记
+12. 链路不必全走：最小链路 + 能跳/别跳表
+13. 反驳"这不是更慢吗"：成本前移 + 经验复利
+14. 产物与 Git 边界
+15. 个人 vs 团队的不同受益（对抗遗忘 / 对抗失对齐）
+16. 小结：翻车现场逐一对应 + 引出 op-02（0-1 新产品）
+
+## 配图（6 张，pic/ 前缀 op-01-，资产名沿用 op-01-*，封面待作）
+
+- op-01-cover（封面，待作）
+- op-01-choose-map（案例定位/两张地图坐标）
+- op-01-failure-scene（三类翻车）
+- op-01-chain-walkthrough（本例六步走查）
+- op-01-skip-decision（按规模裁剪链路）
+- op-01-artifacts（产物清单）
+- op-01-cost-tradeoff（成本前移与复利）
+
+## 质量标准
+
+- 正文 ≥1.5 万字（已达 15007 字）、正文配图 6-10 张、frontmatter title 全角冒号、无 H1。
+- 文风对齐第一季 05 模板：加粗金句开场 + 导读 blockquote + 超短段 + 章节 NN 编号 + 结尾开源 CTA 三件套。

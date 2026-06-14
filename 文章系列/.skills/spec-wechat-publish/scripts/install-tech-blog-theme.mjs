@@ -61,6 +61,15 @@ function addInlineStyle(html: string, tagName: string, style: string): string {
 }
 
 function inlineTechBlogStyles(html: string): string {
+  // tech-blog 主题用 CSS list-style 显示项目符号，所以要去掉 render.ts 在 <li>
+  // 内手写的 '• ' / '数字. ' 前缀，否则与 CSS 符号叠成双层点（问题 8）。
+  // 只在 tech-blog 后处理里做，不碰 render.ts，grace/simple（list-style:none，
+  // 依赖手写前缀）不受影响。
+  html = html.replace(
+    /(<li\\b[^>]*>)\\s*(?:•\\s*|\\d+\\.\\s+)/g,
+    '$1'
+  );
+
   const styles: Record<string, string> = {
     p: 'margin:0 0 24px;font-size:16px;line-height:1.85;color:#1f2937;',
     h2: 'margin:44px 0 22px;padding:14px 16px 14px 18px;font-size:21px;line-height:1.45;font-weight:700;color:#0f172a;background:#f4f8ff;border-left:5px solid #2563eb;border-radius:4px;',

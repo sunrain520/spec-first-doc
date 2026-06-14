@@ -17,18 +17,20 @@
 <!-- spec-first:bootstrap:start -->
 ## Workflow 入口治理
 
-- 本 block 是 using-spec-first 的核心决策集(随会话启动注入,启动即在场);完整路由策略与细节仍在 `skills/using-spec-first/SKILL.md`
+- 本 block 是 using-spec-first 的最小入口锚点(随会话启动注入,启动即在场);完整路由表、边界细节和例外仍在 `skills/using-spec-first/SKILL.md`
 - **何时进入 workflow**:substantial work（改代码/docs/config/runtime asset、启动 implementation/debug/review/plan/setup/update/optimization/知识沉淀、运行改状态命令、架构/prompt/workflow/contract 决策、durable knowledge 增删）前先判断是否进入公开 spec-first workflow
-- **何时直接做**:轻量事实问答、窄定位查询（where is X used）、无 workflow 增益的简短解释可直接回答;workflow-first 不等于 brainstorming-first,不强制每个任务走 workflow
+- **何时直接做**:轻量事实问答、当前上下文解释、窄定位查询（where is X used）、当前对话/用户给定单文档整理可直接回答或 bounded read;workflow-first 不等于 brainstorming-first
 - **何时不重新分流**:已在公开 workflow 内（按其 SKILL 继续,仅在用户改目标/显式 handoff/明显越界时重路由）或作为 bounded subagent/worker 被派遣（完成 bounded 任务即可,不重启路由)
-- **如何路由**:意图优先于关键词与主题域;选一个入口并说明一个理由,不默认进入 `spec-brainstorm`,不自动串联多个 workflow;用户显式调用某 workflow 时优先尊重;用户询问下一步时用 `using-spec-first` guide mode 给一个入口、一个理由、一个动作
-- **优先级(高→低)**:显式 route > 安全/修复(setup/update/缺 runtime) > 诊断(debug 先于 work,针对失败) > 评审(code/doc review 先于实现) > 定义(brainstorm/ideate/prd 先于 plan/work,WHAT 不清时) > 优化(可度量实验) > 执行(plan 先于 work) > 知识(compound/compound-refresh)
+- **如何路由**:意图优先于关键词与主题域;用户显式调用当前 host 公开 workflow 时优先尊重;否则只选一个入口并说明一个理由,不默认进入 `spec-brainstorm`,不自动串联多个 workflow
+- **常见入口锚点**:setup/runtime→`/spec:mcp-setup` 或终端 `spec-first update`;失败→`/spec:debug`;评审→`/spec:code-review`/`/spec:doc-review`;定义→`/spec:ideate`/`/spec:brainstorm`/`/spec:prd`;优化→`/spec:optimize`;计划/执行→`/spec:plan`/`/spec:work`;知识→`/spec:compound`/`/spec:compound-refresh`;完整 map 查 SKILL
+- 用户可见输出语言以本文件的 `spec-first:lang` managed block 为准；skill/agent/template 原文语言和当前会话惯性不得覆盖该策略，除非用户明确要求其他语言
 - 父级多仓 workspace：写入、修复、测试、review autofix 或 commit 前必须有明确 `target_repo` / per-child scope；只读定位也应使用 bounded direct reads 并说明目标 repo 假设
-- Runtime context 默认排除 `.spec-first/audits/**` 和 generated mirrors（`.claude/**`、`.codex/**`、`.agents/skills/**`）;只有 setup/update/runtime-drift/audit 等明确运行时任务按需读取
+- Runtime context 默认排除 `.spec-first/audits/**`、`.spec-first/governance/**` 和 generated mirrors（`.claude/**`、`.codex/**`、`.agents/skills/**`）;只有 setup/update/runtime-drift/audit/governance-health 等明确运行时任务按需读取
+- 架构/prompt/workflow/contract 或 source/runtime 判断前按需读取 `docs/10-prompt/结构化项目角色契约.md`;scripts/tools 只产 deterministic facts,LLM 做语义路由判断
 - **反合理化红旗**(出现这些念头即停):「先改个文件就好」→ 先判断是否 work/debug/update/compound-refresh;「只是个快速架构/prompt 改动」→ 架构/prompt/workflow/contract 改动算 substantial;「得先看一堆文件再决定」→ 只做最小事实核查,已清晰则直接路由;「该评审但我口头答就行」→ 评审目标具体时用 code-review/doc-review;「helper skill 存在所以该暴露」→ 只有公开 workflow 是用户入口,internal helper 隐藏
 - Claude workflow 入口使用 `/spec:*`
 - 不要把 `using-spec-first` 本身当作 command-backed workflow；不要直接暴露 internal-only skills,例如 `git-worktree`
-- 入口映射(意图→入口):环境/MCP/host readiness→`/spec:mcp-setup`;版本检查/刷新 runtime→终端运行 `spec-first update`;bug/失败/栈→`/spec:debug`;代码/PR/diff 评审→`/spec:code-review`;需求/计划/markdown 文档评审→`/spec:doc-review`;skill/agent 资产审计→`/spec:skill-audit`;app/PRD 一致性审计→`/spec:app-consistency-audit`;0-1 产品想法/要选项→`/spec:ideate`;定义 WHAT/问题框定→`/spec:brainstorm`;存量系统 PRD 撰写/校验→`/spec:prd`;可度量优化实验→`/spec:optimize`;目标清晰需执行计划→`/spec:plan`;计划拆任务→`spec-write-tasks`;计划/任务就绪可执行→`/spec:work`;沉淀已解决问题→`/spec:compound`;刷新/订正既有 docs/learnings→`/spec:compound-refresh`;过往 session 检索→`/spec:sessions`;发布说明→`/spec:release-notes`
+
 <!-- spec-first:bootstrap:end -->
 
 <!-- spec-first:coding-guidelines:start -->

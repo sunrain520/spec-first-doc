@@ -220,29 +220,30 @@ workspace/
 
 ### 04.1 第零步：环境就绪（三件事有顺序依赖）
 
-在开始任何 workflow 之前，需要确保三件事就绪：
+在开始任何 workflow 之前，需要确保三件事就绪。
+
+**第一件事：从 source 生成 host runtime assets。**
 
 ```bash
-# 第一件事：从 source 生成 host runtime assets
 npm install -g spec-first
 spec-first doctor
 spec-first init --claude -u leokuang --lang zh
-# 或
-spec-first init --codex -u leokuang --lang zh
 ```
 
-初始化后重启宿主（Claude Code 或 Codex）。
+用 Codex 的把 `--claude` 换成 `--codex`。初始化后重启宿主（Claude Code 或 Codex）。
+
+**第二件事：安装并验证 MCP / helper runtime。**
 
 ```text
-# 第二件事：安装并验证 MCP/helper runtime
 /spec:mcp-setup
 $spec-mcp-setup
 ```
 
 `mcp-setup` 负责安装和验证 required MCP servers、graph providers、helper tools 和 setup facts。它把配置写入 `.spec-first/config/`。
 
+**第三件事：编译 graph readiness facts。**
+
 ```text
-# 第三件事：编译 graph readiness facts
 /spec:graph-bootstrap
 $spec-graph-bootstrap
 ```
@@ -540,13 +541,13 @@ brainstorm → plan → work → compound
 
 两张地图决定链路，不是所有人都走同一条路。
 
-从第二篇开始，我们逐个深入每一个 skill：它解决什么问题，怎么工作，什么时候用，什么时候不用。
+接下来，我们用真实项目案例逐个场景把这条链路跑一遍：日常增量功能、从 0 到 1 新产品、存量系统改造、多仓与团队协作，再补上调试、接力、上线信心三个绕不开的切面。
 
 下一篇：
 
-> **Spec-First：开始第一个任务之前，你需要做这三件事**
+> **Spec-First：给一个真实功能从头跑一遍，我才敢说它能用**
 
-init、mcp-setup、graph-bootstrap——三件事有顺序依赖，缺一不可。
+用最常见的日常增量需求——给一个待办应用加标签过滤——从环境就绪一路跑到经验沉淀，每步给命令、产物和判断。
 
 ---
 

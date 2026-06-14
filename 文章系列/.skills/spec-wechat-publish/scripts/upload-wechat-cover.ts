@@ -72,6 +72,10 @@ async function waitFor(session: any, expression: string, timeoutMs: number, labe
 }
 
 async function clickVisibleByText(session: any, text: string): Promise<boolean> {
+  // 微信弹窗按钮（下一步/确认等）对 JS element.click() 不响应——必须用真实鼠标事件
+  // （Input.dispatchMouseEvent）。这是封面脚本长期超时的真因：选图、按钮文案都对，
+  // 但 .click() 点了不前进，弹窗卡住直到超时。所以这里只用 JS 取按钮中心坐标，
+  // 再用 CDP 派发真实 mousePressed/mouseReleased。
   const result = await evaluate(session, `
     (function() {
       const candidates = Array.from(document.querySelectorAll('button,a,span,div'))
@@ -83,13 +87,18 @@ async function clickVisibleByText(session: any, text: string): Promise<boolean> 
             && (el.offsetWidth || el.offsetHeight || el.getClientRects().length);
         });
       const el = candidates[0];
-      if (!el) return false;
+      if (!el) return 'null';
       el.scrollIntoView({ block: 'center' });
-      el.click();
-      return true;
+      const r = el.getBoundingClientRect();
+      return JSON.stringify({ x: r.x + r.width / 2, y: r.y + r.height / 2 });
     })()
   `);
-  return Boolean(result.result.value);
+  if (result.result.value === 'null') return false;
+  const pos = JSON.parse(result.result.value);
+  await session.cdp.send('Input.dispatchMouseEvent', { type: 'mousePressed', x: pos.x, y: pos.y, button: 'left', clickCount: 1 }, { sessionId: session.sessionId });
+  await sleep(50);
+  await session.cdp.send('Input.dispatchMouseEvent', { type: 'mouseReleased', x: pos.x, y: pos.y, button: 'left', clickCount: 1 }, { sessionId: session.sessionId });
+  return true;
 }
 
 async function getCoverState(session: any) {
@@ -176,24 +185,47 @@ async function main() {
         .some((item) => (item.innerText || item.textContent || '').includes(${JSON.stringify(basename)}))
     `, 30_000, `uploaded cover item ${basename}`);
 
-    await evaluate(session, `
+    // 确保目标图被选中——但**不能无脑 click**：上传完成后微信通常已自动选中该图，
+    // 再 click 会 toggle 取消选中，导致「下一步」在无选中状态下点了无效、弹窗不前进
+    // → 一直停在图片库 → 超时（这正是封面长期传不上的真因）。所以先判断选中态，
+    // 仅在未选中时才 click。选中态用 item 自身或子节点的 selected/checked class 判断。
+    const selectResult = await evaluate(session, `
       (function() {
         const basename = ${JSON.stringify(basename)};
         const item = Array.from(document.querySelectorAll('.weui-desktop-dialog_img-picker .weui-desktop-img-picker__item'))
           .find((el) => (el.innerText || el.textContent || '').includes(basename));
-        if (item) {
-          item.scrollIntoView({ block: 'center' });
-          item.click();
-        }
-        return !!item;
+        if (!item) return 'not_found';
+        const isSelected = item.className.includes('selected')
+          || !!item.querySelector('.weui-desktop-icon-checked, [class*="selected"], [class*="checked"]');
+        if (isSelected) return 'already_selected';
+        item.scrollIntoView({ block: 'center' });
+        item.click();
+        return 'clicked';
       })()
     `);
+    if (selectResult.result.value === 'not_found') {
+      throw new Error('Uploaded cover item not found in image picker.');
+    }
+    await sleep(500);
 
     const clickedNext = await clickVisibleByText(session, '下一步');
     if (!clickedNext) throw new Error('Image picker 下一步 button not found.');
 
     await sleep(3000);
-    await clickVisibleByText(session, '完成');
+    // 下一步后进入裁剪/确认界面。不同微信版本的确认按钮文案不一（「确认」/「完成」/
+    // 再一次「下一步」）——baoyu 原来只点「完成」，新版是「确认」，找不到就一直
+    // 卡在"等封面预览非空"超时。按弹窗内优先级依次尝试，点中即停。
+    const confirmLabels = ['确认', '完成', '下一步'];
+    let confirmed = false;
+    for (const label of confirmLabels) {
+      if (await clickVisibleByText(session, label)) {
+        confirmed = true;
+        break;
+      }
+    }
+    if (!confirmed) {
+      console.warn('[upload-cover] 裁剪确认按钮未找到（确认/完成/下一步），封面可能未生效');
+    }
 
     await waitFor(session, `
       (function() {

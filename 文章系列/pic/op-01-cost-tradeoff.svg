@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="t d">
+  <title id="t">op-01 投入产出：成本前移与经验复利</title>
+  <desc id="d">spec-first 把成本前移到便宜的需求计划阶段，并通过 compound 让链路越用越快。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/><stop offset="0.6" stop-color="#0b2038"/><stop offset="1" stop-color="#162449"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <g opacity="0.07" stroke="#7dd3fc" stroke-width="1">
+    <line x1="0" y1="135" x2="1200" y2="135"/><line x1="0" y1="270" x2="1200" y2="270"/>
+    <line x1="0" y1="405" x2="1200" y2="405"/><line x1="0" y1="540" x2="1200" y2="540"/>
+    <line x1="600" y1="0" x2="600" y2="675"/>
+  </g>
+
+  <text x="60" y="76" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="34" font-weight="700" fill="#f8fafc">两笔账：成本前移 + 经验复利</text>
+  <text x="60" y="114" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="20" fill="#94a3b8">真正的成本不在写代码，在反复纠正写错的代码</text>
+
+  <!-- 左图:成本前移 -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <text x="60" y="172" font-size="23" font-weight="700" fill="#38bdf8">① 成本前移</text>
+    <!-- 直接甩需求:后期成本爆炸 -->
+    <text x="80" y="210" font-size="18" fill="#fca5a5">直接甩需求</text>
+    <rect x="80" y="222" width="60" height="40" rx="4" fill="#475569"/>
+    <text x="148" y="248" font-size="14" fill="#94a3b8">需求</text>
+    <rect x="80" y="222" width="60" height="40" rx="4" fill="#334155"/>
+    <rect x="220" y="222" width="320" height="40" rx="4" fill="#f87171" opacity="0.85"/>
+    <text x="230" y="248" font-size="15" fill="#1a0a0a" font-weight="600">反复纠正 · 返工 · 来回拉扯</text>
+    <!-- 走链路:前期多投入,后期平 -->
+    <text x="80" y="300" font-size="18" fill="#5eead4">走链路</text>
+    <rect x="80" y="312" width="150" height="40" rx="4" fill="#38bdf8" opacity="0.85"/>
+    <text x="92" y="338" font-size="14" fill="#04121f" font-weight="600">需求+计划+审</text>
+    <rect x="234" y="312" width="120" height="40" rx="4" fill="#5eead4" opacity="0.7"/>
+    <text x="246" y="338" font-size="14" fill="#04121f" font-weight="600">一次做对</text>
+    <!-- 坐标轴提示 -->
+    <line x1="80" y1="372" x2="540" y2="372" stroke="#475569" stroke-width="1.5"/>
+    <text x="80" y="394" font-size="15" fill="#64748b">动手前</text>
+    <text x="540" y="394" text-anchor="end" font-size="15" fill="#64748b">交付后 →</text>
+    <text x="80" y="430" font-size="18" fill="#cbd5e1">慢十几分钟，省下后面最贵的返工</text>
+  </g>
+
+  <!-- 右图:经验复利 -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <text x="640" y="172" font-size="23" font-weight="700" fill="#818cf8">② 经验复利（compound）</text>
+    <!-- 阶梯下降:每次更快 -->
+    <text x="660" y="210" font-size="17" fill="#fca5a5">直接甩需求：每次都踩同一个坑</text>
+    <g fill="#f87171" opacity="0.5">
+      <rect x="660" y="222" width="60" height="34" rx="4"/>
+      <rect x="730" y="222" width="60" height="34" rx="4"/>
+      <rect x="800" y="222" width="60" height="34" rx="4"/>
+      <rect x="870" y="222" width="60" height="34" rx="4"/>
+    </g>
+    <text x="936" y="245" font-size="15" fill="#94a3b8">耗时不变</text>
+
+    <text x="660" y="304" font-size="17" fill="#5eead4">走链路 + compound：越往后越快</text>
+    <g fill="#5eead4">
+      <rect x="660" y="316" width="60" height="60" rx="4" opacity="0.9"/>
+      <rect x="730" y="338" width="60" height="38" rx="4" opacity="0.8"/>
+      <rect x="800" y="352" width="60" height="24" rx="4" opacity="0.7"/>
+      <rect x="870" y="360" width="60" height="16" rx="4" opacity="0.6"/>
+    </g>
+    <text x="660" y="402" font-size="14" fill="#64748b">第1次</text>
+    <text x="744" y="402" font-size="14" fill="#64748b">第2次</text>
+    <text x="814" y="402" font-size="14" fill="#64748b">第3次</text>
+    <text x="884" y="402" font-size="14" fill="#64748b">…</text>
+    <text x="660" y="438" font-size="18" fill="#cbd5e1">坑沉淀进 docs/solutions，下次 AI 先绕开</text>
+  </g>
+
+  <!-- 底部金句 -->
+  <rect x="60" y="478" width="1080" height="140" rx="12" fill="#172554" stroke="#818cf8" stroke-width="2"/>
+  <text x="600" y="534" text-anchor="middle" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="24" font-weight="700" fill="#5eead4">不是让 AI 更聪明，而是让每一次任务，都让下一次任务更容易</text>
+  <text x="600" y="582" text-anchor="middle" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="20" fill="#cbd5e1">直接甩需求没有复利——经验全留在了关掉的对话框里</text>
+</svg>

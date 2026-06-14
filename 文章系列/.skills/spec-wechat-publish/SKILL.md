@@ -69,6 +69,15 @@ node 文章系列/.skills/spec-wechat-publish/scripts/install-tech-blog-theme.mj
   && echo "✓ tech-blog theme" \
   || { echo "✗ tech-blog theme 安装/校验失败"; MISSING+=("tech-blog theme"); }
 
+# 4.5 微信编辑器选择器补丁（必需，修复 baoyu 标题/正文/摘要的 DOM 假设）
+#   新版微信编辑器有两个 ProseMirror（标题+正文），baoyu 用 querySelector('.ProseMirror')
+#   会取到标题框 → 正文灌进标题；标题只填隐藏 #title 无效；摘要 .value= 被受控组件
+#   忽略导致保存被正文污染。该补丁修正这三处，幂等可重跑。
+node 文章系列/.skills/spec-wechat-publish/scripts/patch-wechat-editor-selectors.mjs \
+  --skill-dir "$HOME/.claude/skills/baoyu-post-to-wechat" \
+  && echo "✓ 编辑器选择器补丁" \
+  || { echo "✗ 编辑器选择器补丁失败"; MISSING+=("编辑器选择器补丁"); }
+
 # 5. AI 图片 skill（可选）
 for s in baoyu-cover-image baoyu-article-illustrator baoyu-image-gen; do
   if [[ -d "$HOME/.claude/skills/$s" ]]; then
@@ -98,6 +107,8 @@ fi
 **如果上述命令以非 0 退出码结束，立即停止整个 skill 执行**，告诉用户缺少哪些 skill 并给出安装链接。**不要继续后续步骤。**
 
 > **tech-blog theme 安装失败（`Cannot patch baoyu runtime: missing ...`）：** `install-tech-blog-theme.mjs` 用精确字符串匹配给 baoyu 的 `md-to-wechat.ts` / `render.ts` 打补丁。baoyu-post-to-wechat 一旦升级改动被匹配的代码行，补丁就会失败。此时需要对照 `scripts/install-tech-blog-theme.mjs` 里的 `replaceOnce` 锚点字符串，重新适配到 baoyu 新版源码。补丁是幂等的（已打过不会重复打），可安全重跑。
+
+> **编辑器选择器补丁失败（`Cannot patch baoyu runtime: missing anchor for ...`）：** `patch-wechat-editor-selectors.mjs` 修复 baoyu `wechat-article.ts` 的三类 DOM 假设——①正文选择器（`.ProseMirror` → `.rich_media_content .ProseMirror`，否则正文灌进标题框）、②标题填可见 ProseMirror 框（baoyu 只填隐藏 `#title` 无效）、③摘要用 native value setter + 完整事件链（否则保存被微信用正文开头污染）。baoyu 升级改动被匹配行时补丁失败，需对照脚本里的 `REPLACEMENTS` 锚点重新适配。幂等可安全重跑。该补丁是 Step 7 推送正确落地的前提。
 
 AI 图片 skill 和 API key 缺失不阻塞默认 SVG-first 流程；只有用户明确要求 AI raster image 时才阻塞。
 
@@ -466,6 +477,23 @@ fi
 echo "frontmatter: $HAS_FRONTMATTER, title: $HAS_FRONTMATTER_TITLE, body H1: $HAS_BODY_H1"
 echo "title format (Spec-First：xxxx): $TITLE_FORMAT_OK"
 
+# ── 摘要（frontmatter description）强制校验 ──
+# 为什么必须有：微信摘要框为空时，保存草稿会自动用正文开头填充摘要（污染，
+# 且常被截断成半句）。所以发布前必须有一份合格的 description 供推送时写入。
+# 微信摘要上限 120 字，过长会被截断或写入失败。
+DESC_VAL=$(awk '/^---$/{n++; next} n==1 && /^description:/{sub(/^description:[[:space:]]*/,""); print; exit}' "$ARTICLE")
+DESC_LEN=$(printf '%s' "$DESC_VAL" | wc -m | tr -d ' ')
+if [[ -z "$DESC_VAL" ]]; then
+  echo "✗ 缺摘要：frontmatter 无 description —— 必须补齐后才能发布（否则微信会用正文开头污染摘要）"
+  DESC_OK="no"
+elif (( DESC_LEN > 120 )); then
+  echo "✗ 摘要过长：description 共 ${DESC_LEN} 字，超过微信 120 字上限，需精简"
+  DESC_OK="no"
+else
+  echo "✓ 摘要 OK（${DESC_LEN}/120 字）"
+  DESC_OK="yes"
+fi
+
 if [[ "$HAS_FRONTMATTER_TITLE" == "yes" && "$HAS_BODY_H1" == "yes" ]]; then
   echo "⚠ 重复风险：frontmatter title 和正文 H1 都存在"
 elif [[ "$HAS_FRONTMATTER_TITLE" == "no" && "$HAS_BODY_H1" == "no" ]]; then
@@ -483,10 +511,14 @@ fi
 
 | 状态 | 处理 |
 |---|---|
-| ✓ 标题来源唯一 + 格式正确 | 直接进入 Step 5 |
+| ✓ 标题来源唯一 + 格式正确 + 摘要 OK | 直接进入 Step 5 |
 | ⚠ 重复风险 | 用 `AskUserQuestion` 询问：自动删除正文 H1（推荐）/ 手动修复 / 忽略继续 |
 | ⚠ 缺标题 | 用 `AskUserQuestion` 询问：从首行 H1/H2 提取写入 frontmatter / 用户输入 / 用文件名 |
 | ⚠ 标题格式错误 | 自动在 frontmatter title 前加 `Spec-First：` 前缀，或提示用户修改 |
+| ✗ 缺摘要（`DESC_OK=no`，缺失） | **阻断发布**。用 `AskUserQuestion` 询问：根据正文核心论点起草一份 ≤120 字 description 写入 frontmatter（推荐）/ 用户提供。写入后重跑本检查，`DESC_OK=yes` 才能继续 |
+| ✗ 摘要过长（`DESC_OK=no`，>120 字） | **阻断发布**。精简 description 至 ≤120 字后重跑本检查 |
+
+> **摘要是硬门槛：** `DESC_OK` 必须为 `yes` 才能进入 Step 5/Step 7。摘要缺失时微信会自动用正文开头填充（污染、半句截断），所以这一关不可跳过。推送时（Step 7）baoyu 会用 native value setter 把该 description 坐实写入微信摘要框，避免被覆盖。
 
 **自动删除 H1 的实现：**
 

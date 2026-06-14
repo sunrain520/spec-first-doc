@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="t d">
+  <title id="t">什么时候可以跳过某些步骤</title>
+  <desc id="d">可跳过的是"这次没必要"的步骤，不建议跳的是"跳了就动摇地基"的步骤。</desc>
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#07111f"/><stop offset="0.6" stop-color="#0b2038"/><stop offset="1" stop-color="#162449"/></linearGradient></defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <g opacity="0.06" stroke="#7dd3fc" stroke-width="1">
+    <line x1="0" y1="135" x2="1200" y2="135"/><line x1="0" y1="270" x2="1200" y2="270"/><line x1="0" y1="405" x2="1200" y2="405"/><line x1="0" y1="540" x2="1200" y2="540"/>
+    <line x1="600" y1="0" x2="600" y2="675"/>
+  </g>
+  <text x="60" y="76" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="34" font-weight="700" fill="#f8fafc">按需裁剪 vs 偷工减料</text>
+  <text x="60" y="114" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="20" fill="#94a3b8">spec-first 不是固定流水线——但"能跳"和"该跳"是两回事</text>
+
+  <!-- 左:可跳过 -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="60" y="150" width="510" height="380" rx="14" fill="#0b3a2e" stroke="#34d399" stroke-width="2"/>
+    <text x="84" y="196" font-size="24" font-weight="700" fill="#6ee7b7">✓ 可以跳过（这次没必要）</text>
+    <line x1="84" y1="212" x2="546" y2="212" stroke="#1e4a3a"/>
+    <text x="84" y="256" font-size="20" font-weight="600" fill="#a7f3d0">spec-ideate</text>
+    <text x="84" y="286" font-size="17" fill="#cbd5e1">方向已清晰时跳过，直接收敛</text>
+    <text x="84" y="338" font-size="20" font-weight="600" fill="#a7f3d0">spec-write-tasks</text>
+    <text x="84" y="368" font-size="17" fill="#cbd5e1">plan 小（&lt;3 单元）、无跨模块依赖</text>
+    <text x="84" y="420" font-size="20" font-weight="600" fill="#a7f3d0">doc-review 轻量化</text>
+    <text x="84" y="450" font-size="17" fill="#cbd5e1">低风险、plan 简单清晰时</text>
+    <text x="84" y="498" font-size="16" fill="#6ee7b7">跳了顶多多花点时间</text>
+  </g>
+
+  <!-- 右:不建议跳 -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="630" y="150" width="510" height="380" rx="14" fill="#3a1530" stroke="#f87171" stroke-width="2"/>
+    <text x="654" y="196" font-size="24" font-weight="700" fill="#fca5a5">✗ 不建议跳（跳了动摇地基）</text>
+    <line x1="654" y1="212" x2="1116" y2="212" stroke="#4a2030"/>
+    <text x="654" y="256" font-size="20" font-weight="600" fill="#fecaca">环境就绪</text>
+    <text x="654" y="286" font-size="17" fill="#cbd5e1">init / mcp-setup / graph-bootstrap</text>
+    <text x="654" y="312" font-size="16" fill="#94a3b8">跳过 → runtime 不一致、graph 缺失</text>
+    <text x="654" y="364" font-size="20" font-weight="600" fill="#fecaca">需求收敛</text>
+    <text x="654" y="394" font-size="17" fill="#cbd5e1">brainstorm 或 spec-prd</text>
+    <text x="654" y="420" font-size="16" fill="#94a3b8">跳过 → plan 只能猜 WHAT，执行漂移</text>
+    <text x="654" y="498" font-size="16" fill="#fca5a5">跳了让后面每步都建在猜测上</text>
+  </g>
+
+  <!-- 底部最小链路 -->
+  <rect x="60" y="552" width="1080" height="76" rx="12" fill="#172554" stroke="#818cf8" stroke-width="1.5"/>
+  <text x="90" y="586" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="18" fill="#cbd5e1">单仓单项目 + 小需求的最小可用链路：</text>
+  <text x="90" y="616" font-family="'SF Mono',Menlo,monospace" font-size="20" font-weight="700" fill="#5eead4">brainstorm → plan → work → compound　</text>
+  <text x="640" y="616" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="17" fill="#94a3b8">四步完成，每步都留下高质量上下文</text>
+</svg>

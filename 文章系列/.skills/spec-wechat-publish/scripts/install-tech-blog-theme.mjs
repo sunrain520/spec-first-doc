@@ -70,6 +70,16 @@ function inlineTechBlogStyles(html: string): string {
     '$1'
   );
 
+  // 代码块保护：先把 <pre>…</pre> 整块抽走占位，再套通用样式。原因有二：
+  // 1) styles.p 的正则 <p([^>]*)> 会误吞 <pre>（p 后的 're' 被当属性），把段落
+  //    样式错套到代码块；2) 行内 code 的浅蓝底也会渗进块内 <code>，形成"深框套
+  //    浅框"的双层效果。抽走后块内不再被 p/code 通用样式命中，最后单层重套。
+  const preBlocks: string[] = [];
+  html = html.replace(/<pre\\b[^>]*>[\\s\\S]*?<\\/pre>/g, (block: string) => {
+    preBlocks.push(block);
+    return \`___TECHBLOG_PRE_\${preBlocks.length - 1}___\`;
+  });
+
   const styles: Record<string, string> = {
     p: 'margin:0 0 24px;font-size:16px;line-height:1.85;color:#1f2937;',
     h2: 'margin:44px 0 22px;padding:14px 16px 14px 18px;font-size:21px;line-height:1.45;font-weight:700;color:#0f172a;background:#f4f8ff;border-left:5px solid #2563eb;border-radius:4px;',
@@ -81,12 +91,47 @@ function inlineTechBlogStyles(html: string): string {
     figure: 'margin:10px 0 32px;padding:0;',
     img: 'display:block;width:100%;max-width:100%;height:auto;border-radius:4px;border:1px solid #e5e7eb;',
     code: 'padding:0.12em 0.34em;color:#1e3a5f;background:#eff6ff;border-radius:3px;font-family:Menlo, Monaco, Consolas, monospace;font-size:0.92em;',
+    // hr/strong 在 CSS 里有规则，但微信粘贴会剥离 <style> 只留 inline；不补则
+    // 分隔线变默认粗黑线、加粗金句丢深色强调。h2/h3 不含 strong，正文加色安全。
+    hr: 'height:1px;margin:34px 0;border:none;background:#e5e7eb;',
+    strong: 'color:#0f172a;font-weight:700;',
   };
 
-  return Object.entries(styles).reduce(
+  let styled = Object.entries(styles).reduce(
     (current, [tagName, style]) => addInlineStyle(current, tagName, style),
     html
   );
+
+  // 把抽走的代码块单层重套后放回：<pre> 深色外框，内层 <code> 强制透明背景，
+  // 不再叠出"深框套浅框"。微信会清掉 class，所以样式全部走 inline。
+  // 代码块横向滚动适配手机：内层 code 用 white-space:pre 不换行（保持原始
+  // 格式与对齐），外层 pre 用 overflow-x:auto 在超宽时横向滚动；长行不再折行
+  // 破坏对齐，超出部分手指左右滑动查看（微信 iOS/Android webview 均支持）。
+  // code 设 min-width:max-content，让内容自然撑开宽度以触发 pre 的横向滚动。
+  const preStyle =
+    'margin:4px 0 28px;padding:8px 0 16px;background:#0f172a;border:1px solid #1e293b;' +
+    'border-radius:8px;overflow-x:auto;-webkit-overflow-scrolling:touch;line-height:1.75;';
+  const preCodeStyle =
+    'display:block;min-width:max-content;padding:6px 16px 0;background:transparent;' +
+    'color:#e5e7eb;font-family:Menlo, Monaco, Consolas, monospace;font-size:14px;' +
+    'white-space:pre;';
+  styled = styled.replace(/___TECHBLOG_PRE_(\\d+)___/g, (_m, idx: string) => {
+    let block = preBlocks[Number(idx)];
+    block = block.replace(/<pre\\b([^>]*)\\sstyle="[^"]*"/, '<pre$1');
+    block = block.replace(/<pre\\b([^>]*)>/, \`<pre$1 style="\${preStyle}">\`);
+    block = block.replace(/<code\\b([^>]*)\\sstyle="[^"]*"/, '<code$1');
+    block = block.replace(/<code\\b([^>]*)>/, \`<code$1 style="\${preCodeStyle}">\`);
+    return block;
+  });
+
+  // 引用块内的 <p> 带着段落的 24px 下边距，与 blockquote 自身的 padding 叠加，
+  // 在引用块底部撑出一条多余空白。清零 blockquote 内每个 <p> 的下 margin，
+  // 引用块内的段间距交给 blockquote 的 padding 控制。
+  styled = styled.replace(/<blockquote\\b[^>]*>[\\s\\S]*?<\\/blockquote>/g, (quote: string) =>
+    quote.replace(/(<p\\b[^>]*style="[^"]*?)margin:0 0 24px;/g, '$1margin:0;')
+  );
+
+  return styled;
 }
 `.trim();
 

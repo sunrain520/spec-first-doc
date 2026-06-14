@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="t d">
+  <title id="t">op-01 失败场景：直接甩需求给 AI 的三类翻车</title>
+  <desc id="d">缺边界、缺既有约束、缺禁区——三种决策输入缺失导致 AI 只能猜。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/><stop offset="0.6" stop-color="#1a1330"/><stop offset="1" stop-color="#2a1530"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <g opacity="0.07" stroke="#f0abfc" stroke-width="1">
+    <line x1="0" y1="135" x2="1200" y2="135"/><line x1="0" y1="270" x2="1200" y2="270"/>
+    <line x1="0" y1="405" x2="1200" y2="405"/><line x1="0" y1="540" x2="1200" y2="540"/>
+    <line x1="300" y1="0" x2="300" y2="675"/><line x1="600" y1="0" x2="600" y2="675"/><line x1="900" y1="0" x2="900" y2="675"/>
+  </g>
+
+  <text x="60" y="76" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="34" font-weight="700" fill="#f8fafc">「帮我加个按标签过滤」——然后翻车</text>
+  <text x="60" y="114" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="21" fill="#fca5a5">不是 AI 不会写过滤函数，是它在信息严重不足时就动手了</text>
+
+  <!-- 三类缺失卡片 -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <!-- 缺边界 -->
+    <g>
+      <rect x="60" y="160" width="350" height="300" rx="14" fill="#1e1b2e" stroke="#f87171" stroke-width="2"/>
+      <text x="84" y="208" font-size="26" font-weight="700" fill="#fca5a5">缺边界</text>
+      <line x1="84" y1="224" x2="180" y2="224" stroke="#f87171" stroke-width="2"/>
+      <text x="84" y="266" font-size="19" fill="#e2e8f0">单标签还是多标签？</text>
+      <text x="84" y="300" font-size="19" fill="#e2e8f0">它不知道，自己</text>
+      <text x="84" y="334" font-size="19" fill="#e2e8f0">默认了一个。</text>
+      <text x="84" y="392" font-size="17" fill="#94a3b8">你要多标签，</text>
+      <text x="84" y="420" font-size="17" fill="#94a3b8">它给了单标签</text>
+    </g>
+    <!-- 缺既有约束 -->
+    <g>
+      <rect x="425" y="160" width="350" height="300" rx="14" fill="#1e1b2e" stroke="#fb923c" stroke-width="2"/>
+      <text x="449" y="208" font-size="26" font-weight="700" fill="#fdba74">缺既有约束</text>
+      <line x1="449" y1="224" x2="600" y2="224" stroke="#fb923c" stroke-width="2"/>
+      <text x="449" y="266" font-size="19" fill="#e2e8f0">列表本按完成态分组，</text>
+      <text x="449" y="300" font-size="19" fill="#e2e8f0">这是隐藏规则。</text>
+      <text x="449" y="334" font-size="19" fill="#e2e8f0">它没读到，</text>
+      <text x="449" y="368" font-size="19" fill="#e2e8f0">过滤直接冲掉分组。</text>
+      <text x="449" y="426" font-size="17" fill="#fdba74" font-weight="600">增量开发翻车的最大来源</text>
+    </g>
+    <!-- 缺禁区 -->
+    <g>
+      <rect x="790" y="160" width="350" height="300" rx="14" fill="#1e1b2e" stroke="#facc15" stroke-width="2"/>
+      <text x="814" y="208" font-size="26" font-weight="700" fill="#fde047">缺禁区</text>
+      <line x1="814" y1="224" x2="910" y2="224" stroke="#facc15" stroke-width="2"/>
+      <text x="814" y="266" font-size="19" fill="#e2e8f0">哪些代码这次不该碰？</text>
+      <text x="814" y="300" font-size="19" fill="#e2e8f0">没人画线，它就凭</text>
+      <text x="814" y="334" font-size="19" fill="#e2e8f0">审美顺手"优化"了</text>
+      <text x="814" y="368" font-size="19" fill="#e2e8f0">旁边一段。</text>
+      <text x="814" y="426" font-size="17" fill="#94a3b8">引入没要求的改动</text>
+    </g>
+  </g>
+
+  <!-- 底部结论 -->
+  <rect x="60" y="500" width="1080" height="118" rx="12" fill="#0c1a2e" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="600" y="548" text-anchor="middle" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="23" fill="#e2e8f0">再聪明的模型，拿不到边界、读不到约束、不知道禁区，也只能猜</text>
+  <text x="600" y="592" text-anchor="middle" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="24" font-weight="700" fill="#5eead4">AI coding 的质量，受限于决策输入质量，而不是模型智商</text>
+</svg>

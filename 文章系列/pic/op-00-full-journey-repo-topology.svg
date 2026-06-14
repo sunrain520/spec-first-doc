@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="t d">
+  <title id="t">三种仓库拓扑：单仓单项目 / 单仓多模块 / 多仓工作区</title>
+  <desc id="d">项目边界按 Git 拓扑判断，.spec-first 的位置决定权威边界。</desc>
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#07111f"/><stop offset="0.6" stop-color="#0b2038"/><stop offset="1" stop-color="#162449"/></linearGradient></defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <g opacity="0.07" stroke="#7dd3fc" stroke-width="1">
+    <line x1="0" y1="135" x2="1200" y2="135"/><line x1="0" y1="270" x2="1200" y2="270"/><line x1="0" y1="405" x2="1200" y2="405"/><line x1="0" y1="540" x2="1200" y2="540"/>
+    <line x1="300" y1="0" x2="300" y2="675"/><line x1="600" y1="0" x2="600" y2="675"/><line x1="900" y1="0" x2="900" y2="675"/>
+  </g>
+  <text x="60" y="76" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="34" font-weight="700" fill="#f8fafc">第二张地图 · 三种仓库拓扑</text>
+  <text x="60" y="114" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="20" fill="#94a3b8">边界按 Git 拓扑判断，不按 workflow 参数——.spec-first 放在哪，权威就在哪</text>
+
+  <g font-family="'SF Mono',Menlo,Consolas,monospace">
+    <!-- 单仓单项目 -->
+    <rect x="60" y="150" width="350" height="390" rx="14" fill="#0b3a52" stroke="#5eead4" stroke-width="2.5"/>
+    <text x="84" y="192" font-family="-apple-system,'PingFang SC',sans-serif" font-size="22" font-weight="700" fill="#5eead4">单仓单项目</text>
+    <text x="84" y="220" font-family="-apple-system,'PingFang SC',sans-serif" font-size="15" fill="#a5f3e8">一个 repo = 一个应用</text>
+    <text x="100" y="270" font-size="18" fill="#7dd3fc">my-app/</text>
+    <text x="124" y="300" font-size="17" fill="#94a3b8">.git/</text>
+    <text x="124" y="330" font-size="17" fill="#5eead4">.spec-first/ ← 权威</text>
+    <text x="124" y="360" font-size="17" fill="#94a3b8">src/  docs/</text>
+    <rect x="84" y="392" width="302" height="120" rx="8" fill="#0c2438"/>
+    <text x="100" y="424" font-family="-apple-system,'PingFang SC',sans-serif" font-size="16" fill="#cbd5e1">整个 repo 就是范围，</text>
+    <text x="100" y="452" font-family="-apple-system,'PingFang SC',sans-serif" font-size="16" fill="#cbd5e1">不用纠结看哪些文件。</text>
+    <text x="100" y="488" font-family="-apple-system,'PingFang SC',sans-serif" font-size="16" fill="#5eead4">推荐新手 · op-01 在此</text>
+
+    <!-- 单仓多模块 -->
+    <rect x="425" y="150" width="350" height="390" rx="14" fill="#102a44" stroke="#38bdf8" stroke-width="2"/>
+    <text x="449" y="192" font-family="-apple-system,'PingFang SC',sans-serif" font-size="22" font-weight="700" fill="#7dd3fc">单仓多模块</text>
+    <text x="449" y="220" font-family="-apple-system,'PingFang SC',sans-serif" font-size="15" fill="#cbd5e1">一个 repo 多个模块</text>
+    <text x="465" y="270" font-size="18" fill="#7dd3fc">platform/</text>
+    <text x="489" y="300" font-size="17" fill="#5eead4">.spec-first/ ← 一套</text>
+    <text x="489" y="330" font-size="17" fill="#94a3b8">packages/ cli core web</text>
+    <text x="489" y="360" font-size="17" fill="#94a3b8">services/ api worker</text>
+    <rect x="449" y="392" width="302" height="120" rx="8" fill="#3a1530" stroke="#f87171"/>
+    <text x="465" y="424" font-family="-apple-system,'PingFang SC',sans-serif" font-size="16" fill="#fca5a5" font-weight="600">不要为每个 module</text>
+    <text x="465" y="452" font-family="-apple-system,'PingFang SC',sans-serif" font-size="16" fill="#fca5a5" font-weight="600">拆多套 .spec-first</text>
+    <text x="465" y="488" font-family="-apple-system,'PingFang SC',sans-serif" font-size="16" fill="#cbd5e1">一套权威，按 module 筛选</text>
+
+    <!-- 多仓工作区 -->
+    <rect x="790" y="150" width="350" height="390" rx="14" fill="#1a2a4a" stroke="#818cf8" stroke-width="2"/>
+    <text x="814" y="192" font-family="-apple-system,'PingFang SC',sans-serif" font-size="22" font-weight="700" fill="#a5b4fc">多仓工作区</text>
+    <text x="814" y="220" font-family="-apple-system,'PingFang SC',sans-serif" font-size="15" fill="#cbd5e1">多个独立 child repo</text>
+    <text x="830" y="270" font-size="18" fill="#7dd3fc">workspace/</text>
+    <text x="854" y="300" font-size="17" fill="#5eead4">frontend/.spec-first</text>
+    <text x="854" y="330" font-size="17" fill="#5eead4">backend/.spec-first</text>
+    <text x="854" y="360" font-size="16" fill="#94a3b8">.spec-first/workspace</text>
+    <text x="878" y="384" font-size="14" fill="#64748b">（advisory，非权威）</text>
+    <rect x="814" y="398" width="302" height="114" rx="8" fill="#3a1530" stroke="#f87171"/>
+    <text x="830" y="430" font-family="-apple-system,'PingFang SC',sans-serif" font-size="16" fill="#fca5a5" font-weight="600">写入前必须钉死</text>
+    <text x="830" y="458" font-family="-apple-system,'PingFang SC',sans-serif" font-size="16" fill="#fca5a5" font-weight="600">target_repo</text>
+    <text x="830" y="494" font-family="-apple-system,'PingFang SC',sans-serif" font-size="15" fill="#cbd5e1">防"改对内容、写错 repo"</text>
+  </g>
+
+  <rect x="60" y="566" width="1080" height="62" rx="10" fill="#0c1a2e" stroke="#1e3a5f" stroke-width="1.5"/>
+  <text x="600" y="604" text-anchor="middle" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="20" fill="#e2e8f0">需求模式错了写计划时就察觉；拓扑边界错了，往往改崩了才发现</text>
+</svg>

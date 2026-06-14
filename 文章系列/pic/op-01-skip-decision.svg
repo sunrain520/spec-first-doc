@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="t d">
+  <title id="t">op-01 选地图：按需求规模裁剪链路</title>
+  <desc id="d">本例该走哪步、该跳哪步——spec-first 是按需裁剪的节点组，不是固定流水线。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/><stop offset="0.6" stop-color="#0b2038"/><stop offset="1" stop-color="#162449"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <g opacity="0.07" stroke="#7dd3fc" stroke-width="1">
+    <line x1="0" y1="135" x2="1200" y2="135"/><line x1="0" y1="270" x2="1200" y2="270"/>
+    <line x1="0" y1="405" x2="1200" y2="405"/><line x1="0" y1="540" x2="1200" y2="540"/>
+    <line x1="300" y1="0" x2="300" y2="675"/><line x1="600" y1="0" x2="600" y2="675"/><line x1="900" y1="0" x2="900" y2="675"/>
+  </g>
+
+  <text x="60" y="76" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="34" font-weight="700" fill="#f8fafc">按需求规模裁剪链路：走哪步、跳哪步</text>
+  <text x="60" y="114" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="20" fill="#94a3b8">本例每一项都落在「小需求」一侧，所以可以跳过重型节点</text>
+
+  <!-- 表头 -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="60" y="150" width="360" height="56" rx="8" fill="#0c1a2e" stroke="#1e3a5f"/>
+    <text x="80" y="187" font-size="20" font-weight="700" fill="#94a3b8">判断维度</text>
+    <rect x="430" y="150" width="350" height="56" rx="8" fill="#3a1530" stroke="#f87171"/>
+    <text x="450" y="187" font-size="20" font-weight="700" fill="#fca5a5">大需求（重型链路）</text>
+    <rect x="790" y="150" width="350" height="56" rx="8" fill="#0b3a52" stroke="#5eead4"/>
+    <text x="810" y="187" font-size="20" font-weight="700" fill="#5eead4">本例（落右列 → 跳过）</text>
+  </g>
+
+  <!-- 行 -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="19">
+    <!-- r1 -->
+    <rect x="60" y="214" width="360" height="64" rx="8" fill="#0f2942" stroke="#1e3a5f"/>
+    <text x="80" y="252" fill="#cbd5e1" font-weight="600">改动范围</text>
+    <rect x="430" y="214" width="350" height="64" rx="8" fill="#1e1b2e" stroke="#3f2a3a"/>
+    <text x="450" y="252" fill="#94a3b8">跨多模块 / 多文件</text>
+    <rect x="790" y="214" width="350" height="64" rx="8" fill="#0c2438" stroke="#1e3a5f"/>
+    <text x="810" y="252" fill="#a5f3e8">单文件、局部</text>
+    <!-- r2 -->
+    <rect x="60" y="286" width="360" height="64" rx="8" fill="#0f2942" stroke="#1e3a5f"/>
+    <text x="80" y="324" fill="#cbd5e1" font-weight="600">依赖关系</text>
+    <rect x="430" y="286" width="350" height="64" rx="8" fill="#1e1b2e" stroke="#3f2a3a"/>
+    <text x="450" y="324" fill="#94a3b8">有明确依赖或并行机会</text>
+    <rect x="790" y="286" width="350" height="64" rx="8" fill="#0c2438" stroke="#1e3a5f"/>
+    <text x="810" y="324" fill="#a5f3e8">线性、无依赖</text>
+    <!-- r3 -->
+    <rect x="60" y="358" width="360" height="64" rx="8" fill="#0f2942" stroke="#1e3a5f"/>
+    <text x="80" y="396" fill="#cbd5e1" font-weight="600">验证面</text>
+    <rect x="430" y="358" width="350" height="64" rx="8" fill="#1e1b2e" stroke="#3f2a3a"/>
+    <text x="450" y="396" fill="#94a3b8">跨 unit / 集成 / 冒烟</text>
+    <rect x="790" y="358" width="350" height="64" rx="8" fill="#0c2438" stroke="#1e3a5f"/>
+    <text x="810" y="396" fill="#a5f3e8">单一层级</text>
+  </g>
+
+  <!-- 底部判断 -->
+  <rect x="60" y="452" width="1080" height="160" rx="12" fill="#172554" stroke="#818cf8" stroke-width="2"/>
+  <text x="90" y="500" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="23" font-weight="700" fill="#a5b4fc">spec-first 不是固定流水线，而是一组节点</text>
+  <text x="90" y="544" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="21" fill="#e2e8f0">你按需求大小决定走哪几个。本例跳过 write-tasks 等重型拆分节点。</text>
+  <text x="90" y="590" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="22" font-weight="700" fill="#5eead4">给小需求套大流程，和给大需求省关键步骤，是同一种错误的两个方向</text>
+</svg>

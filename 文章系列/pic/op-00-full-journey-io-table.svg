@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="t d">
+  <title id="t">spec-first 各节点输入输出总览</title>
+  <desc id="d">每个节点吃什么吐什么，输出即下一节点输入——上下文的接力。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#07111f"/><stop offset="0.6" stop-color="#0b2038"/><stop offset="1" stop-color="#162449"/></linearGradient>
+    <marker id="arr2" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L9,5 L0,10 Z" fill="#5eead4"/></marker>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <g opacity="0.06" stroke="#7dd3fc" stroke-width="1">
+    <line x1="0" y1="135" x2="1200" y2="135"/><line x1="0" y1="270" x2="1200" y2="270"/><line x1="0" y1="405" x2="1200" y2="405"/><line x1="0" y1="540" x2="1200" y2="540"/>
+  </g>
+  <text x="60" y="76" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="34" font-weight="700" fill="#f8fafc">每个节点的输出，都是下一个节点的输入</text>
+  <text x="60" y="114" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="20" fill="#94a3b8">这条链不是流程仪式，是上下文的接力——每步只拿它需要的那一份</text>
+
+  <!-- 接力链 -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <!-- 节点行 -->
+    <g font-size="16" font-weight="700">
+      <g transform="translate(60,165)"><rect width="150" height="56" rx="8" fill="#102a44" stroke="#38bdf8" stroke-width="1.8"/><text x="75" y="34" text-anchor="middle" fill="#7dd3fc">需求收敛</text></g>
+      <g transform="translate(250,165)"><rect width="150" height="56" rx="8" fill="#102a44" stroke="#38bdf8" stroke-width="1.8"/><text x="75" y="34" text-anchor="middle" fill="#7dd3fc">计划 plan</text></g>
+      <g transform="translate(440,165)"><rect width="150" height="56" rx="8" fill="#1a2a4a" stroke="#a5b4fc" stroke-width="1.8"/><text x="75" y="34" text-anchor="middle" fill="#a5b4fc">计划 review</text></g>
+      <g transform="translate(630,165)"><rect width="150" height="56" rx="8" fill="#102a44" stroke="#38bdf8" stroke-width="1.8"/><text x="75" y="34" text-anchor="middle" fill="#7dd3fc">执行 work</text></g>
+      <g transform="translate(820,165)"><rect width="150" height="56" rx="8" fill="#1a2a4a" stroke="#a5b4fc" stroke-width="1.8"/><text x="75" y="34" text-anchor="middle" fill="#a5b4fc">代码 review</text></g>
+      <g transform="translate(1010,165)"><rect width="150" height="56" rx="8" fill="#172554" stroke="#818cf8" stroke-width="2"/><text x="75" y="34" text-anchor="middle" fill="#a5b4fc">经验沉淀</text></g>
+    </g>
+    <!-- 接力箭头 + 产物标签 -->
+    <g stroke="#5eead4" stroke-width="2" marker-end="url(#arr2)">
+      <line x1="210" y1="193" x2="250" y2="193"/><line x1="400" y1="193" x2="440" y2="193"/>
+      <line x1="590" y1="193" x2="630" y2="193"/><line x1="780" y1="193" x2="820" y2="193"/>
+      <line x1="970" y1="193" x2="1010" y2="193"/>
+    </g>
+    <g font-size="14" fill="#5eead4" text-anchor="middle">
+      <text x="230" y="248">requirements</text>
+      <text x="420" y="248">plan</text>
+      <text x="610" y="248">findings</text>
+      <text x="800" y="248">diff+证据</text>
+      <text x="990" y="248">findings</text>
+    </g>
+
+    <!-- 详细吃/吐 列表 -->
+    <g font-size="17">
+      <text x="60" y="300" fill="#94a3b8">吃 一句话需求 + 你的回答</text><text x="640" y="300" fill="#e2e8f0">→ 吐 requirements（WHAT 的来源）</text>
+      <text x="60" y="338" fill="#94a3b8">吃 requirements</text><text x="640" y="338" fill="#e2e8f0">→ 吐 plan（HOW 的边界）</text>
+      <text x="60" y="376" fill="#94a3b8">吃 plan</text><text x="640" y="376" fill="#e2e8f0">→ 吐 findings（计划层问题，零代码成本纠正）</text>
+      <text x="60" y="414" fill="#94a3b8">吃 plan（或 task pack）+ 源码</text><text x="640" y="414" fill="#e2e8f0">→ 吐 代码 diff + 验证记录 + 交接</text>
+      <text x="60" y="452" fill="#94a3b8">吃 diff + 证据</text><text x="640" y="452" fill="#e2e8f0">→ 吐 带四要素的 findings</text>
+      <text x="60" y="490" fill="#94a3b8">吃 这次的判断与坑</text><text x="640" y="490" fill="#e2e8f0">→ 吐 docs/solutions 一条可复用经验</text>
+    </g>
+  </g>
+
+  <rect x="60" y="528" width="1080" height="98" rx="12" fill="#0c1a2e" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="90" y="566" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="20" font-weight="700" fill="#5eead4">每步的输入，都是上一步精炼过的输出</text>
+  <text x="90" y="600" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="17" fill="#cbd5e1">plan 只读收敛好的 requirements，work 只读 plan 划定的边界——这正是 Context Harness：每个节点恰好拿到它需要的那一份</text>
+</svg>

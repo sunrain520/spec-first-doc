@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="t d">
+  <title id="t">三种需求模式：0-1 / 1-10 / 10-100</title>
+  <desc id="d">按产品阶段区分的三种需求模式，核心差别只在需求收敛阶段。</desc>
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#07111f"/><stop offset="0.6" stop-color="#0b2038"/><stop offset="1" stop-color="#162449"/></linearGradient></defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <g opacity="0.07" stroke="#7dd3fc" stroke-width="1">
+    <line x1="0" y1="135" x2="1200" y2="135"/><line x1="0" y1="270" x2="1200" y2="270"/><line x1="0" y1="405" x2="1200" y2="405"/><line x1="0" y1="540" x2="1200" y2="540"/>
+    <line x1="300" y1="0" x2="300" y2="675"/><line x1="600" y1="0" x2="600" y2="675"/><line x1="900" y1="0" x2="900" y2="675"/>
+  </g>
+  <text x="60" y="76" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="34" font-weight="700" fill="#f8fafc">第一张地图 · 三种需求模式</text>
+  <text x="60" y="114" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="20" fill="#94a3b8">差别集中在需求收敛阶段，过了这个分叉口，后面链路三条路合流</text>
+
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <!-- 0-1 -->
+    <rect x="60" y="160" width="350" height="380" rx="14" fill="#102a44" stroke="#38bdf8" stroke-width="2"/>
+    <text x="84" y="212" font-size="30" font-weight="700" fill="#7dd3fc">0-1</text>
+    <text x="84" y="246" font-size="20" fill="#cbd5e1">全新产品，方向未定</text>
+    <line x1="84" y1="262" x2="386" y2="262" stroke="#1e3a5f"/>
+    <text x="84" y="300" font-size="18" fill="#94a3b8">场景</text>
+    <text x="84" y="328" font-size="18" fill="#e2e8f0">有想法，但形态都没定</text>
+    <text x="84" y="372" font-size="18" fill="#94a3b8">工具链</text>
+    <text x="84" y="400" font-size="19" fill="#5eead4" font-weight="600">ideate → brainstorm</text>
+    <text x="84" y="444" font-size="18" fill="#94a3b8">最不能省</text>
+    <text x="84" y="472" font-size="18" fill="#e2e8f0">探索方向——方向错了，</text>
+    <text x="84" y="500" font-size="18" fill="#e2e8f0">后面跑得再规范都白搭</text>
+    <text x="84" y="528" font-size="16" fill="#64748b">把模糊变清晰</text>
+
+    <!-- 1-10 高亮 -->
+    <rect x="425" y="160" width="350" height="380" rx="14" fill="#0b3a52" stroke="#5eead4" stroke-width="2.5"/>
+    <text x="449" y="212" font-size="30" font-weight="700" fill="#5eead4">1-10</text>
+    <text x="449" y="246" font-size="20" fill="#a5f3e8">已有产品，增量功能</text>
+    <line x1="449" y1="262" x2="751" y2="262" stroke="#1e4a5f"/>
+    <text x="449" y="300" font-size="18" fill="#94a3b8">场景</text>
+    <text x="449" y="328" font-size="18" fill="#e2e8f0">日常开发最高频的状态</text>
+    <text x="449" y="372" font-size="18" fill="#94a3b8">工具链</text>
+    <text x="449" y="400" font-size="19" fill="#5eead4" font-weight="600">brainstorm 或 spec-prd</text>
+    <text x="449" y="444" font-size="18" fill="#94a3b8">最不能省</text>
+    <text x="449" y="472" font-size="18" fill="#e2e8f0">边界说清——"不做什么"</text>
+    <text x="449" y="500" font-size="18" fill="#e2e8f0">必须写下，否则 AI 做多</text>
+    <text x="449" y="528" font-size="16" fill="#5eead4">← op-01 完整跑这条</text>
+
+    <!-- 10-100 -->
+    <rect x="790" y="160" width="350" height="380" rx="14" fill="#102a44" stroke="#38bdf8" stroke-width="2"/>
+    <text x="814" y="212" font-size="30" font-weight="700" fill="#7dd3fc">10-100</text>
+    <text x="814" y="246" font-size="20" fill="#cbd5e1">存量系统，增量需求</text>
+    <line x1="814" y1="262" x2="1116" y2="262" stroke="#1e3a5f"/>
+    <text x="814" y="300" font-size="18" fill="#94a3b8">场景</text>
+    <text x="814" y="328" font-size="18" fill="#e2e8f0">老系统有历史包袱</text>
+    <text x="814" y="372" font-size="18" fill="#94a3b8">工具链</text>
+    <text x="814" y="400" font-size="19" fill="#5eead4" font-weight="600">spec-prd（写 delta）</text>
+    <text x="814" y="444" font-size="18" fill="#94a3b8">最不能省</text>
+    <text x="814" y="472" font-size="18" fill="#e2e8f0">记录当前状态——不写清</text>
+    <text x="814" y="500" font-size="18" fill="#e2e8f0">既有约束就是雷区盲走</text>
+    <text x="814" y="528" font-size="16" fill="#64748b">current-state + delta</text>
+  </g>
+
+  <rect x="60" y="566" width="1080" height="62" rx="10" fill="#172554" stroke="#818cf8" stroke-width="1.5"/>
+  <text x="600" y="604" text-anchor="middle" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="21" font-weight="700" fill="#a5b4fc">你不需要为三种模式学三套流程——差别只在最前面的需求收敛</text>
+</svg>

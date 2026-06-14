@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1500" viewBox="0 0 1200 1500" role="img" aria-labelledby="t d">
+  <title id="t">spec-first 全景一图：两张地图 + 主链 + 三配套</title>
+  <desc id="d">先选地图（需求模式 × 仓库拓扑），再走主链（需求收敛→计划→审查→执行→审查→沉淀），加三个配套（debug/sessions/compound-refresh）。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#07111f"/><stop offset="0.6" stop-color="#0b2038"/><stop offset="1" stop-color="#162449"/></linearGradient>
+    <marker id="arr" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto"><path d="M0,0 L11,6 L0,12 Z" fill="#38bdf8"/></marker>
+  </defs>
+  <rect width="1200" height="1500" fill="url(#bg)"/>
+  <g opacity="0.05" stroke="#7dd3fc" stroke-width="1">
+    <line x1="0" y1="300" x2="1200" y2="300"/><line x1="0" y1="600" x2="1200" y2="600"/><line x1="0" y1="900" x2="1200" y2="900"/><line x1="0" y1="1200" x2="1200" y2="1200"/>
+    <line x1="400" y1="0" x2="400" y2="1500"/><line x1="800" y1="0" x2="800" y2="1500"/>
+  </g>
+
+  <!-- 标题 -->
+  <text x="60" y="80" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="40" font-weight="700" fill="#f8fafc">spec-first 全景一图</text>
+  <text x="60" y="122" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="22" fill="#94a3b8">先选两张地图，再走一条主链，外加三个配套</text>
+
+  <!-- 地图一：需求模式 -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <text x="60" y="186" font-size="24" font-weight="700" fill="#7dd3fc">地图一 · 需求模式（决定前半段用什么工具）</text>
+    <g transform="translate(60,206)">
+      <rect width="346" height="92" rx="12" fill="#102a44" stroke="#38bdf8" stroke-width="2"/>
+      <text x="20" y="38" font-size="20" font-weight="700" fill="#7dd3fc">0-1 全新产品</text>
+      <text x="20" y="68" font-size="16" fill="#cbd5e1">方向未定 → ideate→brainstorm</text>
+    </g>
+    <g transform="translate(427,206)">
+      <rect width="346" height="92" rx="12" fill="#102a44" stroke="#38bdf8" stroke-width="2"/>
+      <text x="20" y="38" font-size="20" font-weight="700" fill="#7dd3fc">1-10 增量功能</text>
+      <text x="20" y="68" font-size="16" fill="#cbd5e1">需求清晰 → brainstorm / prd</text>
+    </g>
+    <g transform="translate(794,206)">
+      <rect width="346" height="92" rx="12" fill="#102a44" stroke="#38bdf8" stroke-width="2"/>
+      <text x="20" y="38" font-size="20" font-weight="700" fill="#7dd3fc">10-100 存量改造</text>
+      <text x="20" y="68" font-size="16" fill="#cbd5e1">历史包袱 → prd（写 delta）</text>
+    </g>
+  </g>
+
+  <!-- 地图二：仓库拓扑 -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <text x="60" y="356" font-size="24" font-weight="700" fill="#a5b4fc">地图二 · 仓库拓扑（决定边界划在哪、改动写到哪）</text>
+    <g transform="translate(60,376)">
+      <rect width="346" height="92" rx="12" fill="#1a1f44" stroke="#818cf8" stroke-width="2"/>
+      <text x="20" y="38" font-size="20" font-weight="700" fill="#a5b4fc">单仓单项目</text>
+      <text x="20" y="68" font-size="16" fill="#cbd5e1">一套 .spec-first = repo root</text>
+    </g>
+    <g transform="translate(427,376)">
+      <rect width="346" height="92" rx="12" fill="#1a1f44" stroke="#818cf8" stroke-width="2"/>
+      <text x="20" y="38" font-size="20" font-weight="700" fill="#a5b4fc">单仓多模块</text>
+      <text x="20" y="68" font-size="16" fill="#cbd5e1">一套权威，按 module 筛选</text>
+    </g>
+    <g transform="translate(794,376)">
+      <rect width="346" height="92" rx="12" fill="#1a1f44" stroke="#818cf8" stroke-width="2"/>
+      <text x="20" y="38" font-size="20" font-weight="700" fill="#a5b4fc">多仓工作区</text>
+      <text x="20" y="68" font-size="16" fill="#cbd5e1">写入前钉死 target_repo</text>
+    </g>
+  </g>
+
+  <!-- 主链 -->
+  <text x="60" y="538" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="24" font-weight="700" fill="#5eead4">主链 · 一个需求从一句话到沉淀（七节点接力）</text>
+  <g transform="translate(60,560)" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect width="1080" height="56" rx="10" fill="#0c1a2e" stroke="#475569" stroke-width="1.5" stroke-dasharray="6 4"/>
+    <text x="24" y="35" font-size="18" font-weight="700" fill="#94a3b8">第零步 · 环境就绪</text>
+    <text x="260" y="35" font-size="16" fill="#cbd5e1">spec-first init → spec-mcp-setup（含 graph readiness，一次性地基）</text>
+  </g>
+  <!-- 七节点 顺序条 -->
+  <g transform="translate(60,640)" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="17">
+    <g><rect width="170" height="62" rx="10" fill="#0d3320" stroke="#5eead4" stroke-width="2"/><text x="16" y="28" font-size="17" font-weight="700" fill="#5eead4">① 需求收敛</text><text x="16" y="50" font-size="14" fill="#cbd5e1">→ requirements</text></g>
+    <g transform="translate(182,0)"><rect width="170" height="62" rx="10" fill="#0d3320" stroke="#5eead4" stroke-width="2"/><text x="16" y="28" font-size="17" font-weight="700" fill="#5eead4">② 计划</text><text x="16" y="50" font-size="14" fill="#cbd5e1">→ plan</text></g>
+    <g transform="translate(364,0)"><rect width="170" height="62" rx="10" fill="#0d3320" stroke="#5eead4" stroke-width="2"/><text x="16" y="28" font-size="17" font-weight="700" fill="#5eead4">③ 计划 review</text><text x="16" y="50" font-size="14" fill="#cbd5e1">→ findings</text></g>
+    <g transform="translate(546,0)"><rect width="170" height="62" rx="10" fill="#13233a" stroke="#64748b" stroke-width="1.5" stroke-dasharray="5 3"/><text x="16" y="28" font-size="17" font-weight="700" fill="#94a3b8">④ 任务切片</text><text x="16" y="50" font-size="14" fill="#94a3b8">可选 → task pack</text></g>
+    <g transform="translate(728,0)"><rect width="170" height="62" rx="10" fill="#0d3320" stroke="#5eead4" stroke-width="2"/><text x="16" y="28" font-size="17" font-weight="700" fill="#5eead4">⑤ 执行</text><text x="16" y="50" font-size="14" fill="#cbd5e1">→ diff + 验证</text></g>
+    <g transform="translate(910,0)"><rect width="170" height="62" rx="10" fill="#0d3320" stroke="#5eead4" stroke-width="2"/><text x="16" y="28" font-size="17" font-weight="700" fill="#5eead4">⑥ 代码 review</text><text x="16" y="50" font-size="14" fill="#cbd5e1">→ findings</text></g>
+  </g>
+  <g transform="translate(60,724)" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect width="1080" height="56" rx="10" fill="#0d3320" stroke="#5eead4" stroke-width="2"/>
+    <text x="24" y="35" font-size="17" font-weight="700" fill="#5eead4">⑦ 经验沉淀（compound）</text>
+    <text x="320" y="35" font-size="15" fill="#cbd5e1">→ docs/solutions/，下次相关需求先读到它，闭环</text>
+  </g>
+
+  <!-- 三配套 -->
+  <text x="60" y="852" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="24" font-weight="700" fill="#fbbf24">主链之外 · 三个绕不开的配套</text>
+  <g transform="translate(60,872)" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <g><rect width="346" height="96" rx="12" fill="#2a210c" stroke="#fbbf24" stroke-width="2"/><text x="20" y="36" font-size="20" font-weight="700" fill="#fbbf24">debug</text><text x="20" y="64" font-size="15" fill="#cbd5e1">出错了：系统化找根因</text><text x="20" y="86" font-size="14" fill="#94a3b8">work 的兄弟，假设验证</text></g>
+    <g transform="translate(367,0)"><rect width="346" height="96" rx="12" fill="#2a210c" stroke="#fbbf24" stroke-width="2"/><text x="20" y="36" font-size="20" font-weight="700" fill="#fbbf24">sessions</text><text x="20" y="64" font-size="15" fill="#cbd5e1">回头查：过往会话历史</text><text x="20" y="86" font-size="14" fill="#94a3b8">与 compound 互补</text></g>
+    <g transform="translate(734,0)"><rect width="346" height="96" rx="12" fill="#2a210c" stroke="#fbbf24" stroke-width="2"/><text x="20" y="36" font-size="20" font-weight="700" fill="#fbbf24">compound-refresh</text><text x="20" y="64" font-size="15" fill="#cbd5e1">经验会过期：刷新沉淀</text><text x="20" y="86" font-size="14" fill="#94a3b8">让经验保持可信</text></g>
+  </g>
+
+  <!-- 核心边界 -->
+  <g transform="translate(60,1008)" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect width="1080" height="92" rx="12" fill="#0c1a2e" stroke="#38bdf8" stroke-width="1.5"/>
+    <text x="28" y="40" font-size="19" font-weight="700" fill="#7dd3fc">贯穿全链的边界</text>
+    <text x="28" y="72" font-size="18" fill="#e2e8f0">脚本只产确定性事实（路径 / hash / 新鲜度）；LLM 只做语义判断（范围 / 取舍 / 根因）。</text>
+  </g>
+
+  <!-- 跳过 / 最小链路 -->
+  <g transform="translate(60,1128)" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect width="530" height="110" rx="12" fill="#13233a" stroke="#64748b" stroke-width="1.5"/>
+    <text x="24" y="38" font-size="19" font-weight="700" fill="#cbd5e1">可按需裁剪</text>
+    <text x="24" y="68" font-size="15" fill="#94a3b8">小需求跳 ideate / write-tasks，</text>
+    <text x="24" y="92" font-size="15" fill="#94a3b8">轻量化 doc-review；环境与需求不能省</text>
+  </g>
+  <g transform="translate(610,1128)" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect width="530" height="110" rx="12" fill="#0d3320" stroke="#5eead4" stroke-width="1.5"/>
+    <text x="24" y="38" font-size="19" font-weight="700" fill="#5eead4">最小可用链路</text>
+    <text x="24" y="70" font-size="17" fill="#e2e8f0">brainstorm → plan → work → compound</text>
+    <text x="24" y="94" font-size="15" fill="#94a3b8">单仓单项目 + 小需求，四步即可</text>
+  </g>
+
+  <!-- 金句 -->
+  <g transform="translate(60,1280)" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect width="1080" height="120" rx="14" fill="#102a44" stroke="#38bdf8" stroke-width="2.5"/>
+    <text x="540" y="56" font-size="26" font-weight="700" fill="#f8fafc" text-anchor="middle">不是让 AI 更聪明，</text>
+    <text x="540" y="94" font-size="26" font-weight="700" fill="#7dd3fc" text-anchor="middle">而是让每次任务都让下一次任务更容易。</text>
+  </g>
+
+  <text x="600" y="1452" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="18" fill="#64748b" text-anchor="middle">spec-first · 先选地图，再走链路 · github.com/sunrain520/spec-first</text>
+</svg>

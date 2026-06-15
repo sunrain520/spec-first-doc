@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="t d">
+  <title id="t">op-07 全季弧线：从敢用到敢上线</title>
+  <desc id="d">第二季 op-00 到 op-07 八篇主题排成一条从敢用到敢上线的弧线，靠的是同一件事：把猜换成有证据的定。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/><stop offset="0.6" stop-color="#0b2038"/><stop offset="1" stop-color="#162449"/>
+    </linearGradient>
+    <linearGradient id="arc" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#38bdf8"/><stop offset="0.5" stop-color="#22d3ee"/><stop offset="1" stop-color="#818cf8"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <g opacity="0.07" stroke="#7dd3fc" stroke-width="1">
+    <line x1="0" y1="135" x2="1200" y2="135"/><line x1="0" y1="270" x2="1200" y2="270"/>
+    <line x1="0" y1="405" x2="1200" y2="405"/><line x1="0" y1="540" x2="1200" y2="540"/>
+  </g>
+
+  <text x="60" y="74" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="34" font-weight="700" fill="#f8fafc">第二季弧线：从"敢用"到"敢上线"</text>
+  <text x="60" y="112" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="20" fill="#94a3b8">八篇换了八个场景，靠的都是同一件事——把"猜"换成"有证据的定"（可截图存）</text>
+
+  <!-- 弧线 -->
+  <path d="M110,470 Q600,150 1090,300" stroke="url(#arc)" stroke-width="4" fill="none" opacity="0.6" stroke-dasharray="2 0"/>
+
+  <!-- 节点 -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <!-- op-00 -->
+    <g>
+      <circle cx="120" cy="466" r="11" fill="#38bdf8"/>
+      <text x="120" y="510" text-anchor="middle" font-size="18" font-weight="700" fill="#7dd3fc">op-00</text>
+      <text x="120" y="536" text-anchor="middle" font-size="15" fill="#cbd5e1">总览</text>
+      <text x="120" y="558" text-anchor="middle" font-size="15" fill="#94a3b8">越改越顺</text>
+    </g>
+    <!-- op-01 -->
+    <g>
+      <circle cx="255" cy="392" r="11" fill="#38bdf8"/>
+      <text x="255" y="356" text-anchor="middle" font-size="18" font-weight="700" fill="#7dd3fc">op-01</text>
+      <text x="255" y="332" text-anchor="middle" font-size="15" fill="#cbd5e1">日常增量</text>
+      <text x="255" y="310" text-anchor="middle" font-size="15" fill="#5eead4" font-weight="700">敢用</text>
+    </g>
+    <!-- op-02 -->
+    <g>
+      <circle cx="390" cy="330" r="11" fill="#22d3ee"/>
+      <text x="390" y="374" text-anchor="middle" font-size="18" font-weight="700" fill="#7dd3fc">op-02</text>
+      <text x="390" y="400" text-anchor="middle" font-size="15" fill="#cbd5e1">0-1 新产品</text>
+      <text x="390" y="422" text-anchor="middle" font-size="15" fill="#94a3b8">敢从零起</text>
+    </g>
+    <!-- op-03 -->
+    <g>
+      <circle cx="525" cy="282" r="11" fill="#22d3ee"/>
+      <text x="525" y="246" text-anchor="middle" font-size="18" font-weight="700" fill="#7dd3fc">op-03</text>
+      <text x="525" y="222" text-anchor="middle" font-size="15" fill="#cbd5e1">老系统改造</text>
+      <text x="525" y="200" text-anchor="middle" font-size="15" fill="#94a3b8">敢碰历史</text>
+    </g>
+    <!-- op-04 -->
+    <g>
+      <circle cx="660" cy="252" r="11" fill="#22d3ee"/>
+      <text x="660" y="296" text-anchor="middle" font-size="18" font-weight="700" fill="#7dd3fc">op-04</text>
+      <text x="660" y="322" text-anchor="middle" font-size="15" fill="#cbd5e1">多仓协作</text>
+      <text x="660" y="344" text-anchor="middle" font-size="15" fill="#94a3b8">敢写对仓</text>
+    </g>
+    <!-- op-05 -->
+    <g>
+      <circle cx="795" cy="240" r="11" fill="#818cf8"/>
+      <text x="795" y="204" text-anchor="middle" font-size="18" font-weight="700" fill="#a5b4fc">op-05</text>
+      <text x="795" y="180" text-anchor="middle" font-size="15" fill="#cbd5e1">改崩了收拾</text>
+      <text x="795" y="158" text-anchor="middle" font-size="15" fill="#94a3b8">敢救火</text>
+    </g>
+    <!-- op-06 -->
+    <g>
+      <circle cx="930" cy="252" r="11" fill="#818cf8"/>
+      <text x="930" y="296" text-anchor="middle" font-size="18" font-weight="700" fill="#a5b4fc">op-06</text>
+      <text x="930" y="322" text-anchor="middle" font-size="15" fill="#cbd5e1">换人/换 AI 接手</text>
+      <text x="930" y="344" text-anchor="middle" font-size="15" fill="#94a3b8">敢交接</text>
+    </g>
+    <!-- op-07 -->
+    <g>
+      <circle cx="1075" cy="296" r="14" fill="#a5b4fc" stroke="#f8fafc" stroke-width="2"/>
+      <text x="1075" y="252" text-anchor="middle" font-size="18" font-weight="700" fill="#a5b4fc">op-07</text>
+      <text x="1075" y="228" text-anchor="middle" font-size="15" fill="#cbd5e1">上线把关</text>
+      <text x="1075" y="206" text-anchor="middle" font-size="16" fill="#5eead4" font-weight="700">敢上线</text>
+    </g>
+  </g>
+
+  <!-- 底部收口 -->
+  <rect x="60" y="578" width="1080" height="70" rx="12" fill="#0c1a2e" stroke="#1e3a5f" stroke-width="1.6"/>
+  <text x="600" y="622" text-anchor="middle" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="21" fill="#e2e8f0">从第一篇的"敢用"到压轴的"敢上线"，每一个"敢"字背后，都是<tspan fill="#5eead4" font-weight="700">证据，不是赌</tspan></text>
+</svg>

@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="511" viewBox="0 0 1200 511" role="img" aria-labelledby="title desc">
+  <title id="title">AI 把代码改崩了，别再"你再看看"了：spec-first debug 实操</title>
+  <desc id="desc">微信公众号 2.35:1 封面图：op-05 调试实战，用 hypothesis ledger 把反复试错换成可追踪的假设证据。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/>
+      <stop offset="0.55" stop-color="#0b2038"/>
+      <stop offset="1" stop-color="#172554"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#38bdf8"/>
+      <stop offset="0.52" stop-color="#22d3ee"/>
+      <stop offset="1" stop-color="#818cf8"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="511" fill="url(#bg)"/>
+
+  <g opacity="0.10" stroke="#7dd3fc" stroke-width="1">
+    <line x1="0" y1="73" x2="1200" y2="73"/>
+    <line x1="0" y1="146" x2="1200" y2="146"/>
+    <line x1="0" y1="219" x2="1200" y2="219"/>
+    <line x1="0" y1="292" x2="1200" y2="292"/>
+    <line x1="0" y1="365" x2="1200" y2="365"/>
+    <line x1="0" y1="438" x2="1200" y2="438"/>
+    <line x1="200" y1="0" x2="200" y2="511"/>
+    <line x1="400" y1="0" x2="400" y2="511"/>
+    <line x1="600" y1="0" x2="600" y2="511"/>
+    <line x1="800" y1="0" x2="800" y2="511"/>
+    <line x1="1000" y1="0" x2="1000" y2="511"/>
+  </g>
+
+  <!-- 顶部标签 -->
+  <text x="90" y="96" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="26" fill="#38bdf8" letter-spacing="2">Spec-First · 第二季 · 项目实操</text>
+
+  <!-- 主标题 -->
+  <text x="90" y="190" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="62" font-weight="700" fill="#f8fafc">AI 把代码改崩了</text>
+  <text x="90" y="272" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="62" font-weight="700" fill="#f8fafc">别再"你再看看"了</text>
+
+  <!-- 副标题 -->
+  <text x="92" y="340" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="29" fill="#cbd5e1">把反复试错，换成可追踪的假设和证据</text>
+
+  <rect x="92" y="372" width="64" height="5" rx="2.5" fill="url(#accent)"/>
+
+  <!-- 右下角调查链路示意 -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="17" fill="#0b1220" font-weight="600">
+    <g transform="translate(596,410)"><rect width="86" height="44" rx="8" fill="#7dd3fc"/><text x="43" y="28" text-anchor="middle">复现</text></g>
+    <g transform="translate(694,410)"><rect width="86" height="44" rx="8" fill="#5eead4"/><text x="43" y="28" text-anchor="middle">因果链</text></g>
+    <g transform="translate(792,410)"><rect width="86" height="44" rx="8" fill="#a5b4fc"/><text x="43" y="28" text-anchor="middle">假设</text></g>
+    <g transform="translate(890,410)"><rect width="110" height="44" rx="8" fill="#38bdf8"/><text x="55" y="28" text-anchor="middle">只改根因</text></g>
+  </g>
+  <g stroke="#7dd3fc" stroke-width="2" opacity="0.7">
+    <line x1="682" y1="432" x2="694" y2="432"/>
+    <line x1="780" y1="432" x2="792" y2="432"/>
+    <line x1="878" y1="432" x2="890" y2="432"/>
+  </g>
+
+  <!-- 坐标标记 -->
+  <text x="1110" y="96" text-anchor="end" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="22" fill="#64748b">op-05 · debug 调试实战</text>
+</svg>

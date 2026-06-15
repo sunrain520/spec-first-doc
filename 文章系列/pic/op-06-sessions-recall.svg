@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="t d">
+  <title id="t">sessions 蒸馏回放：试过什么 / 没成什么 / 关键决策 / 相关上下文</title>
+  <desc id="d">sessions 不做全文回放，只返回蒸馏过的四节引用，每条带证据路径与「为什么现在相关」。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/><stop offset="0.6" stop-color="#0b2038"/><stop offset="1" stop-color="#162449"/>
+    </linearGradient>
+    <marker id="arr2" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto">
+      <path d="M0,0 L11,6 L0,12 Z" fill="#38bdf8"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <g opacity="0.08" stroke="#7dd3fc" stroke-width="1">
+    <line x1="0" y1="135" x2="1200" y2="135"/><line x1="0" y1="270" x2="1200" y2="270"/>
+    <line x1="0" y1="405" x2="1200" y2="405"/><line x1="0" y1="540" x2="1200" y2="540"/>
+    <line x1="300" y1="0" x2="300" y2="675"/><line x1="600" y1="0" x2="600" y2="675"/><line x1="900" y1="0" x2="900" y2="675"/>
+  </g>
+
+  <text x="60" y="76" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="34" font-weight="700" fill="#f8fafc">sessions：不是全文回放，是蒸馏过的四节</text>
+  <text x="60" y="114" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="20" fill="#94a3b8">docs 不够时，从历史会话里捞回「当时的过程」——查完即用，不在仓库留持久文件</text>
+
+  <!-- 左：原始会话 -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="60" y="170" width="230" height="430" rx="12" fill="#0e1a2c" stroke="#334155" stroke-width="1.5"/>
+    <text x="175" y="208" text-anchor="middle" font-size="20" font-weight="700" fill="#94a3b8">历史会话</text>
+    <text x="175" y="232" text-anchor="middle" font-size="14" fill="#64748b">几千行原始记录</text>
+    <g opacity="0.5" stroke="#475569" stroke-width="1.2">
+      <line x1="84" y1="262" x2="266" y2="262"/><line x1="84" y1="288" x2="250" y2="288"/>
+      <line x1="84" y1="314" x2="266" y2="314"/><line x1="84" y1="340" x2="240" y2="340"/>
+      <line x1="84" y1="366" x2="266" y2="366"/><line x1="84" y1="392" x2="255" y2="392"/>
+      <line x1="84" y1="418" x2="266" y2="418"/><line x1="84" y1="444" x2="238" y2="444"/>
+      <line x1="84" y1="470" x2="266" y2="470"/><line x1="84" y1="496" x2="250" y2="496"/>
+      <line x1="84" y1="522" x2="266" y2="522"/><line x1="84" y1="548" x2="244" y2="548"/>
+    </g>
+    <text x="175" y="582" text-anchor="middle" font-size="14" fill="#64748b">~/.claude · ~/.codex</text>
+  </g>
+
+  <!-- 蒸馏箭头 -->
+  <g stroke="#38bdf8" stroke-width="3" marker-end="url(#arr2)" opacity="0.9">
+    <line x1="300" y1="385" x2="392" y2="385"/>
+  </g>
+  <text x="346" y="368" text-anchor="middle" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="15" fill="#5eead4">蒸馏</text>
+  <text x="346" y="415" text-anchor="middle" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="13" fill="#64748b">带当前任务上下文去筛</text>
+
+  <!-- 右：四节 -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <g>
+      <rect x="408" y="170" width="350" height="195" rx="12" fill="#102a44" stroke="#38bdf8" stroke-width="1.6"/>
+      <text x="430" y="208" font-size="20" font-weight="700" fill="#7dd3fc">What was tried before</text>
+      <text x="430" y="236" font-size="16" fill="#cbd5e1">之前试过什么</text>
+      <text x="430" y="270" font-size="15" fill="#94a3b8">上次大致做过哪些尝试</text>
+    </g>
+    <g>
+      <rect x="790" y="170" width="350" height="195" rx="12" fill="#102a44" stroke="#f87171" stroke-width="1.6"/>
+      <text x="812" y="208" font-size="20" font-weight="700" fill="#fca5a5">What didn't work</text>
+      <text x="812" y="236" font-size="16" fill="#cbd5e1">什么没成</text>
+      <text x="812" y="270" font-size="15" fill="#94a3b8">哪些方案失败、为什么放弃</text>
+      <text x="812" y="298" font-size="15" fill="#fca5a5">→ 别再走的死路</text>
+    </g>
+    <g>
+      <rect x="408" y="375" width="350" height="195" rx="12" fill="#172554" stroke="#818cf8" stroke-width="1.6"/>
+      <text x="430" y="413" font-size="20" font-weight="700" fill="#a5b4fc">Key decisions</text>
+      <text x="430" y="441" font-size="16" fill="#cbd5e1">关键决策</text>
+      <text x="430" y="475" font-size="15" fill="#94a3b8">定下了哪些重要取舍</text>
+      <text x="430" y="503" font-size="15" fill="#94a3b8">（含「为什么没选另一个」）</text>
+    </g>
+    <g>
+      <rect x="790" y="375" width="350" height="195" rx="12" fill="#0f2942" stroke="#38bdf8" stroke-width="1.4"/>
+      <text x="812" y="413" font-size="20" font-weight="700" fill="#5eead4">Related context</text>
+      <text x="812" y="441" font-size="16" fill="#cbd5e1">相关上下文</text>
+      <text x="812" y="475" font-size="15" fill="#94a3b8">还有哪些相关背景</text>
+      <text x="812" y="503" font-size="15" fill="#64748b">（无内容的节省略，不凑数）</text>
+    </g>
+  </g>
+
+  <!-- 底注 -->
+  <rect x="408" y="586" width="732" height="62" rx="10" fill="#0c1a2e" stroke="#1e3a5f" stroke-width="1.5"/>
+  <text x="774" y="624" text-anchor="middle" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="17" fill="#cbd5e1">每条引用都指向：哪个会话摘录 · 证据路径 · 为什么现在相关</text>
+</svg>

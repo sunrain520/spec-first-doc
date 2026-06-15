@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="t d">
+  <title id="t">接手半成品的正确顺序：先读 plan → 再读 solutions → 最后看 review findings</title>
+  <desc id="d">三步接手 checklist，可截图直接发给下一个接手的人或 AI。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/><stop offset="0.6" stop-color="#0b2038"/><stop offset="1" stop-color="#162449"/>
+    </linearGradient>
+    <marker id="arr" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto">
+      <path d="M0,0 L11,6 L0,12 Z" fill="#38bdf8"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <g opacity="0.07" stroke="#7dd3fc" stroke-width="1">
+    <line x1="0" y1="180" x2="1200" y2="180"/><line x1="0" y1="360" x2="1200" y2="360"/>
+    <line x1="0" y1="540" x2="1200" y2="540"/><line x1="0" y1="720" x2="1200" y2="720"/>
+    <line x1="400" y1="0" x2="400" y2="900"/><line x1="800" y1="0" x2="800" y2="900"/>
+  </g>
+
+  <text x="60" y="74" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="34" font-weight="700" fill="#f8fafc">接手 checklist：不是读代码猜意图，是读文档拿判断</text>
+  <text x="60" y="112" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="20" fill="#94a3b8">从大到小、从意图到细节——这张图可直接截图发给下一棒</text>
+
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <!-- step 1 plan -->
+    <g>
+      <rect x="60" y="150" width="1080" height="180" rx="14" fill="#0b3a52" stroke="#38bdf8" stroke-width="2"/>
+      <circle cx="130" cy="240" r="34" fill="#38bdf8"/>
+      <text x="130" y="252" text-anchor="middle" font-size="34" font-weight="700" fill="#07111f">1</text>
+      <text x="195" y="205" font-size="26" font-weight="700" fill="#5eead4">先读 plan —— 拿边界</text>
+      <text x="195" y="245" font-size="19" fill="#cbd5e1">搞清楚这事打算怎么干、边界在哪、哪些坚决不碰</text>
+      <text x="195" y="285" font-size="17" fill="#94a3b8">✓ 目标 / 非目标 ✓ 改动区域 ✓ 风险与验证 ✓ 留给实现期的决策</text>
+      <text x="195" y="315" font-size="16" fill="#64748b">docs/plans/…-plan.md</text>
+    </g>
+    <!-- step 2 solutions -->
+    <g>
+      <rect x="60" y="358" width="1080" height="180" rx="14" fill="#102a44" stroke="#38bdf8" stroke-width="1.8"/>
+      <circle cx="130" cy="448" r="34" fill="#22d3ee"/>
+      <text x="130" y="460" text-anchor="middle" font-size="34" font-weight="700" fill="#07111f">2</text>
+      <text x="195" y="413" font-size="26" font-weight="700" fill="#7dd3fc">再读 solutions —— 避坑</text>
+      <text x="195" y="453" font-size="19" fill="#cbd5e1">搞清楚前面踩过哪些坑、有哪些光看代码看不出的既有约束</text>
+      <text x="195" y="493" font-size="17" fill="#94a3b8">✓ 隐藏约束 ✓ 当时的解法 ✓ applies_when 说明这条何时适用</text>
+      <text x="195" y="523" font-size="16" fill="#64748b">docs/solutions/…</text>
+    </g>
+    <!-- step 3 findings -->
+    <g>
+      <rect x="60" y="566" width="1080" height="180" rx="14" fill="#1a2a4a" stroke="#a5b4fc" stroke-width="1.8"/>
+      <circle cx="130" cy="656" r="34" fill="#818cf8"/>
+      <text x="130" y="668" text-anchor="middle" font-size="34" font-weight="700" fill="#07111f">3</text>
+      <text x="195" y="621" font-size="26" font-weight="700" fill="#a5b4fc">最后看 review findings —— 补活</text>
+      <text x="195" y="661" font-size="19" fill="#cbd5e1">搞清楚代码层面还有哪些已知问题没修，直接接着干</text>
+      <text x="195" y="701" font-size="17" fill="#94a3b8">✓ 带证据的 finding ✓ 已写好的验证方式 ✓ 不用重新发现 bug</text>
+      <text x="195" y="731" font-size="16" fill="#64748b">code-review 留下的 P1/P2 findings</text>
+    </g>
+  </g>
+
+  <!-- 箭头 -->
+  <g stroke="#38bdf8" stroke-width="3" marker-end="url(#arr)" opacity="0.85">
+    <line x1="130" y1="330" x2="130" y2="354"/>
+    <line x1="130" y1="538" x2="130" y2="562"/>
+  </g>
+
+  <!-- 结论 -->
+  <rect x="60" y="772" width="1080" height="96" rx="12" fill="#0c1a2e" stroke="#1e3a5f" stroke-width="1.5"/>
+  <text x="600" y="816" text-anchor="middle" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="22" fill="#e2e8f0">三步走完，几分钟从「对着半成品发呆」变成</text>
+  <text x="600" y="850" text-anchor="middle" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="22" font-weight="700" fill="#5eead4">「清楚是什么 / 边界在哪 / 有哪些坑 / 还差哪些活」</text>
+</svg>

@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="t d">
+  <title id="t">复利时间线：每次留好 handoff，下一棒不用猜</title>
+  <desc id="d">每次任务结束留好交接物，下一次接力的起点越来越高，越往后越省。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/><stop offset="0.6" stop-color="#0b2038"/><stop offset="1" stop-color="#162449"/>
+    </linearGradient>
+    <linearGradient id="rise" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#38bdf8" stop-opacity="0.15"/>
+      <stop offset="1" stop-color="#5eead4" stop-opacity="0.35"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <g opacity="0.07" stroke="#7dd3fc" stroke-width="1">
+    <line x1="0" y1="135" x2="1200" y2="135"/><line x1="0" y1="270" x2="1200" y2="270"/>
+    <line x1="0" y1="405" x2="1200" y2="405"/><line x1="0" y1="540" x2="1200" y2="540"/>
+    <line x1="300" y1="0" x2="300" y2="675"/><line x1="600" y1="0" x2="600" y2="675"/><line x1="900" y1="0" x2="900" y2="675"/>
+  </g>
+
+  <text x="60" y="76" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="34" font-weight="700" fill="#f8fafc">复利时间线：每次任务让下一次更容易</text>
+  <text x="60" y="114" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="20" fill="#94a3b8">每次留好 handoff，下一棒的起点越来越高——接力成本一路下降</text>
+
+  <!-- 上升趋势底色 -->
+  <path d="M120 540 L1080 200 L1080 540 Z" fill="url(#rise)"/>
+
+  <!-- 基线 -->
+  <line x1="120" y1="540" x2="1100" y2="540" stroke="#475569" stroke-width="2"/>
+  <text x="70" y="320" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="15" fill="#64748b" transform="rotate(-90 70 320)">可复用上下文 ↑</text>
+  <text x="1100" y="565" text-anchor="end" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="15" fill="#64748b">时间 / 任务次数 →</text>
+
+  <!-- 阶梯节点 -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <!-- 第1次 -->
+    <line x1="240" y1="540" x2="240" y2="470" stroke="#38bdf8" stroke-width="2.5" stroke-dasharray="4 4" opacity="0.7"/>
+    <circle cx="240" cy="470" r="11" fill="#64748b"/>
+    <rect x="150" y="382" width="190" height="78" rx="10" fill="#0f2942" stroke="#1e3a5f"/>
+    <text x="170" y="412" font-size="17" font-weight="700" fill="#cbd5e1">第 1 次</text>
+    <text x="170" y="438" font-size="14" fill="#94a3b8">踩坑、试错</text>
+    <text x="170" y="456" font-size="13" fill="#5eead4">→ 留 handoff + compound</text>
+
+    <!-- 第2次 -->
+    <line x1="500" y1="540" x2="500" y2="380" stroke="#38bdf8" stroke-width="2.5" stroke-dasharray="4 4" opacity="0.7"/>
+    <circle cx="500" cy="380" r="11" fill="#38bdf8"/>
+    <rect x="410" y="292" width="190" height="78" rx="10" fill="#102a44" stroke="#38bdf8"/>
+    <text x="430" y="322" font-size="17" font-weight="700" fill="#7dd3fc">第 2 次</text>
+    <text x="430" y="348" font-size="14" fill="#cbd5e1">读到上次的坑</text>
+    <text x="430" y="366" font-size="13" fill="#94a3b8">直接绕过，更快</text>
+
+    <!-- 第3次 -->
+    <line x1="760" y1="540" x2="760" y2="300" stroke="#22d3ee" stroke-width="2.5" stroke-dasharray="4 4" opacity="0.7"/>
+    <circle cx="760" cy="300" r="11" fill="#22d3ee"/>
+    <rect x="670" y="212" width="190" height="78" rx="10" fill="#102a44" stroke="#22d3ee"/>
+    <text x="690" y="242" font-size="17" font-weight="700" fill="#5eead4">第 3 次</text>
+    <text x="690" y="268" font-size="14" fill="#cbd5e1">站在前两次肩上</text>
+    <text x="690" y="286" font-size="13" fill="#94a3b8">起点更高</text>
+
+    <!-- 第N次 -->
+    <line x1="1020" y1="540" x2="1020" y2="232" stroke="#5eead4" stroke-width="2.5" stroke-dasharray="4 4" opacity="0.7"/>
+    <circle cx="1020" cy="232" r="13" fill="#5eead4"/>
+    <rect x="930" y="142" width="190" height="80" rx="10" fill="#172554" stroke="#818cf8"/>
+    <text x="950" y="172" font-size="17" font-weight="700" fill="#a5b4fc">第 N 次</text>
+    <text x="950" y="198" font-size="14" fill="#cbd5e1">docs 已成项目记忆</text>
+    <text x="950" y="216" font-size="13" fill="#94a3b8">接力只要几分钟</text>
+  </g>
+
+  <!-- 对比线：不留 handoff -->
+  <line x1="120" y1="540" x2="1100" y2="540" stroke="#f87171" stroke-width="2.5" stroke-dasharray="8 6" opacity="0.6"/>
+  <text x="1095" y="528" text-anchor="end" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="15" fill="#fca5a5">不留 handoff：第 10 次踩的还是第 1 次那个坑</text>
+
+  <text x="600" y="635" text-anchor="middle" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="20" font-weight="700" fill="#5eead4">不是让 AI 更聪明，而是让每一次任务，都让下一次更容易</text>
+</svg>

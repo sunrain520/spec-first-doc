@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="t d">
+  <title id="t">op-02 ideate→brainstorm：发散到收敛的漏斗</title>
+  <desc id="d">ideate 把想法发散成多个候选，选定一个方向后交给 brainstorm 收敛成可执行需求。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/><stop offset="0.6" stop-color="#0b2038"/><stop offset="1" stop-color="#172554"/>
+    </linearGradient>
+    <linearGradient id="funnel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b3a52" stop-opacity="0.55"/><stop offset="1" stop-color="#0c2e22" stop-opacity="0.55"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <g opacity="0.08" stroke="#7dd3fc" stroke-width="1">
+    <line x1="0" y1="180" x2="1200" y2="180"/><line x1="0" y1="360" x2="1200" y2="360"/>
+    <line x1="0" y1="540" x2="1200" y2="540"/><line x1="0" y1="720" x2="1200" y2="720"/>
+    <line x1="300" y1="0" x2="300" y2="900"/><line x1="600" y1="0" x2="600" y2="900"/><line x1="900" y1="0" x2="900" y2="900"/>
+  </g>
+
+  <text x="60" y="84" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="34" font-weight="700" fill="#f8fafc">先发散选方向，再收敛成需求</text>
+  <text x="60" y="124" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="20" fill="#94a3b8">0-1 起步段：ideate 是 brainstorm 的前一步，不能跳过 ideate 直接 plan</text>
+
+  <!-- 阶段标签 -->
+  <text x="300" y="186" text-anchor="middle" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="22" font-weight="700" fill="#38bdf8">ideate · 发散</text>
+  <text x="900" y="186" text-anchor="middle" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="22" font-weight="700" fill="#5eead4">brainstorm · 收敛</text>
+
+  <!-- 漏斗形状 -->
+  <path d="M120 220 L600 220 L600 360 L880 480 L880 560 L600 560 L600 700 L120 700 Z" fill="url(#funnel)" stroke="#1e3a5f" stroke-width="1.5" opacity="0.7"/>
+
+  <!-- 左侧：发散的多个候选 -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="150" y="244" width="200" height="48" rx="8" fill="#0f2942" stroke="#1e3a5f"/><text x="250" y="274" text-anchor="middle" font-size="17" fill="#cbd5e1">#1 搜索器</text>
+    <rect x="372" y="244" width="200" height="48" rx="8" fill="#0f2942" stroke="#1e3a5f"/><text x="472" y="274" text-anchor="middle" font-size="17" fill="#cbd5e1">#2 索引器</text>
+    <rect x="150" y="304" width="200" height="48" rx="8" fill="#0f2942" stroke="#1e3a5f"/><text x="250" y="334" text-anchor="middle" font-size="17" fill="#cbd5e1">#3 书架网页</text>
+    <rect x="372" y="304" width="200" height="48" rx="8" fill="#0f2942" stroke="#1e3a5f"/><text x="472" y="334" text-anchor="middle" font-size="17" fill="#cbd5e1">#4 启动器</text>
+  </g>
+
+  <!-- 选中 -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="606" y="392" width="252" height="76" rx="10" fill="#0b3a52" stroke="#5eead4" stroke-width="2.5"/>
+    <text x="732" y="426" text-anchor="middle" font-size="20" fill="#5eead4" font-weight="700">选定 #1 搜索器</text>
+    <text x="732" y="452" text-anchor="middle" font-size="15" fill="#a5f3e8">把握最高 · 最痛 · 最轻</text>
+  </g>
+
+  <!-- 交接箭头 -->
+  <g stroke="#5eead4" stroke-width="3" fill="none" marker-end="url(#ar2)">
+    <path d="M732 472 L732 520"/>
+  </g>
+  <defs><marker id="ar2" markerWidth="12" markerHeight="12" refX="9" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#5eead4"/></marker></defs>
+  <text x="746" y="504" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="15" fill="#5eead4">当作种子交给 brainstorm</text>
+
+  <!-- 右侧：收敛成需求 -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="606" y="560" width="478" height="120" rx="12" fill="#0c2e22" stroke="#5eead4" stroke-width="2"/>
+    <text x="630" y="600" font-size="20" fill="#5eead4" font-weight="700">收敛成一份 requirements</text>
+    <text x="630" y="632" font-size="16" fill="#cbd5e1">一次只问一个问题，把方向种子种成需求：</text>
+    <text x="630" y="660" font-size="15" fill="#94a3b8">用户 / 核心结果 / 范围边界 / 成功标准</text>
+  </g>
+
+  <!-- 底部结论 -->
+  <rect x="60" y="724" width="1080" height="130" rx="12" fill="#0c1a2e" stroke="#1e3a5f" stroke-width="1.5"/>
+  <text x="90" y="770" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="22" fill="#e2e8f0">ideate 回答"哪个方向最值得做"，brainstorm 回答"这个方向到底意味着什么"。</text>
+  <text x="90" y="810" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="22" font-weight="700" fill="#5eead4">选定的方向还很粗——必须先回 brainstorm 收敛，不能拿它直接去 plan。</text>
+  <text x="90" y="844" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="18" fill="#94a3b8">否则只是把"AI 猜方向"挪成了"AI 猜需求"</text>
+</svg>

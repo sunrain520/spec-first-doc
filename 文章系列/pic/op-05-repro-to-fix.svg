@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="t d">
+  <title id="t">op-05 复现到修复的流程</title>
+  <desc id="d">稳定复现到调查根因到写失败测试到最小修复只动根因到测试转绿并回归验证，每一环都挂着证据。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/><stop offset="0.6" stop-color="#0b2038"/><stop offset="1" stop-color="#172554"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <g opacity="0.07" stroke="#7dd3fc" stroke-width="1">
+    <line x1="0" y1="225" x2="1200" y2="225"/><line x1="0" y1="450" x2="1200" y2="450"/><line x1="0" y1="675" x2="1200" y2="675"/>
+    <line x1="400" y1="0" x2="400" y2="900"/><line x1="800" y1="0" x2="800" y2="900"/>
+  </g>
+
+  <text x="60" y="66" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="33" font-weight="700" fill="#f8fafc">从复现到修复：一条带证据的收口路径</text>
+  <text x="60" y="100" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="19" fill="#94a3b8">先复现、再调查、写失败测试、只改根因一处、转绿并回归——每一环都挂着可验证的证据</text>
+
+  <!-- 5 steps vertical with evidence on right -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <!-- step 1 -->
+    <g transform="translate(60,150)">
+      <rect width="640" height="110" rx="12" fill="#0f2942" stroke="#1e3a5f" stroke-width="1.5"/>
+      <circle cx="44" cy="55" r="26" fill="#38bdf8"/><text x="44" y="63" text-anchor="middle" font-size="26" font-weight="700" fill="#0b1220">1</text>
+      <text x="92" y="48" font-size="22" font-weight="700" fill="#f8fafc">稳定最小复现</text>
+      <text x="92" y="82" font-size="16" fill="#cbd5e1">五步每次必现；缩到不能再小</text>
+    </g>
+    <g transform="translate(740,150)">
+      <rect width="400" height="110" rx="12" fill="#0c1a2e" stroke="#5eead4" stroke-width="1.5"/>
+      <text x="24" y="42" font-size="15" font-weight="700" fill="#5eead4">证据 ▸ 复现脚本</text>
+      <text x="24" y="72" font-size="15" fill="#94a3b8">只在"编辑标签"后触发，</text>
+      <text x="24" y="94" font-size="15" fill="#94a3b8">新建不触发——线索已浮现</text>
+    </g>
+
+    <!-- step 2 -->
+    <g transform="translate(60,288)">
+      <rect width="640" height="110" rx="12" fill="#0f2942" stroke="#1e3a5f" stroke-width="1.5"/>
+      <circle cx="44" cy="55" r="26" fill="#38bdf8"/><text x="44" y="63" text-anchor="middle" font-size="26" font-weight="700" fill="#0b1220">2</text>
+      <text x="92" y="48" font-size="22" font-weight="700" fill="#f8fafc">调查到根因，讲通因果链</text>
+      <text x="92" y="82" font-size="16" fill="#cbd5e1">用假设台账逼近：根因是 useMemo 缓存依赖</text>
+    </g>
+    <g transform="translate(740,288)">
+      <rect width="400" height="110" rx="12" fill="#0c1a2e" stroke="#5eead4" stroke-width="1.5"/>
+      <text x="24" y="42" font-size="15" font-weight="700" fill="#5eead4">证据 ▸ 源码 + 运行值</text>
+      <text x="24" y="72" font-size="15" fill="#94a3b8">依赖项 [tasks.length]；</text>
+      <text x="24" y="94" font-size="15" fill="#94a3b8">原地改标签长度不变，不重算</text>
+    </g>
+
+    <!-- step 3 -->
+    <g transform="translate(60,426)">
+      <rect width="640" height="110" rx="12" fill="#0f2942" stroke="#1e3a5f" stroke-width="1.5"/>
+      <circle cx="44" cy="55" r="26" fill="#38bdf8"/><text x="44" y="63" text-anchor="middle" font-size="26" font-weight="700" fill="#0b1220">3</text>
+      <text x="92" y="48" font-size="22" font-weight="700" fill="#f8fafc">先写一个能复现 bug 的失败测试</text>
+      <text x="92" y="82" font-size="16" fill="#cbd5e1">编辑标签后断言筛选结果——它现在是红的</text>
+    </g>
+    <g transform="translate(740,426)">
+      <rect width="400" height="110" rx="12" fill="#0c1a2e" stroke="#5eead4" stroke-width="1.5"/>
+      <text x="24" y="42" font-size="15" font-weight="700" fill="#5eead4">证据 ▸ 失败测试</text>
+      <text x="24" y="72" font-size="15" fill="#94a3b8">先红才证明它真能抓住 bug，</text>
+      <text x="24" y="94" font-size="15" fill="#94a3b8">不是测了个假的</text>
+    </g>
+
+    <!-- step 4 root cause highlight -->
+    <g transform="translate(60,564)">
+      <rect width="640" height="110" rx="12" fill="#0b3a52" stroke="#38bdf8" stroke-width="2.5"/>
+      <circle cx="44" cy="55" r="26" fill="#5eead4"/><text x="44" y="63" text-anchor="middle" font-size="26" font-weight="700" fill="#0b1220">4</text>
+      <text x="92" y="48" font-size="22" font-weight="700" fill="#f8fafc">最小修复，只动根因那一处</text>
+      <text x="92" y="82" font-size="16" fill="#a5f3e8">改对 useMemo 依赖；不顺手碰 filterByTags</text>
+    </g>
+    <g transform="translate(740,564)">
+      <rect width="400" height="110" rx="12" fill="#0c1a2e" stroke="#5eead4" stroke-width="1.5"/>
+      <text x="24" y="42" font-size="15" font-weight="700" fill="#5eead4">纪律 ▸ 一次一处</text>
+      <text x="24" y="72" font-size="15" fill="#94a3b8">没修好就 revert 再试下一个，</text>
+      <text x="24" y="94" font-size="15" fill="#94a3b8">不堆多处碰运气</text>
+    </g>
+
+    <!-- step 5 -->
+    <g transform="translate(60,702)">
+      <rect width="640" height="110" rx="12" fill="#0f2942" stroke="#1e3a5f" stroke-width="1.5"/>
+      <circle cx="44" cy="55" r="26" fill="#38bdf8"/><text x="44" y="63" text-anchor="middle" font-size="26" font-weight="700" fill="#0b1220">5</text>
+      <text x="92" y="48" font-size="22" font-weight="700" fill="#f8fafc">测试转绿 + 回归验证</text>
+      <text x="92" y="82" font-size="16" fill="#cbd5e1">失败测试变绿，原有筛选行为不被冲掉</text>
+    </g>
+    <g transform="translate(740,702)">
+      <rect width="400" height="110" rx="12" fill="#0c1a2e" stroke="#5eead4" stroke-width="1.5"/>
+      <text x="24" y="42" font-size="15" font-weight="700" fill="#5eead4">证据 ▸ 测试结果</text>
+      <text x="24" y="72" font-size="15" fill="#94a3b8">绿了才算修好；</text>
+      <text x="24" y="94" font-size="15" fill="#94a3b8">"好像不崩了"不是证据</text>
+    </g>
+  </g>
+
+  <!-- connecting arrows -->
+  <g stroke="#38bdf8" stroke-width="2.5" opacity="0.75">
+    <line x1="104" y1="260" x2="104" y2="288"/>
+    <line x1="104" y1="398" x2="104" y2="426"/>
+    <line x1="104" y1="536" x2="104" y2="564"/>
+    <line x1="104" y1="674" x2="104" y2="702"/>
+  </g>
+</svg>

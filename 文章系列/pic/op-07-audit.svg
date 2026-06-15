@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="t d">
+  <title id="t">op-07 专项审计</title>
+  <desc id="d">通用 review 在底，特定领域改动再叠一道专项闸，如移动端一致性、skill 一致性。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/><stop offset="0.6" stop-color="#0b2038"/><stop offset="1" stop-color="#162449"/>
+    </linearGradient>
+    <marker id="arr" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto">
+      <path d="M0,0 L11,6 L0,12 Z" fill="#818cf8"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <g opacity="0.07" stroke="#7dd3fc" stroke-width="1">
+    <line x1="0" y1="135" x2="1200" y2="135"/><line x1="0" y1="270" x2="1200" y2="270"/>
+    <line x1="0" y1="405" x2="1200" y2="405"/><line x1="0" y1="540" x2="1200" y2="540"/>
+  </g>
+
+  <text x="60" y="70" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="34" font-weight="700" fill="#f8fafc">通用 review 之上，再加一道专项闸</text>
+  <text x="60" y="108" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="20" fill="#94a3b8">通用维度兜住大多数问题；特定领域有它自己的"对不对"，需要专门的眼睛</text>
+
+  <!-- 底座：通用 review -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="120" y="430" width="960" height="120" rx="14" fill="#0b3a52" stroke="#38bdf8" stroke-width="2"/>
+    <text x="600" y="478" text-anchor="middle" font-size="24" font-weight="700" fill="#5eead4">通用 code-review（正确性 / 测试 / 可维护性 / 规范……）</text>
+    <text x="600" y="516" text-anchor="middle" font-size="18" fill="#cbd5e1">所有改动的公共地基，兜住跨领域的通用问题</text>
+  </g>
+
+  <!-- 上层：专项闸 -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="150" y="190" width="430" height="180" rx="14" fill="#172554" stroke="#818cf8" stroke-width="2"/>
+    <text x="176" y="232" font-size="22" font-weight="700" fill="#a5b4fc">移动端一致性审计</text>
+    <g font-size="17" fill="#cbd5e1">
+      <text x="176" y="272">· 多端表现是否一致</text>
+      <text x="176" y="306">· 设计规范 / 交互状态对齐</text>
+      <text x="176" y="340">· 同样的功能 agent 也能触达</text>
+    </g>
+    <text x="176" y="364" font-size="14" fill="#64748b">（改动涉及移动端时才上）</text>
+
+    <rect x="620" y="190" width="430" height="180" rx="14" fill="#172554" stroke="#818cf8" stroke-width="2"/>
+    <text x="646" y="232" font-size="22" font-weight="700" fill="#a5b4fc">skill / 资产一致性审计</text>
+    <g font-size="17" fill="#cbd5e1">
+      <text x="646" y="272">· 入口治理是否合规</text>
+      <text x="646" y="306">· source / runtime 边界是否守住</text>
+      <text x="646" y="340">· 双宿主行为是否对齐</text>
+    </g>
+    <text x="646" y="364" font-size="14" fill="#64748b">（改 skill / 资产时才上）</text>
+  </g>
+
+  <!-- 连接 -->
+  <g stroke="#818cf8" stroke-width="2.4" marker-end="url(#arr)" opacity="0.8">
+    <line x1="365" y1="430" x2="365" y2="378"/>
+    <line x1="835" y1="430" x2="835" y2="378"/>
+  </g>
+
+  <!-- 底部判断 -->
+  <rect x="120" y="578" width="960" height="68" rx="12" fill="#0c1a2e" stroke="#1e3a5f" stroke-width="1.6"/>
+  <text x="600" y="620" text-anchor="middle" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="20" fill="#e2e8f0">本篇 todo-app 标签过滤<tspan fill="#5eead4" font-weight="700"> 不涉及移动端</tspan>，专项闸不套；涉及才上——这正是按风险匹配</text>
+</svg>

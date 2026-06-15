@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="t d">
+  <title id="t">op-01 brainstorm 收敛：一次只问一个，把模糊问成可执行</title>
+  <desc id="d">从一句模糊需求，经一问一答逐个补齐边界/约束/禁区，收敛成 requirements 文档。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/><stop offset="0.6" stop-color="#0b2038"/><stop offset="1" stop-color="#162449"/>
+    </linearGradient>
+    <linearGradient id="funnel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#38bdf8" stop-opacity="0.10"/><stop offset="1" stop-color="#818cf8" stop-opacity="0.22"/>
+    </linearGradient>
+    <marker id="arr" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto">
+      <path d="M0,0 L11,6 L0,12 Z" fill="#38bdf8"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <g opacity="0.07" stroke="#7dd3fc" stroke-width="1">
+    <line x1="0" y1="135" x2="1200" y2="135"/><line x1="0" y1="270" x2="1200" y2="270"/>
+    <line x1="0" y1="405" x2="1200" y2="405"/><line x1="0" y1="540" x2="1200" y2="540"/>
+  </g>
+
+  <text x="60" y="74" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="34" font-weight="700" fill="#f8fafc">brainstorm：一次只问一个，把模糊问清楚</text>
+  <text x="60" y="112" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="20" fill="#94a3b8">不是甩一张表让你填，是像同事一样问完一个、按你的答案再问下一个</text>
+
+  <!-- 左:模糊起点 -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="60" y="280" width="250" height="120" rx="14" fill="#3a1d1d" stroke="#f87171" stroke-width="2"/>
+    <text x="185" y="326" text-anchor="middle" font-size="20" font-weight="700" fill="#fca5a5">一句模糊需求</text>
+    <text x="185" y="358" text-anchor="middle" font-size="17" fill="#fecaca">「加个按标签</text>
+    <text x="185" y="382" text-anchor="middle" font-size="17" fill="#fecaca">过滤任务」</text>
+  </g>
+
+  <line x1="318" y1="340" x2="362" y2="340" stroke="#38bdf8" stroke-width="2.5" marker-end="url(#arr)" opacity="0.85"/>
+
+  <!-- 中:漏斗(四个一问一答) -->
+  <path d="M370 200 L830 200 L740 480 L460 480 Z" fill="url(#funnel)" stroke="#38bdf8" stroke-width="1.5" opacity="0.9"/>
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <text x="600" y="186" text-anchor="middle" font-size="18" fill="#7dd3fc" font-weight="700">逐问收敛（一问一答）</text>
+    <g>
+      <text x="600" y="244" text-anchor="middle" font-size="18" fill="#e2e8f0">Q1 多标签取交集还是并集？</text>
+      <text x="600" y="270" text-anchor="middle" font-size="16" fill="#5eead4">→ 交集</text>
+    </g>
+    <g>
+      <text x="600" y="312" text-anchor="middle" font-size="18" fill="#e2e8f0">Q2 筛完已完成任务怎么显示？</text>
+      <text x="600" y="338" text-anchor="middle" font-size="16" fill="#5eead4">→ 保留完成态分组</text>
+    </g>
+    <g>
+      <text x="600" y="380" text-anchor="middle" font-size="18" fill="#e2e8f0">Q3 要不要持久化筛选状态？</text>
+      <text x="600" y="406" text-anchor="middle" font-size="16" fill="#5eead4">→ 本轮不做</text>
+    </g>
+    <g>
+      <text x="600" y="448" text-anchor="middle" font-size="18" fill="#e2e8f0">Q4 标签管理也做吗？</text>
+      <text x="600" y="474" text-anchor="middle" font-size="16" fill="#fbbf24">→ 非目标，划出去</text>
+    </g>
+  </g>
+
+  <line x1="838" y1="340" x2="882" y2="340" stroke="#818cf8" stroke-width="2.5" marker-end="url(#arr)" opacity="0.85"/>
+
+  <!-- 右:收敛产物 -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="890" y="250" width="250" height="180" rx="14" fill="#172554" stroke="#818cf8" stroke-width="2"/>
+    <text x="1015" y="292" text-anchor="middle" font-size="20" font-weight="700" fill="#a5b4fc">requirements.md</text>
+    <text x="912" y="328" font-size="16" fill="#cbd5e1">✓ 背景 / 用户场景</text>
+    <text x="912" y="356" font-size="16" fill="#cbd5e1">✓ 需求（多标签交集…）</text>
+    <text x="912" y="384" font-size="16" fill="#fbbf24">✓ 非目标（不做什么）</text>
+    <text x="912" y="412" font-size="16" fill="#cbd5e1">✓ 成功标准</text>
+  </g>
+
+  <text x="600" y="580" text-anchor="middle" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="22" font-weight="700" fill="#7dd3fc">这些窟窿，要么你现在填，要么 AI 待会儿替你猜着填</text>
+  <text x="600" y="618" text-anchor="middle" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="18" fill="#94a3b8">「非目标」是这份文档最贵的部分——一道挡住 scope 漂移的闸</text>
+</svg>

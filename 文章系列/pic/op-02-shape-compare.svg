@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="t d">
+  <title id="t">op-02 链路形状对比：0-1 前段重后段轻 vs 1-10 起步轻</title>
+  <desc id="d">0-1 比 1-10 在起步段多了 ideate，力量前重后轻；1-10 起步轻、力气在中后段。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/><stop offset="0.6" stop-color="#0b2038"/><stop offset="1" stop-color="#162449"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <g opacity="0.08" stroke="#7dd3fc" stroke-width="1">
+    <line x1="0" y1="135" x2="1200" y2="135"/><line x1="0" y1="270" x2="1200" y2="270"/>
+    <line x1="0" y1="405" x2="1200" y2="405"/><line x1="0" y1="540" x2="1200" y2="540"/>
+    <line x1="300" y1="0" x2="300" y2="675"/><line x1="600" y1="0" x2="600" y2="675"/><line x1="900" y1="0" x2="900" y2="675"/>
+  </g>
+
+  <text x="60" y="74" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="34" font-weight="700" fill="#f8fafc">0-1 链路：前段重、后段轻</text>
+  <text x="60" y="112" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="19" fill="#64748b">建议先截图存下 · 一眼分清 0-1 和 1-10 该把力气花在哪</text>
+
+  <!-- 1-10 行 -->
+  <text x="60" y="186" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="22" font-weight="700" fill="#94a3b8">1-10（op-01）· 起步轻</text>
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-weight="600">
+    <rect x="60" y="208" width="150" height="58" rx="9" fill="#0f2942" stroke="#1e3a5f" stroke-width="1.5"/><text x="135" y="244" text-anchor="middle" font-size="18" fill="#94a3b8">brainstorm</text>
+    <rect x="246" y="208" width="216" height="74" rx="9" fill="#1e3a5f" stroke="#475569" stroke-width="1.5"/><text x="354" y="251" text-anchor="middle" font-size="18" fill="#cbd5e1">plan → work →</text>
+    <rect x="498" y="208" width="240" height="74" rx="9" fill="#1e3a5f" stroke="#475569" stroke-width="1.5"/><text x="618" y="251" text-anchor="middle" font-size="18" fill="#cbd5e1">review → compound</text>
+  </g>
+  <text x="770" y="252" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="17" fill="#64748b">形状已定，brainstorm 直接填窟窿；力气在中后段</text>
+
+  <!-- 0-1 行 -->
+  <text x="60" y="346" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="22" font-weight="700" fill="#5eead4">0-1（op-02）· 起步重</text>
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-weight="600">
+    <rect x="60" y="368" width="170" height="92" rx="9" fill="#0b3a52" stroke="#5eead4" stroke-width="2.5"/><text x="145" y="412" text-anchor="middle" font-size="19" fill="#5eead4">ideate</text><text x="145" y="438" text-anchor="middle" font-size="14" fill="#a5f3e8">发散选方向</text>
+    <rect x="248" y="368" width="190" height="92" rx="9" fill="#0b3a52" stroke="#38bdf8" stroke-width="2.5"/><text x="343" y="412" text-anchor="middle" font-size="19" fill="#7dd3fc">brainstorm</text><text x="343" y="438" text-anchor="middle" font-size="14" fill="#bae6fd">收敛成需求</text>
+    <rect x="456" y="378" width="200" height="72" rx="9" fill="#1e3a5f" stroke="#475569" stroke-width="1.5"/><text x="556" y="420" text-anchor="middle" font-size="18" fill="#cbd5e1">plan → work →</text>
+    <rect x="672" y="378" width="220" height="72" rx="9" fill="#1e3a5f" stroke="#475569" stroke-width="1.5"/><text x="782" y="420" text-anchor="middle" font-size="18" fill="#cbd5e1">review → compound</text>
+  </g>
+  <!-- 重段标注 -->
+  <path d="M60 472 L438 472" stroke="#5eead4" stroke-width="3" fill="none"/>
+  <text x="249" y="500" text-anchor="middle" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="17" fill="#5eead4" font-weight="700">最重、最不能省（命门）</text>
+  <path d="M456 472 L892 472" stroke="#475569" stroke-width="2" fill="none" stroke-dasharray="6 5"/>
+  <text x="674" y="500" text-anchor="middle" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="17" fill="#64748b">趋同 op-01，只记几个微差异</text>
+
+  <!-- 底部结论 -->
+  <rect x="60" y="528" width="1080" height="118" rx="12" fill="#0c1a2e" stroke="#818cf8" stroke-width="2"/>
+  <text x="90" y="572" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="22" fill="#e2e8f0">面对一个新东西，别急着进 plan、别急着写代码——</text>
+  <text x="90" y="610" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="22" font-weight="700" fill="#5eead4">把最多的耐心留给最前面的"选方向"。前面对了，后面就是跑熟的老路。</text>
+  <text x="90" y="638" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="17" fill="#94a3b8">坐标变了，变的是前面需求阶段；中间 plan→work→review→compound 基本不动</text>
+</svg>

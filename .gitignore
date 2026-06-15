@@ -31,3 +31,8 @@ graphify-out/.graphify_python
 
 # macOS
 .DS_Store
+
+# local runtime/provider caches
+.claude/CLAUDE.md
+.spec-first/cache/
+graphify-out/

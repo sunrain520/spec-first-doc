@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="t d">
+  <title id="t">docs 三件套作为跨会话记忆载体</title>
+  <desc id="d">requirements 记 WHAT、plan 记 HOW 的边界、solutions 记踩过的坑，各堵一种接力盲区。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/><stop offset="0.6" stop-color="#0b2038"/><stop offset="1" stop-color="#162449"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <g opacity="0.08" stroke="#7dd3fc" stroke-width="1">
+    <line x1="0" y1="135" x2="1200" y2="135"/><line x1="0" y1="270" x2="1200" y2="270"/>
+    <line x1="0" y1="405" x2="1200" y2="405"/><line x1="0" y1="540" x2="1200" y2="540"/>
+    <line x1="300" y1="0" x2="300" y2="675"/><line x1="600" y1="0" x2="600" y2="675"/><line x1="900" y1="0" x2="900" y2="675"/>
+  </g>
+
+  <text x="60" y="76" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="34" font-weight="700" fill="#f8fafc">docs 三件套：跨会话、跨人、跨 AI 的项目记忆</text>
+  <text x="60" y="114" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="21" fill="#94a3b8">对话是过程，会蒸发；文档是产物，留得下——三件套各堵一种接力盲区</text>
+
+  <!-- requirements -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="60" y="165" width="345" height="345" rx="14" fill="#0b3a52" stroke="#38bdf8" stroke-width="2"/>
+    <text x="84" y="210" font-size="24" font-weight="700" fill="#5eead4">requirements</text>
+    <text x="84" y="244" font-size="22" font-weight="700" fill="#f8fafc">记 WHAT</text>
+    <line x1="84" y1="262" x2="381" y2="262" stroke="#1e3a5f" stroke-width="1.2"/>
+    <text x="84" y="296" font-size="17" fill="#cbd5e1">· 做什么、为谁做</text>
+    <text x="84" y="328" font-size="17" fill="#cbd5e1">· 做到什么程度</text>
+    <text x="84" y="360" font-size="17" fill="#cbd5e1">· 这轮不做什么（非目标）</text>
+    <rect x="84" y="392" width="297" height="96" rx="8" fill="#0c1a2e" stroke="#1e3a5f"/>
+    <text x="100" y="422" font-size="15" fill="#94a3b8">堵盲区：</text>
+    <text x="100" y="450" font-size="16" fill="#7dd3fc">「这功能要干到哪」</text>
+    <text x="100" y="476" font-size="15" fill="#94a3b8">→ 接手者一眼看到边界，不越界</text>
+  </g>
+
+  <!-- plan -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="428" y="165" width="344" height="345" rx="14" fill="#102a44" stroke="#38bdf8" stroke-width="1.8"/>
+    <text x="452" y="210" font-size="24" font-weight="700" fill="#7dd3fc">plan</text>
+    <text x="452" y="244" font-size="22" font-weight="700" fill="#f8fafc">记 HOW 的边界</text>
+    <line x1="452" y1="262" x2="748" y2="262" stroke="#1e3a5f" stroke-width="1.2"/>
+    <text x="452" y="296" font-size="17" fill="#cbd5e1">· 大致改哪些地方</text>
+    <text x="452" y="328" font-size="17" fill="#cbd5e1">· 风险点与怎么验证</text>
+    <text x="452" y="360" font-size="17" fill="#cbd5e1">· 哪些决策留给实现期</text>
+    <rect x="452" y="392" width="296" height="96" rx="8" fill="#0c1a2e" stroke="#1e3a5f"/>
+    <text x="468" y="422" font-size="15" fill="#94a3b8">堵盲区：</text>
+    <text x="468" y="450" font-size="16" fill="#7dd3fc">「当初打算怎么落地」</text>
+    <text x="468" y="476" font-size="15" fill="#94a3b8">→ 不漏关键约束与验证点</text>
+  </g>
+
+  <!-- solutions -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="795" y="165" width="345" height="345" rx="14" fill="#172554" stroke="#818cf8" stroke-width="2"/>
+    <text x="819" y="210" font-size="24" font-weight="700" fill="#a5b4fc">solutions</text>
+    <text x="819" y="244" font-size="22" font-weight="700" fill="#f8fafc">记踩过的坑</text>
+    <line x1="819" y1="262" x2="1116" y2="262" stroke="#1e3a5f" stroke-width="1.2"/>
+    <text x="819" y="296" font-size="17" fill="#cbd5e1">· 哪个隐藏约束坑过你</text>
+    <text x="819" y="328" font-size="17" fill="#cbd5e1">· 当时怎么解的</text>
+    <text x="819" y="360" font-size="17" fill="#cbd5e1">· 怎么验证解对了</text>
+    <rect x="819" y="392" width="297" height="96" rx="8" fill="#0c1a2e" stroke="#1e3a5f"/>
+    <text x="835" y="422" font-size="15" fill="#94a3b8">堵盲区：</text>
+    <text x="835" y="450" font-size="16" fill="#a5b4fc">「哪些坑已有人踩过」</text>
+    <text x="835" y="476" font-size="15" fill="#94a3b8">→ 不重复踩同一个坑</text>
+  </g>
+
+  <!-- 底部判断 -->
+  <rect x="60" y="540" width="1080" height="95" rx="12" fill="#0c1a2e" stroke="#1e3a5f" stroke-width="1.5"/>
+  <text x="90" y="585" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="22" fill="#e2e8f0">接力的基础设施不用额外建——你按链路正常跑，把三件套留下，</text>
+  <text x="90" y="618" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="22" font-weight="700" fill="#5eead4">它就自动建好了</text>
+</svg>

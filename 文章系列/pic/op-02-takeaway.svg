@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="t d">
+  <title id="t">op-02 可带走判断：0-1 起步的两个自检问题</title>
+  <desc id="d">两个自检问题：先问形状定了没有；再把耐心留给最前面的选方向。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/><stop offset="0.6" stop-color="#0b2038"/><stop offset="1" stop-color="#162449"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <g opacity="0.08" stroke="#7dd3fc" stroke-width="1">
+    <line x1="0" y1="135" x2="1200" y2="135"/><line x1="0" y1="270" x2="1200" y2="270"/>
+    <line x1="0" y1="405" x2="1200" y2="405"/><line x1="0" y1="540" x2="1200" y2="540"/>
+    <line x1="300" y1="0" x2="300" y2="675"/><line x1="600" y1="0" x2="600" y2="675"/><line x1="900" y1="0" x2="900" y2="675"/>
+  </g>
+
+  <text x="60" y="80" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="34" font-weight="700" fill="#f8fafc">面对新东西，先问自己这两个问题</text>
+
+  <!-- 问题一 -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="60" y="128" width="1080" height="190" rx="14" fill="#0f2942" stroke="#38bdf8" stroke-width="2"/>
+    <circle cx="118" cy="186" r="30" fill="#0b3a52" stroke="#38bdf8" stroke-width="2"/>
+    <text x="118" y="196" text-anchor="middle" font-size="30" font-weight="700" fill="#7dd3fc">1</text>
+    <text x="172" y="180" font-size="26" font-weight="700" fill="#f8fafc">它的"形状"定了没有？</text>
+    <text x="172" y="218" font-size="18" fill="#cbd5e1">主要谁在用 / 核心要产出什么 / 和邻近产品的位置 / 主流程是什么</text>
+    <rect x="172" y="240" width="430" height="56" rx="8" fill="#3a1518" stroke="#f87171" stroke-width="1.5"/>
+    <text x="192" y="276" font-size="18" fill="#fca5a5">没定 → 0-1，走 ideate 发散选方向</text>
+    <rect x="620" y="240" width="430" height="56" rx="8" fill="#0c2e22" stroke="#5eead4" stroke-width="1.5"/>
+    <text x="640" y="276" font-size="18" fill="#5eead4">定了 → 1-10，直接 brainstorm 填窟窿</text>
+  </g>
+  <text x="172" y="338" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="16" fill="#64748b">分界不是"新旧"，是"形状定没定"——老仓库里的新模块也可能是 0-1</text>
+
+  <!-- 问题二 -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="60" y="364" width="1080" height="170" rx="14" fill="#0f2942" stroke="#5eead4" stroke-width="2"/>
+    <circle cx="118" cy="422" r="30" fill="#0c2e22" stroke="#5eead4" stroke-width="2"/>
+    <text x="118" y="432" text-anchor="middle" font-size="30" font-weight="700" fill="#5eead4">2</text>
+    <text x="172" y="416" font-size="26" font-weight="700" fill="#f8fafc">我的耐心，花在最前面了吗？</text>
+    <text x="172" y="454" font-size="18" fill="#cbd5e1">0-1 力量前重后轻：ideate + brainstorm 顶死不能省</text>
+    <text x="172" y="490" font-size="18" fill="#cbd5e1">后段 plan→work→review→compound 趋同 op-01，只记几个微差异</text>
+    <text x="172" y="520" font-size="16" fill="#64748b">work 的第一发 tracer bullet 要尽早触碰最不确定的核心假设</text>
+  </g>
+
+  <!-- 底部金句 -->
+  <rect x="60" y="560" width="1080" height="86" rx="12" fill="#172554" stroke="#818cf8" stroke-width="2"/>
+  <text x="600" y="600" text-anchor="middle" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="23" font-weight="700" fill="#a5b4fc">方向那一步省了，后面盖得越快，塌得越彻底。</text>
+  <text x="600" y="632" text-anchor="middle" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="18" fill="#cbd5e1">选方向是有方法、能跑的，不是拍脑袋</text>
+</svg>

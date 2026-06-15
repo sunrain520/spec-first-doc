@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="t d">
+  <title id="t">op-07 不敢上线的焦虑</title>
+  <desc id="d">AI 写得飞快，但飞快写出来的敢不敢上线是另一回事：四个不敢信的画面。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/><stop offset="0.6" stop-color="#0b2038"/><stop offset="1" stop-color="#162449"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <g opacity="0.07" stroke="#7dd3fc" stroke-width="1">
+    <line x1="0" y1="135" x2="1200" y2="135"/><line x1="0" y1="270" x2="1200" y2="270"/>
+    <line x1="0" y1="405" x2="1200" y2="405"/><line x1="0" y1="540" x2="1200" y2="540"/>
+    <line x1="600" y1="0" x2="600" y2="675"/>
+  </g>
+
+  <text x="60" y="74" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="34" font-weight="700" fill="#f8fafc">AI 写得飞快，敢不敢上线是另一回事</text>
+  <text x="60" y="112" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="20" fill="#94a3b8">代码看起来都对，但鼠标停在上线键上，你说不出哪里靠得住</text>
+
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <!-- card 1 -->
+    <g>
+      <rect x="60" y="156" width="520" height="150" rx="14" fill="#3a1d1d" stroke="#f87171" stroke-width="1.6"/>
+      <text x="86" y="200" font-size="23" font-weight="700" fill="#fca5a5">它漏了边界吗？</text>
+      <text x="86" y="238" font-size="18" fill="#fecaca">空结果、全清空这些角落，它处理了没有</text>
+      <text x="86" y="270" font-size="18" fill="#fecaca">我没看到测试，也不知道它测没测</text>
+    </g>
+    <!-- card 2 -->
+    <g>
+      <rect x="620" y="156" width="520" height="150" rx="14" fill="#3a1d1d" stroke="#f87171" stroke-width="1.6"/>
+      <text x="646" y="200" font-size="23" font-weight="700" fill="#fca5a5">它踩了既有约束吗？</text>
+      <text x="646" y="238" font-size="18" fill="#fecaca">仓库里那些隐藏规则，它读到了吗</text>
+      <text x="646" y="270" font-size="18" fill="#fecaca">改这块会不会把旁边的逻辑冲掉</text>
+    </g>
+    <!-- card 3 -->
+    <g>
+      <rect x="60" y="326" width="520" height="150" rx="14" fill="#3a1d1d" stroke="#f87171" stroke-width="1.6"/>
+      <text x="86" y="370" font-size="23" font-weight="700" fill="#fca5a5">它顺手改了别的吗？</text>
+      <text x="86" y="408" font-size="18" fill="#fecaca">diff 里有没有我没要求的"优化"</text>
+      <text x="86" y="440" font-size="18" fill="#fecaca">这些改动没人 review 就要上线了</text>
+    </g>
+    <!-- card 4 -->
+    <g>
+      <rect x="620" y="326" width="520" height="150" rx="14" fill="#3a1d1d" stroke="#f87171" stroke-width="1.6"/>
+      <text x="646" y="370" font-size="23" font-weight="700" fill="#fca5a5">我凭什么敢信它对？</text>
+      <text x="646" y="408" font-size="18" fill="#fecaca">"应该没问题吧"——这不是信心</text>
+      <text x="646" y="440" font-size="18" fill="#fecaca">出事了我得负责，可我说不出证据</text>
+    </g>
+  </g>
+
+  <!-- 底部结论 -->
+  <rect x="60" y="510" width="1080" height="118" rx="14" fill="#0c1a2e" stroke="#1e3a5f" stroke-width="1.6"/>
+  <text x="90" y="558" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="23" fill="#e2e8f0">这四个问题的共同点：你心里有疑，手里却<tspan fill="#f87171" font-weight="700">没有证据</tspan></text>
+  <text x="90" y="600" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="23" font-weight="700" fill="#5eead4">上线信心不是赌 AI 聪明，是把每个疑问都换成一条可追溯的证据</text>
+</svg>

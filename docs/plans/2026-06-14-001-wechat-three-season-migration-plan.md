@@ -101,7 +101,7 @@ metadata:
 6.2 `文章系列/已发布台账.md`：第二季/第三季表头与路径指针更新。
 6.3 `运营规划/README.md`：编号清单加 008、季对应树更新。
 6.4 `运营规划/003-系统总框架.md`：引用 skill 剖析目录处更新。
-6.5 `.skills/spec-wechat-publish/SKILL.md`：argument-hint 示例、路线图指针核对（扫描已递归，无需改逻辑）。
+6.5 `skills/spec-wechat-publish/SKILL.md`：argument-hint 示例、路线图指针核对（扫描已递归，无需改逻辑）。
 
 ### 步骤 7：CHANGELOG + 全局核验
 

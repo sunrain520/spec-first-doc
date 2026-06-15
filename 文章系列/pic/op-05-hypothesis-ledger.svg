@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="t d">
+  <title id="t">op-05 hypothesis ledger 六字段台账</title>
+  <desc id="d">用本案例的三个真实假设填满 hypothesis/prediction/evidence_for/evidence_against/probe_result/final_root_cause。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/><stop offset="0.6" stop-color="#0b2038"/><stop offset="1" stop-color="#172554"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <g opacity="0.07" stroke="#7dd3fc" stroke-width="1">
+    <line x1="0" y1="180" x2="1200" y2="180"/><line x1="0" y1="360" x2="1200" y2="360"/>
+    <line x1="0" y1="540" x2="1200" y2="540"/><line x1="0" y1="720" x2="1200" y2="720"/>
+    <line x1="300" y1="0" x2="300" y2="900"/><line x1="600" y1="0" x2="600" y2="900"/><line x1="900" y1="0" x2="900" y2="900"/>
+  </g>
+
+  <text x="60" y="68" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="33" font-weight="700" fill="#f8fafc">hypothesis ledger：把假设变成可追踪的推演</text>
+  <text x="60" y="103" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="19" fill="#94a3b8">bug：编辑任务标签后，按新标签筛选，任务被漏掉（工作草稿，不落盘）</text>
+
+  <!-- 表头 -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="15" font-weight="700" fill="#38bdf8">
+    <rect x="60" y="124" width="1080" height="40" rx="6" fill="#0c1a2e" stroke="#1e3a5f" stroke-width="1"/>
+    <text x="78" y="150">字段</text>
+    <text x="300" y="150">假设 1</text>
+    <text x="580" y="150">假设 2</text>
+    <text x="860" y="150">假设 3</text>
+  </g>
+
+  <!-- 行标签列 -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="15" fill="#5eead4" font-weight="600">
+    <text x="78" y="210">hypothesis</text>
+    <text x="78" y="310">prediction</text>
+    <text x="78" y="410">evidence_for</text>
+    <text x="78" y="500">evidence_against</text>
+    <text x="78" y="585">probe_result</text>
+    <text x="78" y="700">final_root_cause</text>
+  </g>
+
+  <!-- 列分隔背景 -->
+  <g opacity="0.4">
+    <rect x="250" y="176" width="270" height="586" rx="8" fill="#0f2942" stroke="#1e3a5f" stroke-width="1"/>
+    <rect x="530" y="176" width="270" height="586" rx="8" fill="#0f2942" stroke="#1e3a5f" stroke-width="1"/>
+    <rect x="810" y="176" width="330" height="586" rx="8" fill="#0b3a52" stroke="#38bdf8" stroke-width="1.5"/>
+  </g>
+
+  <!-- 假设1 列 -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="14" fill="#cbd5e1">
+    <text x="268" y="205">filterByTags 交集</text>
+    <text x="268" y="225">逻辑写错了</text>
+    <text x="268" y="305">新建带"紧急"</text>
+    <text x="268" y="325">的任务也该漏</text>
+    <text x="268" y="405">症状是筛选</text>
+    <text x="268" y="425">结果不对</text>
+    <text x="268" y="498" fill="#64748b">—</text>
+    <text x="268" y="580">新建筛选正常</text>
+    <text x="268" y="600" fill="#f87171">→ 预测落空</text>
+    <text x="268" y="695" font-weight="700" fill="#f87171">✗ 推翻</text>
+  </g>
+
+  <!-- 假设2 列 -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="14" fill="#cbd5e1">
+    <text x="548" y="205">喂给筛选的</text>
+    <text x="548" y="225">数据是过期的</text>
+    <text x="548" y="305">筛到的 A 标签</text>
+    <text x="548" y="325">应是旧值["工作"]</text>
+    <text x="548" y="405">复现证实只有</text>
+    <text x="548" y="425">"编辑"路径触发</text>
+    <text x="548" y="498" fill="#64748b">—</text>
+    <text x="548" y="570">入口打印：</text>
+    <text x="548" y="590">A.tags=["工作"]</text>
+    <text x="548" y="610" fill="#5eead4">→ 命中</text>
+    <text x="548" y="695" font-weight="700" fill="#5eead4">✓ 方向确认</text>
+  </g>
+
+  <!-- 假设3 列 -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="14" fill="#e2e8f0">
+    <text x="828" y="205">过期数据来自</text>
+    <text x="828" y="225">未失效的缓存</text>
+    <text x="828" y="305">能找到依赖项</text>
+    <text x="828" y="325">不完整的 useMemo</text>
+    <text x="828" y="405">A 拿到旧标签，</text>
+    <text x="828" y="425">说明读的是快照</text>
+    <text x="828" y="498" fill="#64748b">—</text>
+    <text x="828" y="565">源码找到</text>
+    <text x="828" y="585" font-family="monospace" font-size="13" fill="#7dd3fc">useMemo(,[tasks.length])</text>
+    <text x="828" y="605">原地编辑不改 length</text>
+    <text x="828" y="690" font-weight="700" fill="#5eead4">✓ 依赖项不完整</text>
+    <text x="828" y="712" font-weight="700" fill="#5eead4">= 真正根因</text>
+  </g>
+
+  <!-- 底部判断 -->
+  <rect x="60" y="788" width="1080" height="86" rx="12" fill="#172554" stroke="#818cf8" stroke-width="2"/>
+  <text x="90" y="828" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="20" fill="#e2e8f0">三个假设、三轮验证，从"被症状误导"走到"根因落地"。</text>
+  <text x="90" y="858" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="20" font-weight="700" fill="#a5b4fc">推翻的假设也留着——它是给后面的自己省下重复劳动的路标。</text>
+</svg>

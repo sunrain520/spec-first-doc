@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="t d">
+  <title id="t">op-02 ideate 发散：多个方向候选 + 评分淘汰</title>
+  <desc id="d">ideate 把一句模糊想法摊成多个方向候选，统一评分后只留下打过分的 survivor。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/><stop offset="0.6" stop-color="#0b2038"/><stop offset="1" stop-color="#172554"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <g opacity="0.08" stroke="#7dd3fc" stroke-width="1">
+    <line x1="0" y1="180" x2="1200" y2="180"/><line x1="0" y1="360" x2="1200" y2="360"/>
+    <line x1="0" y1="540" x2="1200" y2="540"/><line x1="0" y1="720" x2="1200" y2="720"/>
+    <line x1="300" y1="0" x2="300" y2="900"/><line x1="600" y1="0" x2="600" y2="900"/><line x1="900" y1="0" x2="900" y2="900"/>
+  </g>
+
+  <text x="60" y="84" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="34" font-weight="700" fill="#f8fafc">ideate：先发散出多个方向，再评分淘汰</text>
+  <text x="60" y="124" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="20" fill="#94a3b8">先尽量多地生成 → 批判性地全筛一遍 → 只解释活下来的那几个</text>
+
+  <!-- 源头 -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="60" y="380" width="220" height="120" rx="12" fill="#0b3a52" stroke="#38bdf8" stroke-width="2"/>
+    <text x="170" y="430" text-anchor="middle" font-size="22" fill="#7dd3fc" font-weight="700">一句模糊想法</text>
+    <text x="170" y="462" text-anchor="middle" font-size="16" fill="#cbd5e1">管理本地脚本</text>
+  </g>
+
+  <!-- 发散箭头 -->
+  <g stroke="#38bdf8" stroke-width="2.5" fill="none" opacity="0.8">
+    <path d="M280 420 C360 300 400 250 440 222"/>
+    <path d="M280 432 C360 380 400 360 440 352"/>
+    <path d="M280 448 C360 470 400 480 440 488"/>
+    <path d="M280 460 C360 560 400 600 440 622"/>
+  </g>
+
+  <!-- 4 个候选卡片 -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <!-- #1 搜索器 -->
+    <rect x="448" y="186" width="430" height="92" rx="10" fill="#0b3a52" stroke="#5eead4" stroke-width="2.5"/>
+    <text x="472" y="222" font-size="20" fill="#5eead4" font-weight="700">#1 带描述的脚本搜索器</text>
+    <text x="472" y="252" font-size="16" fill="#a5f3e8">从"最痛的摩擦"出发 · 命中"找不到"</text>
+    <rect x="700" y="200" width="156" height="32" rx="6" fill="#0c2e22"/>
+    <text x="778" y="222" text-anchor="middle" font-size="15" fill="#5eead4">把握高 · 复杂度低</text>
+
+    <!-- #2 索引器 -->
+    <rect x="448" y="316" width="430" height="92" rx="10" fill="#0f2942" stroke="#1e3a5f" stroke-width="1.5"/>
+    <text x="472" y="352" font-size="20" fill="#cbd5e1" font-weight="600">#2 自动扫描+注释提取索引器</text>
+    <text x="472" y="382" font-size="16" fill="#64748b">从"把手动变自动"出发</text>
+    <rect x="700" y="330" width="156" height="32" rx="6" fill="#0c1a2e"/>
+    <text x="778" y="352" text-anchor="middle" font-size="15" fill="#94a3b8">把握中 · 复杂度中</text>
+
+    <!-- #3 网页 -->
+    <rect x="448" y="446" width="430" height="92" rx="10" fill="#0f2942" stroke="#1e3a5f" stroke-width="1.5"/>
+    <text x="472" y="482" font-size="20" fill="#cbd5e1" font-weight="600">#3 书架式本地小网页</text>
+    <text x="472" y="512" font-size="16" fill="#64748b">从"跨域类比"出发 · 浏览体验最好</text>
+    <rect x="700" y="460" width="156" height="32" rx="6" fill="#0c1a2e"/>
+    <text x="778" y="482" text-anchor="middle" font-size="15" fill="#94a3b8">把握中 · 偏高</text>
+
+    <!-- #4 启动器 -->
+    <rect x="448" y="576" width="430" height="92" rx="10" fill="#0f2942" stroke="#1e3a5f" stroke-width="1.5"/>
+    <text x="472" y="612" font-size="20" fill="#cbd5e1" font-weight="600">#4 统一脚本启动器</text>
+    <text x="472" y="642" font-size="16" fill="#64748b">解决"记不住怎么跑"，但不是最痛</text>
+    <rect x="700" y="590" width="156" height="32" rx="6" fill="#0c1a2e"/>
+    <text x="778" y="612" text-anchor="middle" font-size="15" fill="#94a3b8">偏低 · 留作后续</text>
+  </g>
+
+  <!-- 评分维度侧栏 -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="908" y="186" width="232" height="482" rx="12" fill="#172554" stroke="#818cf8" stroke-width="2"/>
+    <text x="1024" y="224" text-anchor="middle" font-size="20" font-weight="700" fill="#a5b4fc">同一把尺子评分</text>
+    <text x="930" y="266" font-size="16" fill="#cbd5e1">· 依据强度（观察&gt;推理）</text>
+    <text x="930" y="302" font-size="16" fill="#cbd5e1">· 预期价值</text>
+    <text x="930" y="338" font-size="16" fill="#cbd5e1">· 新颖度</text>
+    <text x="930" y="374" font-size="16" fill="#cbd5e1">· 务实度</text>
+    <text x="930" y="410" font-size="16" fill="#cbd5e1">· 对未来的杠杆</text>
+    <text x="930" y="446" font-size="16" fill="#cbd5e1">· 实现负担</text>
+    <text x="930" y="482" font-size="16" fill="#cbd5e1">· 与更强候选重叠</text>
+    <line x1="930" y1="506" x2="1118" y2="506" stroke="#1e3a5f" stroke-width="1"/>
+    <text x="930" y="544" font-size="16" fill="#5eead4" font-weight="600">每个 survivor 带：</text>
+    <text x="930" y="576" font-size="15" fill="#a5f3e8">· 把握度评分</text>
+    <text x="930" y="606" font-size="15" fill="#a5f3e8">· 复杂度估计</text>
+    <text x="930" y="644" font-size="15" fill="#94a3b8">不合格的直接砍掉</text>
+  </g>
+
+  <!-- 底部结论 -->
+  <rect x="60" y="710" width="1080" height="140" rx="12" fill="#0c1a2e" stroke="#1e3a5f" stroke-width="1.5"/>
+  <text x="90" y="756" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="22" fill="#e2e8f0">ideate 不是只帮你"多想几个点子"——它带着评分和淘汰。</text>
+  <text x="90" y="796" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="22" font-weight="700" fill="#5eead4">它把你从"二十个杂乱点子"拉到"在收窄过、可比的清单上做选择"。</text>
+  <text x="90" y="832" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="18" fill="#94a3b8">产出落 docs/ideation/ —— 它不产出需求、不产出计划、不产出代码</text>
+</svg>

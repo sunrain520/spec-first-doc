@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="t d">
+  <title id="t">op-07 上线信心清单</title>
+  <desc id="d">证据齐了吗、验证过了吗、按规则审了吗、残余风险记了吗——四项打勾才叫敢上线。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/><stop offset="0.6" stop-color="#0b2038"/><stop offset="1" stop-color="#162449"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <g opacity="0.07" stroke="#7dd3fc" stroke-width="1">
+    <line x1="0" y1="135" x2="1200" y2="135"/><line x1="0" y1="270" x2="1200" y2="270"/>
+    <line x1="0" y1="405" x2="1200" y2="405"/><line x1="0" y1="540" x2="1200" y2="540"/>
+  </g>
+
+  <text x="60" y="74" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="36" font-weight="700" fill="#f8fafc">上线信心清单 · 四项</text>
+  <text x="60" y="114" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="20" fill="#94a3b8">按下上线键前，对照这四问——都能答"是"，才叫敢，不叫赌（建议截图存下）</text>
+
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <!-- 1 证据 -->
+    <g>
+      <rect x="60" y="150" width="1080" height="104" rx="14" fill="#0f2942" stroke="#38bdf8" stroke-width="1.8"/>
+      <rect x="84" y="174" width="56" height="56" rx="10" fill="#0b3a52" stroke="#38bdf8"/>
+      <path d="M97,202 l10,11 l20,-22" stroke="#5eead4" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="172" y="192" font-size="24" font-weight="700" fill="#7dd3fc">① 证据齐了吗</text>
+      <text x="172" y="228" font-size="18" fill="#cbd5e1">每条结论都指得到具体文件/行/输入，不是"感觉没问题"</text>
+    </g>
+    <!-- 2 验证 -->
+    <g>
+      <rect x="60" y="266" width="1080" height="104" rx="14" fill="#0f2942" stroke="#38bdf8" stroke-width="1.8"/>
+      <rect x="84" y="290" width="56" height="56" rx="10" fill="#0b3a52" stroke="#38bdf8"/>
+      <path d="M97,318 l10,11 l20,-22" stroke="#5eead4" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="172" y="308" font-size="24" font-weight="700" fill="#7dd3fc">② 验证过了吗</text>
+      <text x="172" y="344" font-size="18" fill="#cbd5e1">空结果/边界/回归都有测试兜底，并且实际跑绿了</text>
+    </g>
+    <!-- 3 规则 -->
+    <g>
+      <rect x="60" y="382" width="1080" height="104" rx="14" fill="#0f2942" stroke="#38bdf8" stroke-width="1.8"/>
+      <rect x="84" y="406" width="56" height="56" rx="10" fill="#0b3a52" stroke="#38bdf8"/>
+      <path d="M97,434 l10,11 l20,-22" stroke="#5eead4" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="172" y="424" font-size="24" font-weight="700" fill="#7dd3fc">③ 按规则审了吗</text>
+      <text x="172" y="460" font-size="18" fill="#cbd5e1">审的是仓库里写下的规则（CLAUDE.md/AGENTS.md/docs/已沉淀解法），不是凭审美</text>
+    </g>
+    <!-- 4 残余风险 -->
+    <g>
+      <rect x="60" y="498" width="1080" height="104" rx="14" fill="#172554" stroke="#818cf8" stroke-width="2"/>
+      <rect x="84" y="522" width="56" height="56" rx="10" fill="#1e2a52" stroke="#818cf8"/>
+      <path d="M97,550 l10,11 l20,-22" stroke="#a5b4fc" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="172" y="540" font-size="24" font-weight="700" fill="#a5b4fc">④ 残余风险记了吗</text>
+      <text x="172" y="576" font-size="18" fill="#cbd5e1">这次没覆盖/留到下次的风险写明白了——已知的没盖盖子才安全</text>
+    </g>
+  </g>
+
+  <text x="600" y="648" text-anchor="middle" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="19" fill="#64748b">四项凑齐 = 一条可追溯的证据链 = 出事能复盘、平时敢上线</text>
+</svg>

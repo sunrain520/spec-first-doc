@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="t d">
+  <title id="t">op-04 多仓事故：代码写对了却写错 repo，连锁污染</title>
+  <desc id="d">cwd 停在 web，AI 把后端代码写进 web 仓，测试全绿 CI 不报错，连锁污染 git/CI/review，目标 api 仓仍为空。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/><stop offset="0.6" stop-color="#1a1330"/><stop offset="1" stop-color="#2a1530"/>
+    </linearGradient>
+    <marker id="arr" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto">
+      <path d="M0,0 L11,6 L0,12 Z" fill="#f87171"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <g opacity="0.07" stroke="#f0abfc" stroke-width="1">
+    <line x1="0" y1="180" x2="1200" y2="180"/><line x1="0" y1="360" x2="1200" y2="360"/>
+    <line x1="0" y1="540" x2="1200" y2="540"/><line x1="0" y1="720" x2="1200" y2="720"/>
+    <line x1="400" y1="0" x2="400" y2="900"/><line x1="800" y1="0" x2="800" y2="900"/>
+  </g>
+
+  <text x="60" y="74" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="34" font-weight="700" fill="#f8fafc">代码写对了，却 commit 进了错误的 repo</text>
+  <text x="60" y="112" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="20" fill="#fca5a5">测试全绿、CI 不报错——错误藏在"写对内容、写错地方"这个测不出的维度</text>
+
+  <!-- 事故起因 -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="60" y="150" width="520" height="150" rx="14" fill="#1e1b2e" stroke="#f87171" stroke-width="2"/>
+    <text x="86" y="192" font-size="22" font-weight="700" fill="#fca5a5">起因 · cwd 停在 web</text>
+    <text x="86" y="228" font-size="18" fill="#e2e8f0">要给 api 加接口，但终端正停在 web 目录</text>
+    <text x="86" y="260" font-size="18" fill="#e2e8f0">AI 顺着"当前在哪"判断写哪 → 写进了 web</text>
+    <text x="86" y="290" font-size="16" fill="#94a3b8">"我站在哪个目录" ≠ "这段代码该进哪个仓"</text>
+
+    <rect x="620" y="150" width="520" height="150" rx="14" fill="#0c2a1e" stroke="#34d399" stroke-width="2"/>
+    <text x="646" y="192" font-size="22" font-weight="700" fill="#6ee7b7">迷惑点 · 一切看起来都对</text>
+    <text x="646" y="228" font-size="18" fill="#e2e8f0">接口逻辑正确 · 参数校验齐全 · 还写了测试</text>
+    <text x="646" y="260" font-size="18" fill="#e2e8f0">单测通过 · CI 一路绿灯 · 顺利合并</text>
+    <text x="646" y="290" font-size="16" fill="#94a3b8">没有任何一个环节报错</text>
+  </g>
+
+  <!-- 中间箭头 -->
+  <g stroke="#f87171" stroke-width="3" marker-end="url(#arr)" opacity="0.9">
+    <line x1="320" y1="300" x2="320" y2="356"/>
+    <line x1="600" y1="325" x2="600" y2="356"/>
+    <line x1="880" y1="300" x2="880" y2="356"/>
+  </g>
+  <rect x="320" y="360" width="560" height="50" rx="10" fill="#3a1530" stroke="#f87171" stroke-width="1.5"/>
+  <text x="600" y="392" text-anchor="middle" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="20" font-weight="700" fill="#fca5a5">后端代码落进了 web 仓 → 连锁污染开始</text>
+
+  <!-- 四层连锁代价 -->
+  <text x="60" y="462" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="22" font-weight="700" fill="#fdba74">连锁代价 · 越往下越难收拾、越晚暴露</text>
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="60" y="484" width="262" height="160" rx="12" fill="#1e1b2e" stroke="#fb923c" stroke-width="1.8"/>
+    <text x="82" y="524" font-size="20" font-weight="700" fill="#fdba74">① 污染 git 历史</text>
+    <text x="82" y="558" font-size="16" fill="#cbd5e1">web 历史里永久留下</text>
+    <text x="82" y="584" font-size="16" fill="#cbd5e1">一段莫名的后端代码</text>
+    <text x="82" y="618" font-size="15" fill="#94a3b8">改不掉，后人考古绕弯</text>
+
+    <rect x="338" y="484" width="262" height="160" rx="12" fill="#1e1b2e" stroke="#fb923c" stroke-width="1.8"/>
+    <text x="360" y="524" font-size="20" font-weight="700" fill="#fdba74">② 污染 CI</text>
+    <text x="360" y="558" font-size="16" fill="#cbd5e1">web 为不属于它的代码</text>
+    <text x="360" y="584" font-size="16" fill="#cbd5e1">跑测试、做构建</text>
+    <text x="360" y="618" font-size="15" fill="#94a3b8">浪费资源，甚至构建挂掉</text>
+
+    <rect x="616" y="484" width="262" height="160" rx="12" fill="#1e1b2e" stroke="#fb923c" stroke-width="1.8"/>
+    <text x="638" y="524" font-size="20" font-weight="700" fill="#fdba74">③ 污染 review</text>
+    <text x="638" y="558" font-size="16" fill="#cbd5e1">前端 reviewer 面对</text>
+    <text x="638" y="584" font-size="16" fill="#cbd5e1">一段看不懂的后端逻辑</text>
+    <text x="638" y="618" font-size="15" fill="#94a3b8">要么放水，要么拉人</text>
+
+    <rect x="894" y="484" width="246" height="160" rx="12" fill="#3a1530" stroke="#f87171" stroke-width="2"/>
+    <text x="916" y="524" font-size="20" font-weight="700" fill="#fca5a5">④ api 仓是空的</text>
+    <text x="916" y="558" font-size="16" fill="#e2e8f0">真正需要接口的地方</text>
+    <text x="916" y="584" font-size="16" fill="#e2e8f0">啥都没有</text>
+    <text x="916" y="618" font-size="15" fill="#fca5a5">联调/上线才暴露</text>
+  </g>
+
+  <!-- 底部结论 -->
+  <rect x="60" y="684" width="1080" height="146" rx="14" fill="#0c1a2e" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="600" y="734" text-anchor="middle" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="22" fill="#e2e8f0">所有把关都在仓内部，没有一道关站在仓的边界上问"你确定要进这个仓吗"</text>
+  <text x="600" y="780" text-anchor="middle" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="25" font-weight="700" fill="#5eead4">唯一划算的拦截点：写入之前，花一秒确认 target_repo</text>
+  <text x="600" y="814" text-anchor="middle" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="17" fill="#64748b">——除非那道关是你自己</text>
+</svg>

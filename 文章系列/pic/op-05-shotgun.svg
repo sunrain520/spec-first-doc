@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="t d">
+  <title id="t">op-05 乱猜循环 vs 假设台账</title>
+  <desc id="d">左侧 shotgun debugging 一次改多处碰运气的死循环，右侧 one hypothesis/one change/one test 的可追踪调查。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/><stop offset="0.6" stop-color="#0b2038"/><stop offset="1" stop-color="#172554"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <g opacity="0.08" stroke="#7dd3fc" stroke-width="1">
+    <line x1="0" y1="135" x2="1200" y2="135"/><line x1="0" y1="270" x2="1200" y2="270"/>
+    <line x1="0" y1="405" x2="1200" y2="405"/><line x1="0" y1="540" x2="1200" y2="540"/>
+    <line x1="300" y1="0" x2="300" y2="675"/><line x1="600" y1="0" x2="600" y2="675"/><line x1="900" y1="0" x2="900" y2="675"/>
+  </g>
+
+  <text x="60" y="72" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="34" font-weight="700" fill="#f8fafc">乱猜循环 vs 可追踪调查</text>
+  <text x="60" y="108" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="20" fill="#94a3b8">建议先截图存下：下次想说"你再看看"时，拿出来看一眼</text>
+
+  <!-- 左：shotgun -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="60" y="138" width="520" height="490" rx="14" fill="#1a0f14" stroke="#7f1d1d" stroke-width="2"/>
+    <text x="86" y="180" font-size="24" font-weight="700" fill="#fca5a5">✗ "你再看看"（shotgun debugging）</text>
+
+    <g transform="translate(110,210)">
+      <rect width="420" height="56" rx="9" fill="#2a1419" stroke="#7f1d1d" stroke-width="1.5"/>
+      <text x="24" y="35" font-size="19" fill="#fecaca">一次改好几处，看看有没有用</text>
+    </g>
+    <text x="320" y="290" text-anchor="middle" font-size="22" fill="#f87171">↓</text>
+    <g transform="translate(110,300)">
+      <rect width="420" height="56" rx="9" fill="#2a1419" stroke="#7f1d1d" stroke-width="1.5"/>
+      <text x="24" y="35" font-size="19" fill="#fecaca">好了 → 不知道是哪处起的作用</text>
+    </g>
+    <g transform="translate(110,366)">
+      <rect width="420" height="56" rx="9" fill="#2a1419" stroke="#7f1d1d" stroke-width="1.5"/>
+      <text x="24" y="35" font-size="19" fill="#fecaca">没好 → 不知道哪处跟 bug 相关</text>
+    </g>
+    <text x="320" y="452" text-anchor="middle" font-size="22" fill="#f87171">↓</text>
+    <g transform="translate(110,462)">
+      <rect width="420" height="56" rx="9" fill="#2a1419" stroke="#7f1d1d" stroke-width="1.5"/>
+      <text x="24" y="35" font-size="19" fill="#fecaca">多处改动互相污染，水越搅越浑</text>
+    </g>
+    <!-- 循环箭头 -->
+    <g transform="translate(110,532)">
+      <rect width="420" height="64" rx="9" fill="#3b0d12" stroke="#b91c1c" stroke-width="2"/>
+      <text x="210" y="32" text-anchor="middle" font-size="20" font-weight="700" fill="#fca5a5">每轮信息收益 = 0</text>
+      <text x="210" y="54" text-anchor="middle" font-size="16" fill="#f87171">↻ 越改越乱，回到原点</text>
+    </g>
+  </g>
+
+  <!-- 右：调查 -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="620" y="138" width="520" height="490" rx="14" fill="#0b3a52" stroke="#38bdf8" stroke-width="2"/>
+    <text x="646" y="180" font-size="24" font-weight="700" fill="#5eead4">✓ debug 的调查纪律</text>
+
+    <g transform="translate(670,210)">
+      <rect width="420" height="56" rx="9" fill="#0f2942" stroke="#1e3a5f" stroke-width="1.5"/>
+      <text x="24" y="35" font-size="19" fill="#e2e8f0">测一个假设</text>
+    </g>
+    <text x="880" y="290" text-anchor="middle" font-size="22" fill="#38bdf8">↓</text>
+    <g transform="translate(670,300)">
+      <rect width="420" height="56" rx="9" fill="#0f2942" stroke="#1e3a5f" stroke-width="1.5"/>
+      <text x="24" y="35" font-size="19" fill="#e2e8f0">改一处</text>
+    </g>
+    <text x="880" y="380" text-anchor="middle" font-size="22" fill="#38bdf8">↓</text>
+    <g transform="translate(670,390)">
+      <rect width="420" height="56" rx="9" fill="#0f2942" stroke="#1e3a5f" stroke-width="1.5"/>
+      <text x="24" y="35" font-size="19" fill="#e2e8f0">验一次</text>
+    </g>
+    <text x="880" y="470" text-anchor="middle" font-size="22" fill="#38bdf8">↓</text>
+    <g transform="translate(670,480)">
+      <rect width="420" height="56" rx="9" fill="#0f2942" stroke="#1e3a5f" stroke-width="1.5"/>
+      <text x="24" y="35" font-size="19" fill="#e2e8f0">没用？先 revert，再试下一个</text>
+    </g>
+    <g transform="translate(670,550)">
+      <rect width="420" height="56" rx="9" fill="#0b3a52" stroke="#5eead4" stroke-width="2"/>
+      <text x="210" y="38" text-anchor="middle" font-size="20" font-weight="700" fill="#5eead4">每轮范围确定地缩小一格</text>
+    </g>
+  </g>
+</svg>

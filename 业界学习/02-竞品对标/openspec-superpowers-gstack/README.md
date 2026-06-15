@@ -4,7 +4,8 @@
 
 ## 入口文档
 
-- [OpenSpec + Superpowers 与 spec-first 对照](./openspec-superpowers-vs-spec-first-analysis.md)
+- [#16 Claude Code + OpenSpec + Superpowers 联合开发流程 vs spec-first 逐维度对照](./16.openspec-superpowers-openspec-superpowers-vs-spec-first-analysis.md)
+- [#18 Gstack + Superpowers + GSD 三层组合 vs spec-first 阶段化设计](./18.gstack-superpowers-gsd-gstack-gsd-superpowers-vs-spec-first-analysis.md)
 - [OpenSpec + Superpowers 双层纪律分析](./openspec-superpowers-dual-discipline.md)
 - [gstack / OpenSpec / Superpowers 三层工具体系分析](./gstack-openspec-superpowers-trilogy-analysis.md)
 - [spec-brainstorm 竞品调研与质量提升报告](./2026-05-29-spec-brainstorm-竞品调研与质量提升报告.md)

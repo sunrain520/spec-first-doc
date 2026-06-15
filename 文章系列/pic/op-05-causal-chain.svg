@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="t d">
+  <title id="t">op-05 因果链 gate</title>
+  <desc id="d">从编辑标签到漏任务的完整九步因果链，标出被症状误导处会留下的缺口，以及真正的根因位置。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/><stop offset="0.6" stop-color="#0b2038"/><stop offset="1" stop-color="#172554"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <g opacity="0.07" stroke="#7dd3fc" stroke-width="1">
+    <line x1="0" y1="225" x2="1200" y2="225"/><line x1="0" y1="450" x2="1200" y2="450"/><line x1="0" y1="675" x2="1200" y2="675"/>
+    <line x1="400" y1="0" x2="400" y2="900"/><line x1="800" y1="0" x2="800" y2="900"/>
+  </g>
+
+  <text x="60" y="66" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="33" font-weight="700" fill="#f8fafc">因果链是一道 gate：讲通无缺口，才动手</text>
+  <text x="60" y="100" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="19" fill="#94a3b8">"莫名其妙地 X 导致 Y"就是一个缺口；缺口没填满，这道闸不开</text>
+
+  <!-- 错误的有缺口链 -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="60" y="124" width="1080" height="110" rx="12" fill="#1a0f14" stroke="#7f1d1d" stroke-width="2"/>
+    <text x="84" y="158" font-size="19" font-weight="700" fill="#fca5a5">✗ 被症状误导的链（有缺口）</text>
+    <g transform="translate(84,176)">
+      <rect width="190" height="44" rx="8" fill="#2a1419" stroke="#7f1d1d" stroke-width="1.2"/>
+      <text x="95" y="29" text-anchor="middle" font-size="15" fill="#fecaca">编辑任务标签</text>
+    </g>
+    <g transform="translate(330,176)">
+      <rect width="150" height="44" rx="8" fill="#3b0d12" stroke="#b91c1c" stroke-width="2" stroke-dasharray="6 4"/>
+      <text x="75" y="29" text-anchor="middle" font-size="22" font-weight="700" fill="#f87171">??? 缺口</text>
+    </g>
+    <g transform="translate(536,176)">
+      <rect width="230" height="44" rx="8" fill="#2a1419" stroke="#7f1d1d" stroke-width="1.2"/>
+      <text x="115" y="29" text-anchor="middle" font-size="15" fill="#fecaca">filterByTags 筛掉了</text>
+    </g>
+    <g transform="translate(822,176)">
+      <rect width="150" height="44" rx="8" fill="#2a1419" stroke="#7f1d1d" stroke-width="1.2"/>
+      <text x="75" y="29" text-anchor="middle" font-size="15" fill="#fecaca">漏任务</text>
+    </g>
+    <g stroke="#f87171" stroke-width="2">
+      <line x1="274" y1="198" x2="328" y2="198"/><line x1="480" y1="198" x2="534" y2="198"/><line x1="766" y1="198" x2="820" y2="198"/>
+    </g>
+    <text x="1000" y="204" font-size="15" fill="#f87171">→ 顺着缺口乱改 filterByTags，掉进陷阱</text>
+  </g>
+
+  <!-- 正确的完整链 -->
+  <text x="60" y="282" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="19" font-weight="700" fill="#5eead4">✓ 逼自己填满缺口后的完整链</text>
+
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="14.5" fill="#e2e8f0">
+    <!-- 9 step chain, 2 columns -->
+    <g transform="translate(60,300)">
+      <rect width="500" height="50" rx="8" fill="#0f2942" stroke="#1e3a5f" stroke-width="1.2"/>
+      <text x="20" y="31"><tspan fill="#38bdf8" font-weight="700">1 </tspan>用户编辑任务 A 的标签</text>
+    </g>
+    <g transform="translate(60,362)">
+      <rect width="500" height="50" rx="8" fill="#0f2942" stroke="#1e3a5f" stroke-width="1.2"/>
+      <text x="20" y="31"><tspan fill="#38bdf8" font-weight="700">2 </tspan>编辑直接在原任务对象上原地改 tags</text>
+    </g>
+    <!-- 根因高亮 -->
+    <g transform="translate(60,424)">
+      <rect width="500" height="68" rx="8" fill="#0b3a52" stroke="#38bdf8" stroke-width="2.5"/>
+      <text x="20" y="29"><tspan fill="#5eead4" font-weight="700">3 </tspan><tspan fill="#f8fafc" font-weight="700">根因 ▸</tspan> useMemo 缓存筛选快照，</text>
+      <text x="42" y="53" font-family="monospace" font-size="14" fill="#7dd3fc">依赖项写成 [tasks.length]</text>
+    </g>
+    <g transform="translate(60,504)">
+      <rect width="500" height="50" rx="8" fill="#0f2942" stroke="#1e3a5f" stroke-width="1.2"/>
+      <text x="20" y="31"><tspan fill="#38bdf8" font-weight="700">4 </tspan>原地编辑不改长度，length 不变</text>
+    </g>
+    <g transform="translate(60,566)">
+      <rect width="500" height="50" rx="8" fill="#0f2942" stroke="#1e3a5f" stroke-width="1.2"/>
+      <text x="20" y="31"><tspan fill="#38bdf8" font-weight="700">5 </tspan>useMemo 认为依赖没变，不重算</text>
+    </g>
+
+    <g transform="translate(640,300)">
+      <rect width="500" height="50" rx="8" fill="#0f2942" stroke="#1e3a5f" stroke-width="1.2"/>
+      <text x="20" y="31"><tspan fill="#38bdf8" font-weight="700">6 </tspan>返回旧快照，A 标签还是 ["工作"]</text>
+    </g>
+    <g transform="translate(640,362)">
+      <rect width="500" height="50" rx="8" fill="#0f2942" stroke="#1e3a5f" stroke-width="1.2"/>
+      <text x="20" y="31"><tspan fill="#38bdf8" font-weight="700">7 </tspan>filterByTags 拿到旧快照，按"紧急"筛</text>
+    </g>
+    <!-- 关键澄清 -->
+    <g transform="translate(640,424)">
+      <rect width="500" height="68" rx="8" fill="#0c1a2e" stroke="#5eead4" stroke-width="1.8"/>
+      <text x="20" y="29"><tspan fill="#5eead4" font-weight="700">8 </tspan>旧快照里 A 确实没"紧急"，被筛掉</text>
+      <text x="42" y="53" font-size="13.5" fill="#94a3b8">filterByTags 没错，它拿到的是过期数据</text>
+    </g>
+    <g transform="translate(640,504)">
+      <rect width="500" height="50" rx="8" fill="#1a0f14" stroke="#7f1d1d" stroke-width="1.5"/>
+      <text x="20" y="31"><tspan fill="#f87171" font-weight="700">9 </tspan><tspan fill="#fecaca">症状：改了标签，A 却被筛没了</tspan></text>
+    </g>
+  </g>
+
+  <!-- 底部结论 -->
+  <rect x="60" y="600" width="1080" height="86" rx="12" fill="#172554" stroke="#818cf8" stroke-width="2"/>
+  <text x="90" y="640" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="20" fill="#e2e8f0">症状在第 8 步（筛选结果），根因在第 3 步（缓存依赖）——隔五步、分属两个模块。</text>
+  <text x="90" y="670" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="20" font-weight="700" fill="#a5b4fc">这就是为什么盯着 filterByTags 改一万年都修不好。</text>
+</svg>

@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="t d">
+  <title id="t">op-03 change delta：把这次对既有行为的变化标死</title>
+  <desc id="d">keep / extend / replace / remove / unknown 五种变化类型，与源码一致，逐条标明这次对既有行为的影响。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/><stop offset="0.6" stop-color="#0b2038"/><stop offset="1" stop-color="#172554"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <g opacity="0.07" stroke="#7dd3fc" stroke-width="1">
+    <line x1="0" y1="168" x2="1200" y2="168"/><line x1="0" y1="336" x2="1200" y2="336"/><line x1="0" y1="504" x2="1200" y2="504"/>
+    <line x1="300" y1="0" x2="300" y2="675"/><line x1="600" y1="0" x2="600" y2="675"/><line x1="900" y1="0" x2="900" y2="675"/>
+  </g>
+
+  <text x="60" y="74" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="34" font-weight="700" fill="#f8fafc">change delta：把这次对既有行为做了什么，逐条标死</text>
+  <text x="60" y="110" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="20" fill="#94a3b8">五种变化类型，与源码一致 —— 不让「加个自动取消」含糊带过</text>
+
+  <!-- 五种类型 卡片 -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <g>
+      <rect x="60" y="150" width="210" height="200" rx="12" fill="#0f2942" stroke="#22d3ee" stroke-width="2"/>
+      <text x="84" y="192" font-size="24" font-weight="700" fill="#22d3ee">新增</text>
+      <text x="84" y="222" font-size="15" fill="#64748b">原来没有的</text>
+      <line x1="84" y1="238" x2="246" y2="238" stroke="#1e3a5f" stroke-width="1"/>
+      <text x="84" y="272" font-size="16" fill="#cbd5e1">超时扫描的</text>
+      <text x="84" y="298" font-size="16" fill="#cbd5e1">定时任务</text>
+    </g>
+    <g>
+      <rect x="290" y="150" width="210" height="200" rx="12" fill="#0f2942" stroke="#38bdf8" stroke-width="2"/>
+      <text x="314" y="192" font-size="24" font-weight="700" fill="#38bdf8">extend</text>
+      <text x="314" y="222" font-size="15" fill="#64748b">加东西，不改原行为</text>
+      <line x1="314" y1="238" x2="476" y2="238" stroke="#1e3a5f" stroke-width="1"/>
+      <text x="314" y="272" font-size="16" fill="#cbd5e1">cancel() 多一个</text>
+      <text x="314" y="298" font-size="16" fill="#cbd5e1">系统触发来源</text>
+      <text x="314" y="324" font-size="15" fill="#7dd3fc">原触发一点不变</text>
+    </g>
+    <g>
+      <rect x="520" y="150" width="210" height="200" rx="12" fill="#0b3a52" stroke="#5eead4" stroke-width="2.5"/>
+      <text x="544" y="192" font-size="24" font-weight="700" fill="#5eead4">keep</text>
+      <text x="544" y="222" font-size="15" fill="#5eead4">显式声明保持不变</text>
+      <line x1="544" y1="238" x2="706" y2="238" stroke="#1e3a5f" stroke-width="1"/>
+      <text x="544" y="272" font-size="16" fill="#cbd5e1">库存走对账释放</text>
+      <text x="544" y="298" font-size="16" fill="#cbd5e1">幂等约束不变</text>
+      <text x="544" y="324" font-size="15" fill="#5eead4">不许动！</text>
+    </g>
+    <g>
+      <rect x="750" y="150" width="210" height="200" rx="12" fill="#0f2942" stroke="#475569" stroke-width="1.5"/>
+      <text x="774" y="192" font-size="24" font-weight="700" fill="#94a3b8">replace</text>
+      <text x="774" y="222" font-size="15" fill="#64748b">新行为取代旧行为</text>
+      <line x1="774" y1="238" x2="936" y2="238" stroke="#1e3a5f" stroke-width="1"/>
+      <text x="774" y="272" font-size="16" fill="#64748b">remove</text>
+      <text x="774" y="298" font-size="15" fill="#64748b">既有行为退役</text>
+      <text x="774" y="324" font-size="14" fill="#475569">本例没用到</text>
+    </g>
+    <g>
+      <rect x="980" y="150" width="160" height="200" rx="12" fill="#0f2942" stroke="#fbbf24" stroke-width="2" stroke-dasharray="6 4"/>
+      <text x="1004" y="192" font-size="24" font-weight="700" fill="#fbbf24">unknown</text>
+      <text x="1004" y="222" font-size="15" fill="#64748b">还定不下来</text>
+      <line x1="1004" y1="238" x2="1116" y2="238" stroke="#1e3a5f" stroke-width="1"/>
+      <text x="1004" y="272" font-size="15" fill="#cbd5e1">超时取消要不</text>
+      <text x="1004" y="298" font-size="15" fill="#cbd5e1">要发不同文案</text>
+      <text x="1004" y="324" font-size="14" fill="#fcd34d">owner 还没拍板</text>
+    </g>
+  </g>
+
+  <!-- 底部:两个最危险的词 -->
+  <rect x="60" y="400" width="525" height="235" rx="12" fill="#172554" stroke="#5eead4" stroke-width="2"/>
+  <text x="90" y="444" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="22" font-weight="700" fill="#5eead4">keep ≠「我没碰」</text>
+  <text x="90" y="482" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="18" fill="#e2e8f0">keep 是主动声明的保护，不是被动的没碰。</text>
+  <text x="90" y="512" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="18" fill="#cbd5e1">只有白纸黑字标 keep，对账约束才会变成</text>
+  <text x="90" y="542" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="18" fill="#cbd5e1">AI 必须守、review 会盯的硬约束。</text>
+  <text x="90" y="592" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="17" fill="#94a3b8">不标 keep，AI 可能为「方便」自己另写个释放</text>
+  <text x="90" y="618" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="17" fill="#94a3b8">→ 绕开对账，账又对不上</text>
+
+  <rect x="615" y="400" width="525" height="235" rx="12" fill="#172554" stroke="#fbbf24" stroke-width="2"/>
+  <text x="645" y="444" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="22" font-weight="700" fill="#fbbf24">存疑就标 unknown，别默认 keep</text>
+  <text x="645" y="482" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="18" fill="#e2e8f0">默认「和以前一样」标成 keep，下游就当</text>
+  <text x="645" y="512" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="18" fill="#cbd5e1">「已确认」，没人再回来确认 ——</text>
+  <text x="645" y="542" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="18" fill="#cbd5e1">该 owner 拍板的决策被想当然吞掉了。</text>
+  <text x="645" y="592" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="17" fill="#94a3b8">存疑是诚实的状态，显式记下来，</text>
+  <text x="645" y="618" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="17" fill="#94a3b8">比假装它已确定要安全得多</text>
+</svg>

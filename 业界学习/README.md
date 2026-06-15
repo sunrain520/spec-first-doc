@@ -31,6 +31,7 @@
     prd-agent-os/
     crg-codegraph-graphify/
     harness-engineering/
+    ai-engineering-methodology/
   03-机制专题/
     workflow-lifecycle/
     review-testing/

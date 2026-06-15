@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="511" viewBox="0 0 1200 511" role="img" aria-labelledby="title desc">
+  <title id="title">管着好几个仓库，怎么不让 AI 把代码写错地方</title>
+  <desc id="desc">微信公众号 2.35:1 封面图：op-04 多仓工作区，显式把守 target_repo。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/>
+      <stop offset="0.55" stop-color="#0b2038"/>
+      <stop offset="1" stop-color="#172554"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#38bdf8"/>
+      <stop offset="0.52" stop-color="#22d3ee"/>
+      <stop offset="1" stop-color="#818cf8"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="511" fill="url(#bg)"/>
+
+  <g opacity="0.10" stroke="#7dd3fc" stroke-width="1">
+    <line x1="0" y1="73" x2="1200" y2="73"/>
+    <line x1="0" y1="146" x2="1200" y2="146"/>
+    <line x1="0" y1="219" x2="1200" y2="219"/>
+    <line x1="0" y1="292" x2="1200" y2="292"/>
+    <line x1="0" y1="365" x2="1200" y2="365"/>
+    <line x1="0" y1="438" x2="1200" y2="438"/>
+    <line x1="200" y1="0" x2="200" y2="511"/>
+    <line x1="400" y1="0" x2="400" y2="511"/>
+    <line x1="600" y1="0" x2="600" y2="511"/>
+    <line x1="800" y1="0" x2="800" y2="511"/>
+    <line x1="1000" y1="0" x2="1000" y2="511"/>
+  </g>
+
+  <text x="90" y="96" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="26" fill="#38bdf8" letter-spacing="2">Spec-First · 第二季 · 项目实操</text>
+
+  <text x="90" y="190" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="58" font-weight="700" fill="#f8fafc">管着好几个仓库</text>
+  <text x="90" y="266" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="58" font-weight="700" fill="#f8fafc">怎么不让 AI 写错地方</text>
+
+  <text x="92" y="334" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="27" fill="#cbd5e1">代码写对了，却 commit 进了错误的 repo</text>
+
+  <rect x="92" y="366" width="64" height="5" rx="2.5" fill="url(#accent)"/>
+
+  <!-- 右下角三仓 + 闸 示意 -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <g transform="translate(640,404)"><rect width="92" height="48" rx="9" fill="#0f2942" stroke="#1e3a5f" stroke-width="1.5"/><text x="46" y="30" text-anchor="middle" font-size="19" fill="#94a3b8">web</text></g>
+    <g transform="translate(744,404)"><rect width="92" height="48" rx="9" fill="#0b3a52" stroke="#38bdf8" stroke-width="2.5"/><text x="46" y="30" text-anchor="middle" font-size="19" fill="#5eead4" font-weight="700">api</text></g>
+    <g transform="translate(848,404)"><rect width="92" height="48" rx="9" fill="#0f2942" stroke="#1e3a5f" stroke-width="1.5"/><text x="46" y="30" text-anchor="middle" font-size="18" fill="#94a3b8">shared</text></g>
+  </g>
+  <text x="1110" y="437" text-anchor="end" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="17" fill="#818cf8" font-weight="600">target_repo 由人把守</text>
+
+  <text x="1110" y="96" text-anchor="end" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="22" fill="#64748b">op-04 · 多仓工作区</text>
+</svg>

@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="t d">
+  <title id="t">op-07 code-review 多维度并行</title>
+  <desc id="d">默认核心维度 + 条件触发维度 + 栈相关维度，按改动规模动态选择，不是固定几维。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/><stop offset="0.6" stop-color="#0b2038"/><stop offset="1" stop-color="#162449"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <g opacity="0.07" stroke="#7dd3fc" stroke-width="1">
+    <line x1="0" y1="135" x2="1200" y2="135"/><line x1="0" y1="270" x2="1200" y2="270"/>
+    <line x1="0" y1="405" x2="1200" y2="405"/><line x1="0" y1="540" x2="1200" y2="540"/>
+  </g>
+
+  <text x="60" y="70" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="34" font-weight="700" fill="#f8fafc">不是固定几维，是核心 + 按需触发</text>
+  <text x="60" y="108" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="20" fill="#94a3b8">几个核心维度并行兜底，碰到对应改动再加挂专项——改动越小，上的维度越少</text>
+
+  <!-- 默认核心 -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="60" y="142" width="1080" height="180" rx="14" fill="#0b3a52" stroke="#38bdf8" stroke-width="2"/>
+    <text x="86" y="178" font-size="22" font-weight="700" fill="#5eead4">默认核心维度（多数改动都上）</text>
+    <g>
+      <rect x="86" y="198" width="240" height="100" rx="10" fill="#102a44" stroke="#1e3a5f"/>
+      <text x="106" y="232" font-size="19" font-weight="700" fill="#7dd3fc">正确性</text>
+      <text x="106" y="262" font-size="15" fill="#cbd5e1">逻辑 / 边界 / 状态</text>
+      <text x="106" y="284" font-size="15" fill="#cbd5e1">/ 错误传播</text>
+    </g>
+    <g>
+      <rect x="342" y="198" width="240" height="100" rx="10" fill="#102a44" stroke="#1e3a5f"/>
+      <text x="362" y="232" font-size="19" font-weight="700" fill="#7dd3fc">测试覆盖</text>
+      <text x="362" y="262" font-size="15" fill="#cbd5e1">缺口 / 弱断言</text>
+      <text x="362" y="284" font-size="15" fill="#cbd5e1">/ 脆弱测试</text>
+    </g>
+    <g>
+      <rect x="598" y="198" width="240" height="100" rx="10" fill="#102a44" stroke="#1e3a5f"/>
+      <text x="618" y="232" font-size="19" font-weight="700" fill="#7dd3fc">可维护性</text>
+      <text x="618" y="262" font-size="15" fill="#cbd5e1">耦合 / 复杂度 / 命名</text>
+      <text x="618" y="284" font-size="15" fill="#cbd5e1">/ 死代码 / 抽象债</text>
+    </g>
+    <g>
+      <rect x="854" y="198" width="262" height="100" rx="10" fill="#102a44" stroke="#1e3a5f"/>
+      <text x="874" y="232" font-size="19" font-weight="700" fill="#7dd3fc">项目规范</text>
+      <text x="874" y="262" font-size="15" fill="#cbd5e1">合不合 CLAUDE.md</text>
+      <text x="874" y="284" font-size="15" fill="#cbd5e1">/ AGENTS.md 规则</text>
+    </g>
+  </g>
+
+  <!-- 条件触发 -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="60" y="340" width="530" height="200" rx="14" fill="#0c1a2e" stroke="#475569" stroke-width="1.6" stroke-dasharray="6 5"/>
+    <text x="86" y="376" font-size="21" font-weight="700" fill="#a5b4fc">条件触发（碰到才上）</text>
+    <g font-size="16" fill="#cbd5e1">
+      <text x="92" y="412">· 安全</text>
+      <text x="240" y="412">· 性能</text>
+      <text x="388" y="412">· 接口契约</text>
+      <text x="92" y="446">· 数据迁移</text>
+      <text x="240" y="446">· 可靠性</text>
+      <text x="388" y="446">· 对抗性审查</text>
+      <text x="92" y="480">· CLI 可用性</text>
+      <text x="240" y="480">· 历史评论</text>
+      <text x="388" y="480">· ……</text>
+    </g>
+    <text x="86" y="518" font-size="15" fill="#64748b">改动碰到这些面，对应维度才被激活</text>
+  </g>
+
+  <!-- 栈相关 -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="610" y="340" width="530" height="200" rx="14" fill="#0c1a2e" stroke="#475569" stroke-width="1.6" stroke-dasharray="6 5"/>
+    <text x="636" y="376" font-size="21" font-weight="700" fill="#a5b4fc">栈相关（按语言/框架上）</text>
+    <g font-size="16" fill="#cbd5e1">
+      <text x="642" y="412">· Rails 风格</text>
+      <text x="852" y="412">· Python 风格</text>
+      <text x="642" y="446">· TypeScript 风格</text>
+      <text x="852" y="446">· 前端竞态</text>
+      <text x="642" y="480">· iOS / Swift</text>
+      <text x="852" y="480">· ……</text>
+    </g>
+    <text x="636" y="518" font-size="15" fill="#64748b">diff 是哪个栈，就挂哪个栈的专家视角</text>
+  </g>
+
+  <!-- 底部规模规则 -->
+  <rect x="60" y="558" width="1080" height="92" rx="12" fill="#172554" stroke="#818cf8" stroke-width="1.8"/>
+  <text x="90" y="600" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="20" fill="#e2e8f0">规模决定上多少：<tspan fill="#5eead4" font-weight="700">docs-only</tspan> 只上规范+可维护性；<tspan fill="#5eead4" font-weight="700">小 diff</tspan> 上正确性+测试+可维护性</text>
+  <text x="90" y="634" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="20" font-weight="700" fill="#cbd5e1">中/大/敏感/说不清的 diff → 上全套核心 + 匹配的条件维度。改动越小越安全，上的越少</text>
+</svg>

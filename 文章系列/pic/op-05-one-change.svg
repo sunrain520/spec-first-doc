@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="t d">
+  <title id="t">op-05 一次只改一件事 vs shotgun</title>
+  <desc id="d">左侧霰弹枪一轮改四处无法归因，右侧调查改一处立即验证不成立则 revert 再试。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/><stop offset="0.6" stop-color="#0b2038"/><stop offset="1" stop-color="#172554"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <g opacity="0.08" stroke="#7dd3fc" stroke-width="1">
+    <line x1="0" y1="168" x2="1200" y2="168"/><line x1="0" y1="337" x2="1200" y2="337"/><line x1="0" y1="506" x2="1200" y2="506"/>
+    <line x1="300" y1="0" x2="300" y2="675"/><line x1="600" y1="0" x2="600" y2="675"/><line x1="900" y1="0" x2="900" y2="675"/>
+  </g>
+
+  <text x="60" y="68" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="34" font-weight="700" fill="#f8fafc">同样修这个 bug，两种改法</text>
+  <text x="60" y="104" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="20" fill="#94a3b8">动的代码量差不多，但信息收益天差地别</text>
+
+  <!-- 左：霰弹枪 -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="60" y="132" width="520" height="500" rx="14" fill="#1a0f14" stroke="#7f1d1d" stroke-width="2"/>
+    <text x="86" y="172" font-size="23" font-weight="700" fill="#fca5a5">✗ 一起都改了，保险</text>
+    <text x="86" y="200" font-size="16" fill="#f87171">同一轮里改四处：</text>
+
+    <g font-size="15" fill="#fecaca">
+      <g transform="translate(86,216)"><rect width="468" height="42" rx="7" fill="#2a1419" stroke="#7f1d1d" stroke-width="1.2"/><text x="18" y="27">① useMemo 依赖 [tasks.length]→[tasks]</text></g>
+      <g transform="translate(86,266)"><rect width="468" height="42" rx="7" fill="#2a1419" stroke="#7f1d1d" stroke-width="1.2"/><text x="18" y="27">② filterByTags 加"空结果兜底"</text></g>
+      <g transform="translate(86,316)"><rect width="468" height="42" rx="7" fill="#2a1419" stroke="#7f1d1d" stroke-width="1.2"/><text x="18" y="27">③ 改编辑逻辑返回新数组</text></g>
+      <g transform="translate(86,366)"><rect width="468" height="42" rx="7" fill="#2a1419" stroke="#7f1d1d" stroke-width="1.2"/><text x="18" y="27">④ 顺手补另一处 useEffect 依赖</text></g>
+    </g>
+    <g transform="translate(86,426)">
+      <rect width="468" height="80" rx="9" fill="#3b0d12" stroke="#b91c1c" stroke-width="2"/>
+      <text x="234" y="33" text-anchor="middle" font-size="18" font-weight="700" fill="#fca5a5">bug 没了——但哪个起的作用？</text>
+      <text x="234" y="60" text-anchor="middle" font-size="15" fill="#f87171">四个嫌疑人一个没排除，后三个可能埋新 bug</text>
+    </g>
+    <g transform="translate(86,520)">
+      <rect width="468" height="92" rx="9" fill="#2a1419" stroke="#7f1d1d" stroke-width="1.5"/>
+      <text x="234" y="38" text-anchor="middle" font-size="16" fill="#fecaca">修好一个、埋下一个、</text>
+      <text x="234" y="68" text-anchor="middle" font-size="16" fill="#fecaca">还留两个说不清的改动</text>
+    </g>
+  </g>
+
+  <!-- 右：调查 -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="620" y="132" width="520" height="500" rx="14" fill="#0b3a52" stroke="#38bdf8" stroke-width="2"/>
+    <text x="646" y="172" font-size="23" font-weight="700" fill="#5eead4">✓ 测一个假设，改一处，验一次</text>
+    <text x="646" y="200" font-size="16" fill="#7dd3fc">根因假设只有一个，只改这一处：</text>
+
+    <g transform="translate(646,216)">
+      <rect width="468" height="68" rx="9" fill="#0c1a2e" stroke="#1e3a5f" stroke-width="1.5"/>
+      <text x="20" y="30" font-family="monospace" font-size="14" fill="#f87171">- useMemo(..., [tasks.length])</text>
+      <text x="20" y="56" font-family="monospace" font-size="14" fill="#5eead4">+ useMemo(..., [tasks])</text>
+    </g>
+    <text x="880" y="312" text-anchor="middle" font-size="20" fill="#38bdf8">↓ 立刻按最小复现验</text>
+    <g transform="translate(646,326)">
+      <rect width="225" height="80" rx="9" fill="#0f2942" stroke="#5eead4" stroke-width="1.8"/>
+      <text x="112" y="34" text-anchor="middle" font-size="16" fill="#5eead4" font-weight="700">bug 消失</text>
+      <text x="112" y="60" text-anchor="middle" font-size="14" fill="#cbd5e1">根因确认，收工</text>
+    </g>
+    <g transform="translate(889,326)">
+      <rect width="225" height="80" rx="9" fill="#0f2942" stroke="#1e3a5f" stroke-width="1.5"/>
+      <text x="112" y="34" text-anchor="middle" font-size="16" fill="#fbbf24" font-weight="700">bug 还在</text>
+      <text x="112" y="60" text-anchor="middle" font-size="14" fill="#cbd5e1">假设不对</text>
+    </g>
+    <text x="1001" y="430" text-anchor="middle" font-size="20" fill="#fbbf24">↓</text>
+    <g transform="translate(889,440)">
+      <rect width="225" height="66" rx="9" fill="#0c1a2e" stroke="#fbbf24" stroke-width="1.8"/>
+      <text x="112" y="30" text-anchor="middle" font-size="15" fill="#fbbf24" font-weight="700">先 revert 这一处</text>
+      <text x="112" y="54" text-anchor="middle" font-size="14" fill="#cbd5e1">回干净状态，试下一个</text>
+    </g>
+    <g transform="translate(646,520)">
+      <rect width="468" height="92" rx="9" fill="#0b3a52" stroke="#5eead4" stroke-width="2"/>
+      <text x="234" y="38" text-anchor="middle" font-size="17" fill="#5eead4" font-weight="700">代码永远只承载当前在验的那一个假设</text>
+      <text x="234" y="68" text-anchor="middle" font-size="15" fill="#a5f3e8">不会变成一堆失败尝试的叠加层</text>
+    </g>
+  </g>
+</svg>

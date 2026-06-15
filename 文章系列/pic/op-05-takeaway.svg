@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="t d">
+  <title id="t">op-05 可带走的判断</title>
+  <desc id="d">左侧你再看看的盲目循环，右侧 debug 的七条纪律构成可追踪可验证可收口的调查路径。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/><stop offset="0.6" stop-color="#0b2038"/><stop offset="1" stop-color="#172554"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <g opacity="0.07" stroke="#7dd3fc" stroke-width="1">
+    <line x1="0" y1="169" x2="1200" y2="169"/><line x1="0" y1="338" x2="1200" y2="338"/><line x1="0" y1="507" x2="1200" y2="507"/>
+    <line x1="600" y1="0" x2="600" y2="675"/>
+  </g>
+
+  <text x="60" y="62" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="32" font-weight="700" fill="#f8fafc">从"你再看看"到"可追踪的假设"</text>
+  <text x="60" y="96" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="18" fill="#94a3b8">同样是收拾烂摊子，左边在赌运气，右边在沿证据收口</text>
+
+  <!-- LEFT: blind loop -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="60" y="124" width="500" height="500" rx="14" fill="#1a0f14" stroke="#7f1d1d" stroke-width="2"/>
+    <text x="84" y="166" font-size="22" font-weight="700" fill="#fca5a5">✗ "你再看看"的盲目循环</text>
+
+    <g transform="translate(150,210)">
+      <circle cx="160" cy="150" r="140" fill="none" stroke="#7f1d1d" stroke-width="2" stroke-dasharray="7 6"/>
+      <g transform="translate(110,18)"><rect width="120" height="40" rx="8" fill="#2a1419" stroke="#7f1d1d"/><text x="60" y="26" text-anchor="middle" font-size="15" fill="#fecaca">再改改看</text></g>
+      <g transform="translate(248,130)"><rect width="120" height="40" rx="8" fill="#2a1419" stroke="#7f1d1d"/><text x="60" y="26" text-anchor="middle" font-size="15" fill="#fecaca">又崩了</text></g>
+      <g transform="translate(110,242)"><rect width="120" height="40" rx="8" fill="#2a1419" stroke="#7f1d1d"/><text x="60" y="26" text-anchor="middle" font-size="15" fill="#fecaca">换个地方改</text></g>
+      <g transform="translate(-30,130)"><rect width="120" height="40" rx="8" fill="#2a1419" stroke="#7f1d1d"/><text x="60" y="26" text-anchor="middle" font-size="15" fill="#fecaca">越改越乱</text></g>
+      <text x="160" y="160" text-anchor="middle" font-size="20" font-weight="700" fill="#f87171">在猜</text>
+    </g>
+    <text x="310" y="590" text-anchor="middle" font-size="15.5" fill="#fca5a5">每次都在赌，好了不知为何，没好不知哪错</text>
+  </g>
+
+  <!-- RIGHT: 7 disciplines -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="640" y="124" width="500" height="500" rx="14" fill="#0c1a2e" stroke="#5eead4" stroke-width="2"/>
+    <text x="664" y="166" font-size="22" font-weight="700" fill="#5eead4">✓ debug 的七条纪律</text>
+
+    <g font-size="16" fill="#e2e8f0">
+      <g transform="translate(664,188)"><text x="0" y="20"><tspan fill="#38bdf8" font-weight="700">1 </tspan>先复现：没最小复现不谈修</text></g>
+      <g transform="translate(664,228)"><text x="0" y="20"><tspan fill="#38bdf8" font-weight="700">2 </tspan>先调查：因果链无缺口才动手</text></g>
+      <g transform="translate(664,268)"><text x="0" y="20"><tspan fill="#38bdf8" font-weight="700">3 </tspan>不确定的环节，用预测去验</text></g>
+      <g transform="translate(664,308)"><text x="0" y="20"><tspan fill="#38bdf8" font-weight="700">4 </tspan>一次只改一件事，不堆改动</text></g>
+      <g transform="translate(664,348)"><text x="0" y="20"><tspan fill="#38bdf8" font-weight="700">5 </tspan>证据来自复现/源码/测试/日志</text></g>
+      <g transform="translate(664,388)"><text x="0" y="20"><tspan fill="#38bdf8" font-weight="700">6 </tspan>卡住就诊断为什么卡，别硬试</text></g>
+      <g transform="translate(664,428)"><text x="0" y="20"><tspan fill="#38bdf8" font-weight="700">7 </tspan>失败测试先行，最小修复只动根因</text></g>
+    </g>
+    <line x1="664" y1="468" x2="1116" y2="468" stroke="#1e3a5f" stroke-width="1.5"/>
+    <text x="664" y="498" font-size="16" font-weight="700" fill="#5eead4">可追踪 · 可验证 · 可收口</text>
+    <text x="664" y="528" font-size="15.5" fill="#94a3b8">每一步都站在能被独立验证的事实上，</text>
+    <text x="664" y="552" font-size="15.5" fill="#94a3b8">不是站在"我觉得"上。换谁来都能复现同样结论。</text>
+    <g transform="translate(664,572)"><rect width="452" height="38" rx="8" fill="#0b3a52" stroke="#38bdf8" stroke-width="1.5"/><text x="226" y="25" text-anchor="middle" font-size="15.5" font-weight="700" fill="#a5f3e8">把"反复试"换成"沿证据逼近根因"</text></g>
+  </g>
+</svg>

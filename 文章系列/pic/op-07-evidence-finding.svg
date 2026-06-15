@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="t d">
+  <title id="t">op-07 带证据的 finding vs 你再检查一下</title>
+  <desc id="d">左边一句模糊的你再检查一下，右边一条带证据/严重度/谁修/怎么验证/置信度的结构化 finding。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/><stop offset="0.6" stop-color="#0b2038"/><stop offset="1" stop-color="#162449"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <g opacity="0.07" stroke="#7dd3fc" stroke-width="1">
+    <line x1="0" y1="135" x2="1200" y2="135"/><line x1="0" y1="270" x2="1200" y2="270"/>
+    <line x1="0" y1="405" x2="1200" y2="405"/><line x1="0" y1="540" x2="1200" y2="540"/>
+    <line x1="600" y1="0" x2="600" y2="675"/>
+  </g>
+
+  <text x="60" y="70" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="34" font-weight="700" fill="#f8fafc">同一个问题，两种说法</text>
+  <text x="60" y="108" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="20" fill="#94a3b8">左边让你再猜一轮，右边让你直接动手——差别就是有没有证据</text>
+
+  <!-- 左：模糊 -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="60" y="150" width="510" height="470" rx="14" fill="#3a1d1d" stroke="#f87171" stroke-width="1.8"/>
+    <text x="86" y="194" font-size="22" font-weight="700" fill="#fca5a5">"你再检查一下"</text>
+    <rect x="86" y="220" width="458" height="120" rx="10" fill="#2a1414" stroke="#7f1d1d"/>
+    <text x="110" y="270" font-size="22" fill="#fecaca">这个标签渲染好像有点问题，</text>
+    <text x="110" y="304" font-size="22" fill="#fecaca">你再看看吧。</text>
+    <g font-size="18" fill="#fda4af">
+      <text x="86" y="392">✕ 没说哪个文件、哪一行</text>
+      <text x="86" y="430">✕ 没说多严重、要不要拦上线</text>
+      <text x="86" y="468">✕ 没说谁来修</text>
+      <text x="86" y="506">✕ 没说怎么验证修好了</text>
+      <text x="86" y="544">✕ 没说有多大把握</text>
+    </g>
+    <text x="86" y="596" font-size="17" fill="#f87171" font-weight="700">→ 你只能再猜一轮</text>
+  </g>
+
+  <!-- 右：带证据 -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="630" y="150" width="510" height="470" rx="14" fill="#0b3a52" stroke="#38bdf8" stroke-width="1.8"/>
+    <text x="656" y="194" font-size="22" font-weight="700" fill="#5eead4">一条结构化 finding</text>
+    <g font-size="17">
+      <text x="656" y="240" fill="#7dd3fc" font-weight="700">证据 </text>
+      <text x="724" y="240" fill="#cbd5e1">renderTagOptions 用 Set 去重后</text>
+      <text x="656" y="266" fill="#cbd5e1">未排序，选项顺序每次渲染抖动</text>
+
+      <text x="656" y="312" fill="#7dd3fc" font-weight="700">严重度 </text>
+      <text x="752" y="312" fill="#cbd5e1">P2（不崩，但伤体验/可测试性）</text>
+
+      <text x="656" y="358" fill="#7dd3fc" font-weight="700">谁修 </text>
+      <text x="724" y="358" fill="#cbd5e1">work 阶段实现者</text>
+
+      <text x="656" y="404" fill="#7dd3fc" font-weight="700">怎么验证 </text>
+      <text x="784" y="404" fill="#cbd5e1">补单测断言选项稳定有序，</text>
+      <text x="656" y="430" fill="#cbd5e1">多次渲染顺序一致</text>
+
+      <text x="656" y="476" fill="#7dd3fc" font-weight="700">置信度 </text>
+      <text x="752" y="476" fill="#cbd5e1">75（证据明确，影响面待确认）</text>
+
+      <text x="656" y="522" fill="#7dd3fc" font-weight="700">是否既有 </text>
+      <text x="784" y="522" fill="#cbd5e1">否，本次改动引入</text>
+    </g>
+    <text x="656" y="596" font-size="17" fill="#5eead4" font-weight="700">→ 拿到就能动手，不用再猜</text>
+  </g>
+</svg>

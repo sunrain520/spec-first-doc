@@ -12,6 +12,9 @@
 - [spec-first 竞争分析](./harness-engineering/spec-first-competitive-analysis.md)
 - [spec-first Harness Engineering 改造技术方案](./harness-engineering/spec-first-harness-engineering-改造技术方案.md)
 - [六层 Knowledge Harness 分层研究](./harness-engineering/2026-06-05-六层KnowledgeHarness分层合理性深度研究报告.md)
+- [#19 组织级 Coding Agent 架构与 spec-first 对照](./harness-engineering/19.org-coding-agent-org-coding-agent-vs-spec-first-analysis.md)
+- [#25 Agentic Engineering 三层体系：Loop 工程 / Harness 工程 / FDE](./harness-engineering/25.loop-harness-fde-analysis.md)
+- [TMA1 v2：Coding Agent Loop 与 spec-first / LSF Skill 升级判断](./harness-engineering/2026-06-15-tma1-v2-coding-agent-loop-spec-first-lsf-skill-analysis.md)
 
 ### CRG / CodeGraph / Graphify
 
@@ -23,10 +26,12 @@
 - [业界方案调研：AI 编码上下文工程现状](./crg-codegraph-graphify/业界方案调研.md)
 - [Graphify 借鉴方案](./crg-codegraph-graphify/graphify借鉴方案.md)
 - [CodeGraph / Graphify capability-aware 协同方案](./crg-codegraph-graphify/CodeGraph技术方案.md)
+- [CodeGraph 降低 Token 消耗与 spec-first 最佳实践复判](./crg-codegraph-graphify/2026-06-15-codegraph-token-cost-spec-first-best-practice-review.md)
 
 ### OpenSpec / Superpowers / gstack
 
-- [OpenSpec + Superpowers 与 spec-first 对照](./openspec-superpowers-gstack/openspec-superpowers-vs-spec-first-analysis.md)
+- [#16 Claude Code + OpenSpec + Superpowers 联合开发流程 vs spec-first 逐维度对照](./openspec-superpowers-gstack/16.openspec-superpowers-openspec-superpowers-vs-spec-first-analysis.md)
+- [#18 Gstack + Superpowers + GSD 三层组合 vs spec-first 阶段化设计](./openspec-superpowers-gstack/18.gstack-superpowers-gsd-gstack-gsd-superpowers-vs-spec-first-analysis.md)
 - [OpenSpec + Superpowers 双层纪律分析](./openspec-superpowers-gstack/openspec-superpowers-dual-discipline.md)
 - [gstack / OpenSpec / Superpowers 三层工具体系分析](./openspec-superpowers-gstack/gstack-openspec-superpowers-trilogy-analysis.md)
 - [spec-brainstorm 竞品调研与质量提升报告](./openspec-superpowers-gstack/2026-05-29-spec-brainstorm-竞品调研与质量提升报告.md)
@@ -52,9 +57,19 @@
 - [google-skills 集成分析与 Agent OS 升级路径](./prd-agent-os/12.google-skills-集成分析与Agent-OS升级路径-2026-05-18.md)
 - [host 能力核查清单](./prd-agent-os/13.host能力核查清单-判定版本规划是否成立-2026-05-29.md)
 - [prd-skill 竞品分析](./prd-agent-os/14.prd-skill-竞品分析-2026-05-30.md)
-- [prd 内容规范与模板业界对标](./prd-agent-os/15.prd-内容规范与模板-业界对标-2026-05-30.md)
 - [AI Coding 研发体系深度分析](./prd-agent-os/AI Coding 研发体系深度分析.md)
-- [pm-skills vs spec-first](./prd-agent-os/pm-skills-vs-spec-first-analysis.md)
+- [#15 pm-skills vs spec-first 逐维度对照](./prd-agent-os/15.pm-skills-pm-skills-vs-spec-first-analysis.md)
+- [#17 AI PRD 方法论与 PRD Skill 优化报告](./prd-agent-os/17.ai-prd-methodology-ai-prd-methodology-and-skill-optimization.md)
+- [#22 Demand Detective（需求侦探）Skill 深度分析](./prd-agent-os/22.demand-detective-skill-analysis.md)
+- [#23 端到端业务需求专家 Agent 深度分析](./prd-agent-os/23.business-requirement-agent-analysis.md)
+- [#26 prd 内容规范与模板业界对标（原 #15，避让新系列冲突重编号）](./prd-agent-os/26.prd-内容规范与模板-业界对标-2026-05-30.md)
+
+### AI 工程方法论与团队实践
+
+- [#20 Vibe Coding 12 条“天条”深度分析](./ai-engineering-methodology/20.vibe-coding-12-rules-analysis.md)
+- [#21 AI 赋能软件工程深度分析](./ai-engineering-methodology/21.ai-software-engineering-guide-analysis.md)
+- [#24 AI 时代的团队提效：从 Prompt 到工程化](./ai-engineering-methodology/24.team-efficiency-prompt-to-engineering-analysis.md)
+- [Trae 解构项目业务与代码流程：从代码中提取规范的方法论复盘](./ai-engineering-methodology/2026-06-15-trae-code-to-spec-extraction-analysis.md)
 
 ## 使用约定
 

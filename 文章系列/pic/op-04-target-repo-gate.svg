@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="t d">
+  <title id="t">op-04 三条心法：每仓独立就绪、独立跑链路、target_repo 人工把守</title>
+  <desc id="d">多仓不写错地方的三条心法，核心是 target_repo 由人把守那道闸；目标不明确时 fail closed 列候选不自动选。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#07111f"/><stop offset="0.6" stop-color="#0b2038"/><stop offset="1" stop-color="#162449"/></linearGradient>
+    <marker id="arr" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto"><path d="M0,0 L11,6 L0,12 Z" fill="#38bdf8"/></marker>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <g opacity="0.07" stroke="#7dd3fc" stroke-width="1">
+    <line x1="0" y1="180" x2="1200" y2="180"/><line x1="0" y1="360" x2="1200" y2="360"/>
+    <line x1="0" y1="540" x2="1200" y2="540"/><line x1="0" y1="720" x2="1200" y2="720"/>
+    <line x1="400" y1="0" x2="400" y2="900"/><line x1="800" y1="0" x2="800" y2="900"/>
+  </g>
+
+  <text x="60" y="74" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="34" font-weight="700" fill="#f8fafc">多仓不写错地方：三条心法</text>
+  <text x="60" y="112" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="20" fill="#94a3b8">前两条为第三条服务——target_repo 由人把守的那道闸</text>
+
+  <!-- 心法一 -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="60" y="150" width="1080" height="130" rx="14" fill="#102a44" stroke="#38bdf8" stroke-width="1.8"/>
+    <text x="86" y="192" font-size="23" font-weight="700" fill="#7dd3fc">心法一 · 每个仓独立就绪</text>
+    <text x="86" y="228" font-size="18" fill="#cbd5e1">每个 child 各跑一次"第零步" → 就绪事实写进各仓自己的 .spec-first/config/</text>
+    <text x="86" y="258" font-family="'SF Mono',Menlo,monospace" font-size="16" fill="#5eead4">--repo api（逐个）　/　--all-repos（逐个把每个仓都过一遍，不是父层一锅烩）</text>
+  </g>
+
+  <line x1="600" y1="280" x2="600" y2="306" stroke="#38bdf8" stroke-width="2.5" marker-end="url(#arr)"/>
+
+  <!-- 心法二 -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="60" y="310" width="1080" height="130" rx="14" fill="#102a44" stroke="#38bdf8" stroke-width="1.8"/>
+    <text x="86" y="352" font-size="23" font-weight="700" fill="#7dd3fc">心法二 · 每个仓独立跑链路</text>
+    <text x="86" y="388" font-size="18" fill="#cbd5e1">已会的单仓链路原封搬到每个仓：brainstorm → plan → work → review → compound</text>
+    <text x="86" y="418" font-size="16" fill="#94a3b8">跨仓需求？拆成"每个仓一段"，每段各自带明确 target_repo——拆开是纪律，不是麻烦</text>
+  </g>
+
+  <line x1="600" y1="440" x2="600" y2="466" stroke="#38bdf8" stroke-width="2.5" marker-end="url(#arr)"/>
+
+  <!-- 心法三 核心 -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="60" y="470" width="1080" height="170" rx="14" fill="#172554" stroke="#818cf8" stroke-width="2.5"/>
+    <text x="86" y="512" font-size="23" font-weight="700" fill="#a5b4fc">心法三 · target_repo 是人把守的闸（核心）</text>
+    <text x="86" y="548" font-size="18" fill="#e2e8f0">每一步写入 / 测试 / commit 前，target_repo 必须由人明确确认</text>
+    <text x="86" y="578" font-size="18" fill="#e2e8f0">不交给 cwd，不交给 graph</text>
+    <g transform="translate(700,494)">
+      <rect width="416" height="60" rx="10" fill="#0b3a52" stroke="#5eead4" stroke-width="2"/>
+      <text x="208" y="27" text-anchor="middle" font-size="16" fill="#5eead4" font-weight="700">合法来源：explicit-repo（你点名）</text>
+      <text x="208" y="48" text-anchor="middle" font-size="16" fill="#a5f3e8">/ cwd-git-root（确实站在仓根上）</text>
+    </g>
+    <text x="86" y="612" font-size="16" fill="#94a3b8">work 兜底：范围不清就停下来问，绝不自作主张写进 sibling 仓或父 workspace</text>
+  </g>
+
+  <line x1="600" y1="640" x2="600" y2="666" stroke="#818cf8" stroke-width="2.5" marker-end="url(#arr)"/>
+
+  <!-- fail closed -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="60" y="670" width="1080" height="160" rx="14" fill="#0c1a2e" stroke="#38bdf8" stroke-width="1.5"/>
+    <text x="86" y="712" font-size="22" font-weight="700" fill="#5eead4">默认 fail closed：没指定仓 + 多个候选 → 停下来列候选，不自动选</text>
+    <text x="86" y="748" font-size="17" fill="#cbd5e1">信号：workspace-target-required（目标仓是必须项，你还没给）</text>
+    <text x="86" y="780" font-size="17" fill="#cbd5e1">默认"不允许写入"，逼你每次主动解锁——错误代价高、又测不出，就该默认锁着</text>
+    <text x="86" y="812" font-size="16" fill="#64748b">这道闸不华丽，但 AI 想顺着 cwd 写错仓，根本走不到那一步</text>
+  </g>
+</svg>

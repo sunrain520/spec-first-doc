@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="t d">
+  <title id="t">op-03 current-state evidence：现状要标出处，最硬的优先</title>
+  <desc id="d">同一条现状从源码坐实、口述、假设，可信度天差地别，最硬的优先，没坐实的别伪装成坐实的。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/><stop offset="0.6" stop-color="#0b2038"/><stop offset="1" stop-color="#172554"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <g opacity="0.07" stroke="#7dd3fc" stroke-width="1">
+    <line x1="0" y1="168" x2="1200" y2="168"/><line x1="0" y1="336" x2="1200" y2="336"/><line x1="0" y1="504" x2="1200" y2="504"/>
+    <line x1="400" y1="0" x2="400" y2="675"/><line x1="800" y1="0" x2="800" y2="675"/>
+  </g>
+
+  <text x="60" y="74" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="34" font-weight="700" fill="#f8fafc">同样是「现状」，可信度天差地别</text>
+  <text x="60" y="110" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="20" fill="#94a3b8">spec-prd 给每条现状标明出处 —— 用最硬的，没坐实的别伪装成坐实的</text>
+
+  <!-- 三条不同出处 -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <!-- 最硬 -->
+    <rect x="60" y="150" width="345" height="320" rx="12" fill="#0b3a52" stroke="#38bdf8" stroke-width="2.5"/>
+    <text x="84" y="192" font-size="22" font-weight="700" fill="#5eead4">从源码坐实</text>
+    <rect x="84" y="208" width="120" height="30" rx="6" fill="#0f2942" stroke="#38bdf8" stroke-width="1"/>
+    <text x="144" y="229" text-anchor="middle" font-size="15" fill="#5eead4">最硬 · 可当铁律</text>
+    <text x="84" y="278" font-size="18" fill="#cbd5e1">库存释放走</text>
+    <text x="84" y="306" font-size="17" fill="#e2e8f0">releaseByReconciliation</text>
+    <text x="84" y="334" font-size="17" fill="#cbd5e1">幂等键 orderId，只释放一次</text>
+    <text x="84" y="384" font-size="16" fill="#38bdf8">证据：已读到函数源码</text>
+    <text x="84" y="410" font-size="16" fill="#38bdf8">+ 对应幂等单测</text>
+    <text x="84" y="448" font-size="16" fill="#5eead4" font-weight="600">→ 直接当「不能破坏」约束</text>
+
+    <!-- 口述 -->
+    <rect x="427" y="150" width="345" height="320" rx="12" fill="#0f2942" stroke="#fbbf24" stroke-width="2"/>
+    <text x="451" y="192" font-size="22" font-weight="700" fill="#fbbf24">产品 owner 口述</text>
+    <rect x="451" y="208" width="140" height="30" rx="6" fill="#1a1a0e" stroke="#fbbf24" stroke-width="1"/>
+    <text x="521" y="229" text-anchor="middle" font-size="15" fill="#fcd34d">待代码核实</text>
+    <text x="451" y="278" font-size="18" fill="#cbd5e1">「超时时间业务上</text>
+    <text x="451" y="306" font-size="18" fill="#cbd5e1">定的是 30 分钟」</text>
+    <text x="451" y="356" font-size="16" fill="#94a3b8">代码里是写死常量？读配置？</text>
+    <text x="451" y="382" font-size="16" fill="#94a3b8">还是压根没有？还没核实</text>
+    <text x="451" y="448" font-size="16" fill="#fcd34d" font-weight="600">→ 记下，但标「owner 说的」</text>
+
+    <!-- 假设 -->
+    <rect x="794" y="150" width="346" height="320" rx="12" fill="#0f2942" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 4"/>
+    <text x="818" y="192" font-size="22" font-weight="700" fill="#cbd5e1">自己推断的假设</text>
+    <rect x="818" y="208" width="100" height="30" rx="6" fill="#1a2030" stroke="#94a3b8" stroke-width="1"/>
+    <text x="868" y="229" text-anchor="middle" font-size="15" fill="#94a3b8">最弱</text>
+    <text x="818" y="278" font-size="18" fill="#cbd5e1">「通知应该是异步发的，</text>
+    <text x="818" y="306" font-size="18" fill="#cbd5e1">取消通知失败大概</text>
+    <text x="818" y="334" font-size="18" fill="#cbd5e1">不会阻塞主流程」</text>
+    <text x="818" y="384" font-size="16" fill="#64748b">无源码、无人证支撑</text>
+    <text x="818" y="448" font-size="16" fill="#94a3b8" font-weight="600">→ 老实标「假设」，可复查</text>
+  </g>
+
+  <!-- 底部规矩 -->
+  <rect x="60" y="500" width="1080" height="135" rx="12" fill="#172554" stroke="#818cf8" stroke-width="2"/>
+  <text x="90" y="546" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="22" font-weight="700" fill="#a5b4fc">存量场景最贵的错：把「我以为」当成「我确认」往下传</text>
+  <text x="90" y="586" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="20" fill="#e2e8f0">没有出处标签的现状，不许当成已确认的事实对待</text>
+  <text x="90" y="618" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="19" fill="#5eead4">可以带着假设往下走，但假设必须以「它是假设」的身份往下走</text>
+</svg>

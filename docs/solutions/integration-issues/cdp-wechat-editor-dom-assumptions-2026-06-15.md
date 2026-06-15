@@ -25,8 +25,8 @@ applicable_versions:
   - "baoyu-post-to-wechat v1.24.0"
 invalidation_condition: "微信公众号编辑器再次改版:ProseMirror 实例结构变化、标题/摘要数据流改回直接赋值、或弹窗按钮开始响应合成 click 时,本修法的选择器与事件假设全部失效,需按新版真实 DOM 用 CDP 重新探测研判"
 source_refs:
-  - "文章系列/.skills/spec-wechat-publish/scripts/patch-wechat-editor-selectors.mjs"
-  - "文章系列/.skills/spec-wechat-publish/scripts/upload-wechat-cover.ts"
+  - "skills/spec-wechat-publish/scripts/patch-wechat-editor-selectors.mjs"
+  - "skills/spec-wechat-publish/scripts/upload-wechat-cover.ts"
 tags:
   - cdp-automation
   - wechat-editor
@@ -128,6 +128,6 @@ await cdp.send('Input.dispatchMouseEvent', { type: 'mouseReleased', x, y, button
 
 ## Related Issues
 
-- 修复载体：`文章系列/.skills/spec-wechat-publish/scripts/patch-wechat-editor-selectors.mjs`（坑 1+2）、`文章系列/.skills/spec-wechat-publish/scripts/upload-wechat-cover.ts`（坑 3）
-- skill 文档：`文章系列/.skills/spec-wechat-publish/SKILL.md` Prerequisites #4.5 调用该补丁；Step 7 推送链路
+- 修复载体：`skills/spec-wechat-publish/scripts/patch-wechat-editor-selectors.mjs`（坑 1+2）、`skills/spec-wechat-publish/scripts/upload-wechat-cover.ts`（坑 3）
+- skill 文档：`skills/spec-wechat-publish/SKILL.md` Prerequisites #4.5 调用该补丁；Step 7 推送链路
 - 同源样式修复（不同主题）：`install-tech-blog-theme.mjs` 的 inline 样式后处理（代码块/引用块/横向滚动）

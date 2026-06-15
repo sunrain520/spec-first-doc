@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="t d">
+  <title id="t">op-04 传播资产：多仓协作不踩坑的核心约束全景卡</title>
+  <desc id="d">多仓最容易出的事故是写错 repo；靠认知（advisory 现状）+ 纪律（三条心法、target_repo 人工把守）挡住。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#07111f"/><stop offset="0.55" stop-color="#0b2038"/><stop offset="1" stop-color="#172554"/></linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <g opacity="0.06" stroke="#7dd3fc" stroke-width="1">
+    <line x1="0" y1="135" x2="1200" y2="135"/><line x1="0" y1="270" x2="1200" y2="270"/><line x1="0" y1="405" x2="1200" y2="405"/><line x1="0" y1="540" x2="1200" y2="540"/>
+    <line x1="300" y1="0" x2="300" y2="675"/><line x1="600" y1="0" x2="600" y2="675"/><line x1="900" y1="0" x2="900" y2="675"/>
+  </g>
+
+  <text x="60" y="72" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="33" font-weight="700" fill="#f8fafc">多仓协作不踩坑 · 核心约束全景</text>
+  <text x="60" y="108" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="19" fill="#94a3b8">管多仓的人建议截图存下——一张卡说清"怎么不把代码写错地方"</text>
+
+  <!-- 事故 -->
+  <rect x="60" y="134" width="1080" height="72" rx="12" fill="#3a1530" stroke="#f87171" stroke-width="1.8"/>
+  <text x="86" y="172" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="20" font-weight="700" fill="#fca5a5">最容易出的事故</text>
+  <text x="380" y="172" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="19" fill="#e2e8f0">代码写对了，却 commit 进错误的 repo——测试全绿、CI 不报错</text>
+
+  <!-- 认知 + 纪律 两栏 -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="60" y="222" width="525" height="280" rx="12" fill="#1a2a4a" stroke="#818cf8" stroke-width="2"/>
+    <text x="86" y="262" font-size="22" font-weight="700" fill="#a5b4fc">① 认知：advisory 是设计，不是缺陷</text>
+    <text x="86" y="300" font-size="17" fill="#cbd5e1">父 workspace 是 advisory 控制面</text>
+    <text x="86" y="330" font-size="17" fill="#cbd5e1">给跨仓概览、列候选仓</text>
+    <text x="86" y="360" font-size="17" fill="#cbd5e1">但故意不替你拍板写哪儿</text>
+    <text x="86" y="396" font-size="17" fill="#94a3b8">summary 是参考，真相在各仓自己那里</text>
+    <rect x="86" y="420" width="473" height="62" rx="8" fill="#0c1a2e"/>
+    <text x="102" y="452" font-size="16" fill="#5eead4" font-weight="600">像副驾：报路况给候选，方向盘在你手里</text>
+    <text x="102" y="474" font-size="15" fill="#94a3b8">关键决策越关键，越不该自动化掉</text>
+
+    <rect x="615" y="222" width="525" height="280" rx="12" fill="#0b3a52" stroke="#5eead4" stroke-width="2"/>
+    <text x="641" y="262" font-size="22" font-weight="700" fill="#5eead4">② 纪律：三条心法 + 人把守闸</text>
+    <text x="641" y="300" font-size="17" fill="#a5f3e8">· 每个仓独立就绪（--repo / --all-repos）</text>
+    <text x="641" y="330" font-size="17" fill="#a5f3e8">· 每个仓独立跑链路（单仓链路原封搬）</text>
+    <text x="641" y="360" font-size="17" fill="#a5f3e8">· target_repo 由人确认，不交给 cwd/graph</text>
+    <text x="641" y="396" font-size="17" fill="#cbd5e1">默认 fail closed：多候选不自动选，列出来让你定</text>
+    <rect x="641" y="420" width="473" height="62" rx="8" fill="#0c1a2e"/>
+    <text x="657" y="452" font-size="16" fill="#5eead4" font-weight="600">跨仓需求？拆成"每仓一段"，各带 target_repo</text>
+    <text x="657" y="474" font-size="15" fill="#94a3b8">能写进 plan 就提前写死，全程可查</text>
+  </g>
+
+  <!-- 底部金句 -->
+  <rect x="60" y="520" width="1080" height="116" rx="12" fill="#0c1a2e" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="600" y="566" text-anchor="middle" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="24" font-weight="700" fill="#5eead4">"写哪个仓"不是工具该替你猜的</text>
+  <text x="600" y="602" text-anchor="middle" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="24" font-weight="700" fill="#f8fafc">是你每次开工要显式回答的第一个问题</text>
+  <text x="600" y="626" text-anchor="middle" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="16" fill="#64748b">边界清楚，是优势，不是缺陷　·　spec-first op-04</text>
+</svg>

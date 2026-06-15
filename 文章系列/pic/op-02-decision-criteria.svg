@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="t d">
+  <title id="t">op-02 方向评估维度：ideate 给候选打分用的尺子</title>
+  <desc id="d">ideate 评估每个方向候选的七个维度，也是你自己拍方向时该想的几件事。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/><stop offset="0.6" stop-color="#0b2038"/><stop offset="1" stop-color="#162449"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <g opacity="0.08" stroke="#7dd3fc" stroke-width="1">
+    <line x1="0" y1="135" x2="1200" y2="135"/><line x1="0" y1="270" x2="1200" y2="270"/>
+    <line x1="0" y1="405" x2="1200" y2="405"/><line x1="0" y1="540" x2="1200" y2="540"/>
+    <line x1="300" y1="0" x2="300" y2="675"/><line x1="600" y1="0" x2="600" y2="675"/><line x1="900" y1="0" x2="900" y2="675"/>
+  </g>
+
+  <text x="60" y="76" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="34" font-weight="700" fill="#f8fafc">评一个方向，到底在评什么</text>
+  <text x="60" y="114" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="20" fill="#94a3b8">理解这几把尺子，你才知道清单上的"把握高/中/低"高在哪、低在哪</text>
+
+  <!-- 7 个维度卡片 3x3-1 布局 -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <!-- row1 -->
+    <rect x="60" y="150" width="350" height="108" rx="10" fill="#0f2942" stroke="#1e3a5f" stroke-width="1.5"/>
+    <text x="84" y="186" font-size="21" fill="#5eead4" font-weight="700">依据强不强</text>
+    <text x="84" y="216" font-size="16" fill="#cbd5e1">直接观察 &gt; 外部听来 &gt; 纯推理</text>
+    <text x="84" y="242" font-size="15" fill="#64748b">搜索器排第一：依据最直接</text>
+
+    <rect x="425" y="150" width="350" height="108" rx="10" fill="#0f2942" stroke="#1e3a5f" stroke-width="1.5"/>
+    <text x="449" y="186" font-size="21" fill="#38bdf8" font-weight="700">预期价值多大</text>
+    <text x="449" y="216" font-size="16" fill="#cbd5e1">用得频不频繁、解决得狠不狠</text>
+    <text x="449" y="242" font-size="15" fill="#64748b">"找不到"是每天都踩的痛</text>
+
+    <rect x="790" y="150" width="350" height="108" rx="10" fill="#0f2942" stroke="#1e3a5f" stroke-width="1.5"/>
+    <text x="814" y="186" font-size="21" fill="#38bdf8" font-weight="700">新颖度</text>
+    <text x="814" y="216" font-size="16" fill="#cbd5e1">是不是已经一堆现成轮子</text>
+    <text x="814" y="242" font-size="15" fill="#64748b">做了也没差异就该降权</text>
+
+    <!-- row2 -->
+    <rect x="60" y="274" width="350" height="108" rx="10" fill="#0f2942" stroke="#1e3a5f" stroke-width="1.5"/>
+    <text x="84" y="310" font-size="21" fill="#38bdf8" font-weight="700">务实度</text>
+    <text x="84" y="340" font-size="16" fill="#cbd5e1">在单仓单项目、一个人的约束下</text>
+    <text x="84" y="366" font-size="15" fill="#64748b">现不现实</text>
+
+    <rect x="425" y="274" width="350" height="108" rx="10" fill="#0b3a52" stroke="#5eead4" stroke-width="2"/>
+    <text x="449" y="310" font-size="21" fill="#5eead4" font-weight="700">对未来的杠杆</text>
+    <text x="449" y="340" font-size="16" fill="#a5f3e8">做了它，是否顺带让后面变容易</text>
+    <text x="449" y="366" font-size="15" fill="#94a3b8">索引建好，启动器也能复用</text>
+
+    <rect x="790" y="274" width="350" height="108" rx="10" fill="#0f2942" stroke="#1e3a5f" stroke-width="1.5"/>
+    <text x="814" y="310" font-size="21" fill="#f59e0b" font-weight="700">实现负担</text>
+    <text x="814" y="340" font-size="16" fill="#cbd5e1">要起多少东西、多重</text>
+    <text x="814" y="366" font-size="15" fill="#64748b">书架网页要起前端，偏重</text>
+
+    <!-- row3 单个居中 -->
+    <rect x="425" y="398" width="350" height="108" rx="10" fill="#0f2942" stroke="#1e3a5f" stroke-width="1.5"/>
+    <text x="449" y="434" font-size="21" fill="#f59e0b" font-weight="700">与更强候选的重叠</text>
+    <text x="449" y="464" font-size="16" fill="#cbd5e1">更强的候选顺手就盖掉它？</text>
+    <text x="449" y="490" font-size="15" fill="#64748b">能被覆盖的就该砍</text>
+  </g>
+
+  <!-- 底部结论 -->
+  <rect x="60" y="528" width="1080" height="118" rx="12" fill="#172554" stroke="#818cf8" stroke-width="2"/>
+  <text x="90" y="572" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="22" fill="#e2e8f0">几把尺子摆一起，就明白为什么"搜索器"胜出：</text>
+  <text x="90" y="610" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="22" font-weight="700" fill="#a5b4fc">依据最直接 · 价值最高频 · 实现最轻 · 还给后续留了杠杆——几乎每把尺子都不输。</text>
+  <text x="90" y="638" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="17" fill="#94a3b8">这套尺子也是你自己拍方向时该过的那几条</text>
+</svg>

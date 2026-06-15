@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="t d">
+  <title id="t">op-03 code-review 按影响面分组，盯既有行为</title>
+  <desc id="d">code-review 按变更文件和影响面分组，拿 keep 约束当尺子，第一位盯这次改动会不会冲掉既有行为。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/><stop offset="0.6" stop-color="#0b2038"/><stop offset="1" stop-color="#172554"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <g opacity="0.07" stroke="#7dd3fc" stroke-width="1">
+    <line x1="0" y1="168" x2="1200" y2="168"/><line x1="0" y1="336" x2="1200" y2="336"/><line x1="0" y1="504" x2="1200" y2="504"/>
+    <line x1="400" y1="0" x2="400" y2="675"/><line x1="800" y1="0" x2="800" y2="675"/>
+  </g>
+
+  <text x="60" y="74" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="34" font-weight="700" fill="#f8fafc">code-review 按影响面分组，第一位盯：会不会冲掉既有行为</text>
+  <text x="60" y="110" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="20" fill="#94a3b8">存量风险不均匀分布，分组让最该盯的那组得到最集中的火力</text>
+
+  <!-- 三组,风险不同 -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="60" y="150" width="345" height="150" rx="12" fill="#0f2942" stroke="#5eead4" stroke-width="1.5"/>
+    <text x="84" y="190" font-size="21" font-weight="700" fill="#5eead4">组 A · 新增定时任务</text>
+    <text x="84" y="226" font-size="17" fill="#cbd5e1">全新代码，不碰既有行为</text>
+    <text x="84" y="262" font-size="16" fill="#64748b">风险相对低</text>
+    <text x="84" y="288" font-size="16" fill="#5eead4">挂少量 reviewer</text>
+
+    <rect x="427" y="150" width="345" height="150" rx="12" fill="#0b3a52" stroke="#f87171" stroke-width="2.5"/>
+    <text x="451" y="190" font-size="21" font-weight="700" fill="#f87171">组 B · cancel 接库存释放</text>
+    <text x="451" y="226" font-size="17" fill="#cbd5e1">直接踩在 keep 约束上</text>
+    <text x="451" y="262" font-size="16" fill="#fca5a5">风险极高 ← 火力集中</text>
+    <text x="451" y="288" font-size="16" fill="#fca5a5">挂最多 reviewer，逐行对照</text>
+
+    <rect x="794" y="150" width="346" height="150" rx="12" fill="#0f2942" stroke="#38bdf8" stroke-width="1.5"/>
+    <text x="818" y="190" font-size="21" font-weight="700" fill="#38bdf8">组 C · 通知 / 集成</text>
+    <text x="818" y="226" font-size="17" fill="#cbd5e1">联动既有通知 + 跨模块</text>
+    <text x="818" y="262" font-size="16" fill="#64748b">中等风险</text>
+    <text x="818" y="288" font-size="16" fill="#7dd3fc">盯并发与集成边界</text>
+  </g>
+
+  <!-- 一条真实 finding -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="60" y="330" width="1080" height="245" rx="12" fill="#0c1a2e" stroke="#f87171" stroke-width="2"/>
+    <rect x="84" y="354" width="64" height="32" rx="6" fill="#f87171"/>
+    <text x="116" y="377" text-anchor="middle" font-size="17" font-weight="700" fill="#0b1220">P0</text>
+    <text x="164" y="377" font-size="19" font-weight="700" fill="#f8fafc">correctness · 既有约束守护 · OrderService.cancel()</text>
+
+    <text x="84" y="416" font-size="16" fill="#38bdf8" font-weight="600">evidence：</text>
+    <text x="180" y="416" font-size="16" fill="#cbd5e1">cancel() 走 releaseByReconciliation、幂等键保留 —— 符合 keep。</text>
+    <text x="180" y="442" font-size="16" fill="#fca5a5">但集成测试只覆盖「手动取消」幂等，没覆盖「超时取消 + 几乎同时手动取消」并发。</text>
+
+    <text x="84" y="478" font-size="16" fill="#38bdf8" font-weight="600">severity：</text>
+    <text x="180" y="478" font-size="16" fill="#cbd5e1">P0 —— 双触发并发可能绕过幂等，重复释放，正是本次最该防的事故</text>
+
+    <text x="84" y="512" font-size="16" fill="#38bdf8" font-weight="600">owner：</text>
+    <text x="180" y="512" font-size="16" fill="#cbd5e1">work 阶段实现者</text>
+
+    <text x="84" y="546" font-size="16" fill="#38bdf8" font-weight="600">verification：</text>
+    <text x="210" y="546" font-size="16" fill="#cbd5e1">补集成测试 —— 同一订单超时与手动取消并发，断言只生效一次</text>
+  </g>
+
+  <text x="600" y="630" text-anchor="middle" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="20" fill="#5eead4" font-weight="600">它不是挑新代码毛病，是拿 spec-prd 标死的 keep 约束当尺子，量新代码碰没碰到不该碰的</text>
+  <text x="600" y="660" text-anchor="middle" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="18" fill="#94a3b8">前面 spec-prd 把约束标得越清楚，这里 review 就盯得越准</text>
+</svg>

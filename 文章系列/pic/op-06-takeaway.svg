@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="t d">
+  <title id="t">可带走的判断：把接力变成习惯动作</title>
+  <desc id="d">op-06 收尾：上下文落进文件、接手有顺序、sessions 补过程、compound 沉淀、留好 handoff。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/><stop offset="0.6" stop-color="#0b2038"/><stop offset="1" stop-color="#162449"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <g opacity="0.08" stroke="#7dd3fc" stroke-width="1">
+    <line x1="0" y1="135" x2="1200" y2="135"/><line x1="0" y1="270" x2="1200" y2="270"/>
+    <line x1="0" y1="405" x2="1200" y2="405"/><line x1="0" y1="540" x2="1200" y2="540"/>
+    <line x1="300" y1="0" x2="300" y2="675"/><line x1="600" y1="0" x2="600" y2="675"/><line x1="900" y1="0" x2="900" y2="675"/>
+  </g>
+
+  <text x="60" y="76" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="34" font-weight="700" fill="#f8fafc">可带走的判断：把接力变成习惯动作</text>
+  <text x="60" y="114" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="20" fill="#94a3b8">不是重新讲一遍，而是让下一棒读一遍</text>
+
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <g>
+      <rect x="60" y="160" width="350" height="150" rx="12" fill="#0b3a52" stroke="#38bdf8" stroke-width="1.8"/>
+      <text x="84" y="200" font-size="22" font-weight="700" fill="#5eead4">docs 三件套</text>
+      <text x="84" y="236" font-size="16" fill="#cbd5e1">把判断固化下来</text>
+      <text x="84" y="266" font-size="15" fill="#94a3b8">requirements / plan / solutions</text>
+      <text x="84" y="294" font-size="15" fill="#94a3b8">各记 WHAT / HOW 边界 / 坑</text>
+    </g>
+    <g>
+      <rect x="428" y="160" width="344" height="150" rx="12" fill="#102a44" stroke="#38bdf8" stroke-width="1.6"/>
+      <text x="452" y="200" font-size="22" font-weight="700" fill="#7dd3fc">接手有顺序</text>
+      <text x="452" y="236" font-size="16" fill="#cbd5e1">先 plan → 再 solutions</text>
+      <text x="452" y="262" font-size="16" fill="#cbd5e1">→ 最后 review findings</text>
+      <text x="452" y="294" font-size="15" fill="#94a3b8">从意图到细节，几分钟到位</text>
+    </g>
+    <g>
+      <rect x="790" y="160" width="350" height="150" rx="12" fill="#102a44" stroke="#22d3ee" stroke-width="1.6"/>
+      <text x="814" y="200" font-size="22" font-weight="700" fill="#5eead4">sessions 补过程</text>
+      <text x="814" y="236" font-size="16" fill="#cbd5e1">docs 不够时捞回</text>
+      <text x="814" y="262" font-size="15" fill="#94a3b8">试过什么 / 什么没成 / 决策</text>
+      <text x="814" y="294" font-size="15" fill="#94a3b8">蒸馏引用，不在仓库留痕</text>
+    </g>
+    <g>
+      <rect x="60" y="330" width="350" height="150" rx="12" fill="#172554" stroke="#818cf8" stroke-width="1.8"/>
+      <text x="84" y="370" font-size="22" font-weight="700" fill="#a5b4fc">compound 沉淀</text>
+      <text x="84" y="406" font-size="16" fill="#cbd5e1">长期留存可复用判断</text>
+      <text x="84" y="436" font-size="15" fill="#94a3b8">不重复踩坑、不重复纠结</text>
+      <text x="84" y="464" font-size="15" fill="#94a3b8">有选择地记，不是写日记</text>
+    </g>
+    <g>
+      <rect x="428" y="330" width="344" height="150" rx="12" fill="#0f2942" stroke="#1e3a5f" stroke-width="1.6"/>
+      <text x="452" y="370" font-size="22" font-weight="700" fill="#cbd5e1">留好 handoff</text>
+      <text x="452" y="406" font-size="16" fill="#cbd5e1">每次结束别急着关</text>
+      <text x="452" y="436" font-size="15" fill="#94a3b8">work 已写的别删</text>
+      <text x="452" y="464" font-size="15" fill="#94a3b8">让交接成为默认副产品</text>
+    </g>
+    <g>
+      <rect x="790" y="330" width="350" height="150" rx="12" fill="#0f2942" stroke="#1e3a5f" stroke-width="1.6"/>
+      <text x="814" y="370" font-size="22" font-weight="700" fill="#cbd5e1">个人 / 团队同源</text>
+      <text x="814" y="406" font-size="16" fill="#cbd5e1">对个人：对抗遗忘</text>
+      <text x="814" y="436" font-size="16" fill="#cbd5e1">对团队：对抗失对齐</text>
+      <text x="814" y="464" font-size="15" fill="#94a3b8">为自己留的，就是为团队留的</text>
+    </g>
+  </g>
+
+  <!-- 金句条 -->
+  <rect x="60" y="510" width="1080" height="120" rx="14" fill="#0b3a52" stroke="#38bdf8" stroke-width="2"/>
+  <text x="600" y="560" text-anchor="middle" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="23" fill="#e2e8f0">上下文不该留在脑子里和对话框里——那些一关就蒸发</text>
+  <text x="600" y="600" text-anchor="middle" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="25" font-weight="700" fill="#5eead4">把它落在文件里，下一棒（哪怕是三个月后的你）才接得住</text>
+</svg>

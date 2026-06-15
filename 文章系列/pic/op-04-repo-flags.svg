@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="t d">
+  <title id="t">op-04 三个 flag：--repo / --all-repos / --folder 用法与边界</title>
+  <desc id="d">--repo 点名一个 child 仓；--all-repos 逐个维护所有仓只多一份 advisory summary；--folder 处理非 Git 普通目录，与 --repo 互斥。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#07111f"/><stop offset="0.6" stop-color="#0b2038"/><stop offset="1" stop-color="#162449"/></linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <g opacity="0.07" stroke="#7dd3fc" stroke-width="1">
+    <line x1="0" y1="135" x2="1200" y2="135"/><line x1="0" y1="270" x2="1200" y2="270"/><line x1="0" y1="405" x2="1200" y2="405"/><line x1="0" y1="540" x2="1200" y2="540"/>
+    <line x1="300" y1="0" x2="300" y2="675"/><line x1="600" y1="0" x2="600" y2="675"/><line x1="900" y1="0" x2="900" y2="675"/>
+  </g>
+
+  <text x="60" y="74" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="34" font-weight="700" fill="#f8fafc">三个 flag · 目标是哪个、什么类型，都要你说清</text>
+  <text x="60" y="112" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="20" fill="#94a3b8">工具不在"Git 仓还是普通目录""哪一个仓"这些问题上替你猜</text>
+
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <!-- --repo -->
+    <rect x="60" y="150" width="345" height="360" rx="14" fill="#0b3a52" stroke="#5eead4" stroke-width="2.5"/>
+    <text x="84" y="194" font-family="'SF Mono',Menlo,monospace" font-size="24" font-weight="700" fill="#5eead4">--repo &lt;path&gt;</text>
+    <text x="84" y="228" font-size="18" fill="#a5f3e8" font-weight="600">点名一个 child 仓</text>
+    <line x1="84" y1="244" x2="381" y2="244" stroke="#1e3a5f" stroke-width="1.5"/>
+    <text x="84" y="282" font-size="16" fill="#cbd5e1">显式选工作区里的一个</text>
+    <text x="84" y="308" font-size="16" fill="#cbd5e1">child Git 仓</text>
+    <text x="84" y="340" font-size="16" fill="#cbd5e1">路径规范化 + 边界检查</text>
+    <text x="84" y="366" font-size="16" fill="#cbd5e1">确认是合法仓根 → 放开写入</text>
+    <rect x="84" y="392" width="297" height="96" rx="8" fill="#0c2438"/>
+    <text x="100" y="424" font-size="15" fill="#94a3b8">何时用：这一轮专注</text>
+    <text x="100" y="450" font-size="15" fill="#94a3b8">一个仓，最干净的方式</text>
+    <text x="100" y="478" font-size="15" fill="#5eead4" font-weight="600">最常用</text>
+
+    <!-- --all-repos -->
+    <rect x="427" y="150" width="345" height="360" rx="14" fill="#102a44" stroke="#38bdf8" stroke-width="2"/>
+    <text x="451" y="194" font-family="'SF Mono',Menlo,monospace" font-size="24" font-weight="700" fill="#7dd3fc">--all-repos</text>
+    <text x="451" y="228" font-size="18" fill="#cbd5e1" font-weight="600">逐个维护所有 child 仓</text>
+    <line x1="451" y1="244" x2="748" y2="244" stroke="#1e3a5f" stroke-width="1.5"/>
+    <text x="451" y="282" font-size="16" fill="#cbd5e1">逐个进每个 child 仓执行</text>
+    <text x="451" y="308" font-size="16" fill="#cbd5e1">repo-local 事实写回各仓</text>
+    <text x="451" y="340" font-size="16" fill="#cbd5e1">父层只多一份 advisory</text>
+    <text x="451" y="366" font-size="16" fill="#cbd5e1">summary</text>
+    <rect x="451" y="392" width="297" height="96" rx="8" fill="#3a1530" stroke="#f87171"/>
+    <text x="467" y="424" font-size="15" fill="#fca5a5" font-weight="600">不跨仓乱写、不一锅烩</text>
+    <text x="467" y="452" font-size="15" fill="#cbd5e1">适合就绪/维护，不适合</text>
+    <text x="467" y="478" font-size="15" fill="#cbd5e1">批量写业务代码</text>
+
+    <!-- --folder -->
+    <rect x="794" y="150" width="346" height="360" rx="14" fill="#1a2a4a" stroke="#818cf8" stroke-width="2"/>
+    <text x="818" y="194" font-family="'SF Mono',Menlo,monospace" font-size="24" font-weight="700" fill="#a5b4fc">--folder &lt;path&gt;</text>
+    <text x="818" y="228" font-size="18" fill="#cbd5e1" font-weight="600">非 Git 普通目录</text>
+    <line x1="818" y1="244" x2="1115" y2="244" stroke="#1e3a5f" stroke-width="1.5"/>
+    <text x="818" y="282" font-size="16" fill="#cbd5e1">父目录里混着的普通文件夹</text>
+    <text x="818" y="308" font-size="16" fill="#cbd5e1">（不是 Git 仓那种）</text>
+    <text x="818" y="340" font-size="16" fill="#cbd5e1">标成 non-git-folder 处理</text>
+    <rect x="818" y="368" width="297" height="120" rx="8" fill="#3a1530" stroke="#f87171"/>
+    <text x="834" y="400" font-size="16" fill="#fca5a5" font-weight="700">与 --repo 互斥</text>
+    <text x="834" y="428" font-size="15" fill="#cbd5e1">一个针对 Git 仓，一个针对</text>
+    <text x="834" y="452" font-size="15" fill="#cbd5e1">普通目录，不能既要又要</text>
+    <text x="834" y="480" font-size="15" fill="#94a3b8">何时用：纯文档站/资料目录</text>
+  </g>
+
+  <rect x="60" y="566" width="1080" height="62" rx="10" fill="#0c1a2e" stroke="#1e3a5f" stroke-width="1.5"/>
+  <text x="600" y="604" text-anchor="middle" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="20" fill="#e2e8f0">处处逼你明确——把每个可能被误解的点，都改成必须显式说明的点</text>
+</svg>

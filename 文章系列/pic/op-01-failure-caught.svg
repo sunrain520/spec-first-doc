@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="t d">
+  <title id="t">op-01 四类翻车，被链路哪一步接住</title>
+  <desc id="d">缺边界/缺既有约束/缺禁区/没测试四类翻车，分别由 brainstorm、plan、work、code-review、compound 接住。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/><stop offset="0.6" stop-color="#0b2038"/><stop offset="1" stop-color="#162449"/>
+    </linearGradient>
+    <marker id="arr" markerWidth="11" markerHeight="11" refX="8" refY="5.5" orient="auto">
+      <path d="M0,0 L10,5.5 L0,11 Z" fill="#5eead4"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <g opacity="0.07" stroke="#7dd3fc" stroke-width="1">
+    <line x1="0" y1="135" x2="1200" y2="135"/><line x1="0" y1="270" x2="1200" y2="270"/>
+    <line x1="0" y1="405" x2="1200" y2="405"/><line x1="0" y1="540" x2="1200" y2="540"/>
+    <line x1="600" y1="0" x2="600" y2="675"/>
+  </g>
+
+  <text x="60" y="74" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="34" font-weight="700" fill="#f8fafc">四类翻车，被链路哪一步接住</text>
+  <text x="60" y="112" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="20" fill="#94a3b8">不是某一步解决所有问题，是整条链路在不同位置，把"猜"换成"定"</text>
+
+  <!-- 表头 -->
+  <text x="70" y="166" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="19" fill="#f87171" font-weight="700">直接甩需求的翻车（第 02 节）</text>
+  <text x="640" y="166" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="19" fill="#5eead4" font-weight="700">被链路哪一步接住</text>
+
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <!-- row1 缺边界 -->
+    <g>
+      <rect x="60" y="186" width="500" height="100" rx="12" fill="#3a1d1d" stroke="#f87171" stroke-width="1.6"/>
+      <text x="84" y="226" font-size="21" font-weight="700" fill="#fca5a5">缺边界</text>
+      <text x="84" y="258" font-size="17" fill="#fecaca">单标签还是多标签？AI 自己默认了一个</text>
+      <rect x="640" y="186" width="500" height="100" rx="12" fill="#102a44" stroke="#38bdf8" stroke-width="1.6"/>
+      <text x="664" y="226" font-size="19" font-weight="700" fill="#7dd3fc">brainstorm</text>
+      <text x="664" y="258" font-size="17" fill="#cbd5e1">钉死"多标签取交集"</text>
+    </g>
+    <!-- row2 缺既有约束 -->
+    <g>
+      <rect x="60" y="298" width="500" height="100" rx="12" fill="#3a1d1d" stroke="#f87171" stroke-width="1.6"/>
+      <text x="84" y="338" font-size="21" font-weight="700" fill="#fca5a5">缺既有约束</text>
+      <text x="84" y="370" font-size="17" fill="#fecaca">冲掉了原本的完成态分组</text>
+      <rect x="640" y="298" width="500" height="100" rx="12" fill="#102a44" stroke="#38bdf8" stroke-width="1.6"/>
+      <text x="664" y="338" font-size="19" font-weight="700" fill="#7dd3fc">plan + compound</text>
+      <text x="664" y="370" font-size="17" fill="#cbd5e1">标为重点回归 + 把坑沉淀下来</text>
+    </g>
+    <!-- row3 缺禁区 -->
+    <g>
+      <rect x="60" y="410" width="500" height="100" rx="12" fill="#3a1d1d" stroke="#f87171" stroke-width="1.6"/>
+      <text x="84" y="450" font-size="21" font-weight="700" fill="#fca5a5">缺禁区</text>
+      <text x="84" y="482" font-size="17" fill="#fecaca">顺手"优化"了不该碰的代码</text>
+      <rect x="640" y="410" width="500" height="100" rx="12" fill="#102a44" stroke="#38bdf8" stroke-width="1.6"/>
+      <text x="664" y="450" font-size="19" font-weight="700" fill="#7dd3fc">brainstorm 非目标 + work scope 验证</text>
+      <text x="664" y="482" font-size="17" fill="#cbd5e1">需求阶段画线，执行期不越界</text>
+    </g>
+    <!-- row4 没测试 -->
+    <g>
+      <rect x="60" y="522" width="500" height="100" rx="12" fill="#3a1d1d" stroke="#f87171" stroke-width="1.6"/>
+      <text x="84" y="562" font-size="21" font-weight="700" fill="#fca5a5">没测试、边界没覆盖</text>
+      <text x="84" y="594" font-size="17" fill="#fecaca">空结果、全清空都没人管</text>
+      <rect x="640" y="522" width="500" height="100" rx="12" fill="#172554" stroke="#818cf8" stroke-width="1.8"/>
+      <text x="664" y="562" font-size="19" font-weight="700" fill="#a5b4fc">plan 列验证点 + code-review</text>
+      <text x="664" y="594" font-size="17" fill="#cbd5e1">带证据查，而非"再看看"</text>
+    </g>
+  </g>
+
+  <!-- 中间映射箭头 -->
+  <g stroke="#5eead4" stroke-width="2.2" marker-end="url(#arr)" opacity="0.8">
+    <line x1="566" y1="236" x2="634" y2="236"/>
+    <line x1="566" y1="348" x2="634" y2="348"/>
+    <line x1="566" y1="460" x2="634" y2="460"/>
+    <line x1="566" y1="572" x2="634" y2="572"/>
+  </g>
+</svg>

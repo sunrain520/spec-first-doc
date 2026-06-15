@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="t d">
+  <title id="t">op-04 多端 actors 与仓库拓扑正交，不是"多端=多仓"</title>
+  <desc id="d">actors（端/参与角色）和仓库拓扑是两个正交维度，没有固定换算；target_repo 选的是 Git 仓根不是"端"。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#07111f"/><stop offset="0.6" stop-color="#0b2038"/><stop offset="1" stop-color="#162449"/></linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <g opacity="0.07" stroke="#7dd3fc" stroke-width="1">
+    <line x1="0" y1="135" x2="1200" y2="135"/><line x1="0" y1="270" x2="1200" y2="270"/><line x1="0" y1="405" x2="1200" y2="405"/><line x1="0" y1="540" x2="1200" y2="540"/>
+    <line x1="300" y1="0" x2="300" y2="675"/><line x1="600" y1="0" x2="600" y2="675"/><line x1="900" y1="0" x2="900" y2="675"/>
+  </g>
+
+  <text x="60" y="74" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="34" font-weight="700" fill="#f8fafc">"多端" ≠ "多仓"——这是两个正交维度</text>
+  <text x="60" y="112" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="20" fill="#94a3b8">几个端 与 几个仓 之间，没有任何固定的换算关系</text>
+
+  <!-- 四象限 -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <!-- 轴标 -->
+    <text x="120" y="180" font-size="17" fill="#64748b">纵轴：仓库拓扑（几个独立 Git 仓）　·　横轴：actors / 端（参与角色）</text>
+
+    <!-- 单仓单端 -->
+    <rect x="120" y="200" width="450" height="150" rx="12" fill="#0f2942" stroke="#1e3a5f" stroke-width="1.5"/>
+    <text x="144" y="240" font-size="20" font-weight="700" fill="#cbd5e1">单仓 · 单端</text>
+    <text x="144" y="276" font-size="16" fill="#94a3b8">一个仓，一类端</text>
+    <text x="144" y="308" font-size="16" fill="#94a3b8">最简单的情况</text>
+
+    <!-- 单仓多端 -->
+    <rect x="630" y="200" width="450" height="150" rx="12" fill="#0b3a52" stroke="#38bdf8" stroke-width="2"/>
+    <text x="654" y="240" font-size="20" font-weight="700" fill="#5eead4">单仓 · 多端</text>
+    <text x="654" y="276" font-size="16" fill="#a5f3e8">monorepo 里前后端都有 / Android 多 module</text>
+    <text x="654" y="308" font-size="16" fill="#cbd5e1">多端，但你只有一个仓 → 不需要多仓那道闸</text>
+
+    <!-- 多仓单端 -->
+    <rect x="120" y="366" width="450" height="150" rx="12" fill="#1a2a4a" stroke="#818cf8" stroke-width="2"/>
+    <text x="144" y="406" font-size="20" font-weight="700" fill="#a5b4fc">多仓 · 同端</text>
+    <text x="144" y="442" font-size="16" fill="#cbd5e1">几个仓都是后端服务</text>
+    <text x="144" y="474" font-size="16" fill="#cbd5e1">多仓，但都是同一类端</text>
+
+    <!-- 多仓多端 -->
+    <rect x="630" y="366" width="450" height="150" rx="12" fill="#1a2a4a" stroke="#818cf8" stroke-width="2"/>
+    <text x="654" y="406" font-size="20" font-weight="700" fill="#a5b4fc">多仓 · 多端</text>
+    <text x="654" y="442" font-size="16" fill="#cbd5e1">web 是前端仓、api 是后端仓</text>
+    <text x="654" y="474" font-size="16" fill="#cbd5e1">既多端又多仓 → 才需要守 target_repo</text>
+  </g>
+
+  <rect x="60" y="540" width="1080" height="100" rx="12" fill="#0c1a2e" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="90" y="582" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="19" fill="#e2e8f0">actors 是"谁参与"的角色维度（交 brainstorm/plan 拆）；target_repo 选的是 Git 仓根，不是"端"</text>
+  <text x="90" y="618" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="20" font-weight="700" fill="#5eead4">判断要不要上多仓纪律：看"我有几个独立 Git 仓"，不是"涉及几个端"</text>
+</svg>

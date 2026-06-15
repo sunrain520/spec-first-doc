@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="t d">
+  <title id="t">上下文蒸发：经验全留在了关掉的对话框里</title>
+  <desc id="d">换会话、换 AI、换人三道接缝处，代码背后的判断一点点漏光。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/><stop offset="0.6" stop-color="#0b2038"/><stop offset="1" stop-color="#162449"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <g opacity="0.08" stroke="#7dd3fc" stroke-width="1">
+    <line x1="0" y1="135" x2="1200" y2="135"/><line x1="0" y1="270" x2="1200" y2="270"/>
+    <line x1="0" y1="405" x2="1200" y2="405"/><line x1="0" y1="540" x2="1200" y2="540"/>
+    <line x1="300" y1="0" x2="300" y2="675"/><line x1="600" y1="0" x2="600" y2="675"/><line x1="900" y1="0" x2="900" y2="675"/>
+  </g>
+
+  <text x="60" y="76" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="34" font-weight="700" fill="#f8fafc">上下文蒸发：经验全留在关掉的对话框里</text>
+  <text x="60" y="114" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="21" fill="#94a3b8">蒸发的从来不是代码，是代码背后的「为什么」</text>
+
+  <!-- 三道接缝 -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <!-- 换会话 -->
+    <g>
+      <rect x="60" y="170" width="345" height="180" rx="12" fill="#0f2942" stroke="#1e3a5f" stroke-width="1.5"/>
+      <text x="84" y="210" font-size="23" font-weight="700" fill="#38bdf8">换会话</text>
+      <text x="84" y="246" font-size="17" fill="#cbd5e1">昨天聊清楚的一下午</text>
+      <text x="84" y="276" font-size="17" fill="#cbd5e1">今天一开，对话框空了</text>
+      <text x="84" y="318" font-size="16" fill="#f87171">→ 只能重新组织语言再讲</text>
+    </g>
+    <!-- 换 AI -->
+    <g>
+      <rect x="428" y="170" width="344" height="180" rx="12" fill="#0f2942" stroke="#1e3a5f" stroke-width="1.5"/>
+      <text x="452" y="210" font-size="23" font-weight="700" fill="#22d3ee">换 AI</text>
+      <text x="452" y="246" font-size="17" fill="#cbd5e1">新模型对项目一无所知</text>
+      <text x="452" y="276" font-size="17" fill="#cbd5e1">不知边界 / 约束 / 非目标</text>
+      <text x="452" y="318" font-size="16" fill="#f87171">→ 自信地按默认重来一遍</text>
+    </g>
+    <!-- 换人 -->
+    <g>
+      <rect x="795" y="170" width="345" height="180" rx="12" fill="#0f2942" stroke="#1e3a5f" stroke-width="1.5"/>
+      <text x="819" y="210" font-size="23" font-weight="700" fill="#818cf8">换人</text>
+      <text x="819" y="246" font-size="17" fill="#cbd5e1">代码看得到，「为什么」看不到</text>
+      <text x="819" y="276" font-size="17" fill="#cbd5e1">隐性知识锁在前人脑子里</text>
+      <text x="819" y="318" font-size="16" fill="#f87171">→ 对着半成品发呆从头摸</text>
+    </g>
+  </g>
+
+  <!-- 漏光示意 -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <text x="600" y="400" text-anchor="middle" font-size="20" fill="#94a3b8">三道接缝处，最值钱的「判断层」一点点漏光</text>
+    <g opacity="0.85">
+      <text x="180" y="430" text-anchor="middle" font-size="30" fill="#475569">▽</text>
+      <text x="480" y="430" text-anchor="middle" font-size="30" fill="#475569">▽</text>
+      <text x="720" y="430" text-anchor="middle" font-size="30" fill="#475569">▽</text>
+      <text x="1020" y="430" text-anchor="middle" font-size="30" fill="#475569">▽</text>
+    </g>
+  </g>
+
+  <!-- 三种代价 -->
+  <rect x="60" y="455" width="1080" height="160" rx="12" fill="#0c1a2e" stroke="#1e3a5f" stroke-width="1.5"/>
+  <text x="90" y="495" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="20" font-weight="700" fill="#f8fafc">判断丢了，接手者只能从三条路里挑一条走（都不靠换更聪明的 AI 能省）</text>
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif">
+    <g transform="translate(90,520)"><rect width="320" height="76" rx="10" fill="#102a44" stroke="#1e3a5f"/><text x="20" y="32" font-size="19" font-weight="700" fill="#7dd3fc">重新推导（慢）</text><text x="20" y="58" font-size="15" fill="#94a3b8">重新生产已有过的判断</text></g>
+    <g transform="translate(440,520)"><rect width="320" height="76" rx="10" fill="#102a44" stroke="#1e3a5f"/><text x="20" y="32" font-size="19" font-weight="700" fill="#22d3ee">重新踩坑（更慢）</text><text x="20" y="58" font-size="15" fill="#94a3b8">前人摔过的同一跤再摔</text></g>
+    <g transform="translate(790,520)"><rect width="320" height="76" rx="10" fill="#102a44" stroke="#1e3a5f"/><text x="20" y="32" font-size="19" font-weight="700" fill="#818cf8">推翻重写（最贵）</text><text x="20" y="58" font-size="15" fill="#94a3b8">看不懂理由，索性全扔</text></g>
+  </g>
+</svg>

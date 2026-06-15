@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="511" viewBox="0 0 1200 511" role="img" aria-labelledby="title desc">
+  <title id="title">AI 写的代码，你凭什么敢按下上线：spec-first 上线信心切面篇</title>
+  <desc id="desc">微信公众号 2.35:1 封面图：op-07 质量门/审计/上线信心，全季压轴信任收口。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/>
+      <stop offset="0.55" stop-color="#0b2038"/>
+      <stop offset="1" stop-color="#172554"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#38bdf8"/>
+      <stop offset="0.52" stop-color="#22d3ee"/>
+      <stop offset="1" stop-color="#818cf8"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="511" fill="url(#bg)"/>
+
+  <g opacity="0.10" stroke="#7dd3fc" stroke-width="1">
+    <line x1="0" y1="73" x2="1200" y2="73"/>
+    <line x1="0" y1="146" x2="1200" y2="146"/>
+    <line x1="0" y1="219" x2="1200" y2="219"/>
+    <line x1="0" y1="292" x2="1200" y2="292"/>
+    <line x1="0" y1="365" x2="1200" y2="365"/>
+    <line x1="0" y1="438" x2="1200" y2="438"/>
+    <line x1="200" y1="0" x2="200" y2="511"/>
+    <line x1="400" y1="0" x2="400" y2="511"/>
+    <line x1="600" y1="0" x2="600" y2="511"/>
+    <line x1="800" y1="0" x2="800" y2="511"/>
+    <line x1="1000" y1="0" x2="1000" y2="511"/>
+  </g>
+
+  <text x="90" y="96" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="26" fill="#38bdf8" letter-spacing="2">Spec-First · 第二季 · 项目实操</text>
+
+  <text x="90" y="190" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="60" font-weight="700" fill="#f8fafc">AI 写的代码</text>
+  <text x="90" y="272" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="60" font-weight="700" fill="#f8fafc">你凭什么敢按下上线</text>
+
+  <text x="92" y="340" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="28" fill="#cbd5e1">上线信心不是相信 AI 聪明，是每步都有证据</text>
+
+  <rect x="92" y="372" width="64" height="5" rx="2.5" fill="url(#accent)"/>
+
+  <!-- 右下角 把关闸门示意 -->
+  <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="17" fill="#0b1220" font-weight="600">
+    <g transform="translate(628,408)"><rect width="84" height="44" rx="8" fill="#7dd3fc"/><text x="42" y="28" text-anchor="middle">证据</text></g>
+    <g transform="translate(724,408)"><rect width="84" height="44" rx="8" fill="#22d3ee"/><text x="42" y="28" text-anchor="middle">多维审</text></g>
+    <g transform="translate(820,408)"><rect width="84" height="44" rx="8" fill="#5eead4"/><text x="42" y="28" text-anchor="middle">测试</text></g>
+    <g transform="translate(916,408)"><rect width="110" height="44" rx="8" fill="#38bdf8"/><text x="55" y="28" text-anchor="middle">敢上线</text></g>
+  </g>
+  <g stroke="#7dd3fc" stroke-width="2" opacity="0.7">
+    <line x1="712" y1="430" x2="724" y2="430"/>
+    <line x1="808" y1="430" x2="820" y2="430"/>
+    <line x1="904" y1="430" x2="916" y2="430"/>
+  </g>
+
+  <text x="1110" y="96" text-anchor="end" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" font-size="22" fill="#64748b">op-07 · 全季压轴 · 信任收口</text>
+</svg>
